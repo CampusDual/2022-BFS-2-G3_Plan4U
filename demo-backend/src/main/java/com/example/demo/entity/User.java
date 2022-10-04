@@ -33,6 +33,9 @@ public class User implements Serializable {
 
 	@Column
 	private String surname;
+	
+	@Column(unique = true)
+	private String login;
 
 	@Column(unique = true)
 	private String email;
@@ -55,18 +58,18 @@ public class User implements Serializable {
 		super();
 	}
 
-	public User(String nif, String name, String surname, String email, String password, String phone) {
+	public User(String nif, String name, String surname, String email, String phone , String login) {
 		super();
 		this.nif = nif;
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
-		this.password = password;
 		this.phone = phone;
+		this.login = login;
 	}
 
-	public User(Integer id, String nif, String name, String surname, String phone, String email, String password) {
-		this(nif, name, surname, email, password, phone);
+	public User(Integer id, String nif, String name, String surname, String phone, String email, String login) {
+		this(nif, name, surname, email, login, phone);
 		this.id = id;
 	}
 
@@ -117,6 +120,15 @@ public class User implements Serializable {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 
 	public Set<Profile> getProfiles() {
 		return profiles;
