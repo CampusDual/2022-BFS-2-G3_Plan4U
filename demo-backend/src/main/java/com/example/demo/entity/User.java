@@ -32,15 +32,12 @@ public class User implements Serializable {
 	private String name;
 
 	@Column
-	private String surname1;
-
-	@Column
-	private String surname2;
+	private String surname;
 
 	@Column(unique = true)
-	private String login;
+	private String email;
 
-	@Formula("name || ' ' || surname1 || ' ' || surname2")
+	@Formula("name || ' ' || surname")
 	private String fullName;
 
 	@ManyToMany
@@ -51,21 +48,25 @@ public class User implements Serializable {
 	@Column
 	private String password;
 
+	@Column
+	private String phone;
+
 	public User() {
 		super();
 	}
 
-	public User(String nif, String name, String surname1, String surname2, String login) {
+	public User(String nif, String name, String surname, String email, String password, String phone) {
 		super();
 		this.nif = nif;
 		this.name = name;
-		this.surname1 = surname1;
-		this.surname2 = surname2;
-		this.login = login;
+		this.surname = surname;
+		this.email = email;
+		this.password = password;
+		this.phone = phone;
 	}
 
-	public User(Integer id, String nif, String name, String surname1, String surname2, String login) {
-		this(nif, name, surname1, surname2, login);
+	public User(Integer id, String nif, String name, String surname, String phone, String email, String password) {
+		this(nif, name, surname, email, password, phone);
 		this.id = id;
 	}
 
@@ -93,28 +94,28 @@ public class User implements Serializable {
 		this.name = name;
 	}
 
-	public String getSurname1() {
-		return surname1;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setSurname1(String surname1) {
-		this.surname1 = surname1;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public String getSurname2() {
-		return surname2;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setSurname2(String surname2) {
-		this.surname2 = surname2;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public Set<Profile> getProfiles() {
@@ -154,7 +155,7 @@ public class User implements Serializable {
 	}
 
 	public static User from(String query) {
-		return new User(query, query, query, query, query);
+		return new User(query, query, query, query, query, query);
 	}
 
 	/**
