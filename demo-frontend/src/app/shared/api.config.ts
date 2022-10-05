@@ -15,5 +15,15 @@ export const API_CONFIG = {
   createContact: environment.contactsBaseUrl + '/createContact',
   editContact: environment.contactsBaseUrl + '/editContact',
   deleteContact: environment.contactsBaseUrl + '/deleteContact',
+  
+  
+  // Users API
+  getUsers: environment.usersBaseUrl + '/getUsers',
+  getUser: environment.usersBaseUrl + '/getUser',
+  createUser: environment.usersBaseUrl + '/createUser',
+  editUser: environment.usersBaseUrl + '/editUser',
+  deleteUser: environment.usersBaseUrl + '/deleteUser',
+
+  
 
 };

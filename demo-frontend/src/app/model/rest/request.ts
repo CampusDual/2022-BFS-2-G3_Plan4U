@@ -1,4 +1,5 @@
 import { Contact } from '../contact';
+import { User } from '../user';
 
 export class QuerySortPaginationRequest {
   query: string;
@@ -38,5 +39,27 @@ export class EditContactRequest extends CreateContactRequest {
   constructor(contact: Contact) {
     super(contact);
     this.id = contact.id;
+  }
+}
+
+export class CreateUserRequest {
+    name: string;
+    surname: string;
+    nif: string;
+    phone: number;
+    email: string;
+    login: string;
+    // password: string;
+
+  constructor(user: User) {
+    
+    this.name = user.name;
+    this.nif = user.nif;
+    this.phone = user.phone;
+    this.email = user.email;
+    this.login = user.login;
+    this.surname = user.surname;
+   // this.password = user.password;
+   
   }
 }

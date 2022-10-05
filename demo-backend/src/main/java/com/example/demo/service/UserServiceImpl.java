@@ -51,4 +51,11 @@ public class UserServiceImpl implements IUserService {
 	public User getUser(Integer id) {
 		return userRepository.findById(id).orElse(null);
 	}
+
+
+	@Override
+	@Transactional
+	public User createUser(User createUserRequest) {
+		return userRepository.save(createUserRequest);
+	}
 }

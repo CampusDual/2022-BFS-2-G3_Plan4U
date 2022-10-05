@@ -15,6 +15,7 @@
           name="username"
           placeholder="{{ 'login.user' | translate }}"
         />
+        
       </mat-form-field>
 
       <mat-form-field style="width: 100%">
@@ -54,9 +55,11 @@
         ng-reflect-fx-layout="column"
         ng-reflect-fx-layout-align="center center"
       >
-        <span class="login_info">Use this user and password for login:</span>
+        <!-- <span class="login_info">Use this user and password for login:</span>
         <span class="dark_text">Username : demo</span>
-        <span class="dark_text">Password : demouser</span>
+        <span class="dark_text">Password : demouser</span> -->
+         <span>¿No estás registrado? Pulsa en el botón </span>
+         <button type="button" class="btn btn-rounded btn-primary" [routerLink]="['']">Crear Usuario</button>
       </div>
     </form>
   </div>

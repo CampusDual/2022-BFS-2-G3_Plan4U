@@ -16,6 +16,7 @@ public class Constant {
 	public static final String CONTACT_CONSTRAINT_VIOLATION ="CONTACT_CONSTRAINT_VIOLATION";
 	public static final String UNKNOWN_ERROR ="UNKNOWN_ERROR";
 	
+	
 	//Contact message
 	public static final String CONTACT_CREATE_SUCCESS ="CONTACT_CREATE_SUCCESS";
 	public static final String CONTACT_NOT_CREATED ="CONTACT_NOT_CREATED";
@@ -57,6 +58,10 @@ public class Constant {
 	public static final String PHONE_ERROR ="contacts_phone_key";
 
 	
-	
+	//nuestros errores
+	public static final String EMAIL_ERROR = "EMAIL_ERROR";
+	public static final String EMAIL_ALREADY_EXIST = "EMAIL_ALREADY_EXISTS";
+	public static final String USER_NOT_CREATED = "USER_NOT_CREATED"; 
+			
 
 }

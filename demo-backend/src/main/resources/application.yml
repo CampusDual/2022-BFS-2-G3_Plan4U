@@ -9,10 +9,10 @@ spring:
     password: y1JOQ3T9igItgfgE
   jpa:
     hibernate.ddl-auto: update
-    show-sql: false
+    show-sql: true
     properties:
       hibernate:
-        format_sql: false
+        format_sql: true
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
 
 # oauth2 configuration  
