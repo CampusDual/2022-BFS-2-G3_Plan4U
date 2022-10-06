@@ -1,10 +1,12 @@
 package com.example.demo.service;
 
 
-import com.example.demo.entity.User;
+import com.example.demo.dto.UserCompletDTO;
+import com.example.demo.dto.UserDTO;
 
 public interface IUserService {
 
-	User getUser(Integer id);
-	User createUser(User createUserRequest);
+	UserDTO getUser(Integer id);
+	UserDTO createUser(UserCompletDTO createUserRequest);
+	
 }

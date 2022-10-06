@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.UserCompletDTO;
+import com.example.demo.dto.UserDTO;
 import com.example.demo.entity.User;
 import com.example.demo.entity.enums.ResponseCodeEnum;
 import com.example.demo.service.IUserService;
@@ -46,10 +48,10 @@ public class UsersController {
 	 * @return el contacto cuyo id sea el pasado por parámetros.
 	 */
 	@GetMapping("/getUser")
-	//@PreAuthorize("hasAnyAuthority('USERS')") Peta el postman no muestra datos
+	@PreAuthorize("hasAnyAuthority('USERS')")
 	public ResponseEntity<?> getUser(@RequestParam(value = "id") Integer id) {
 		LOGGER.info("getUser in progress...");
-		User user = null;
+		UserDTO user = null;
 		Map<String, Object> response = new HashMap<>();
 		ResponseEntity<?>re = null;
 		try {
@@ -60,7 +62,7 @@ public class UsersController {
 				re = new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 			}else {
 				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.OK.getValue());
-				re = new ResponseEntity<User>(user, HttpStatus.OK);
+				re = new ResponseEntity<UserDTO>(user, HttpStatus.OK);
 			}
 		} catch (DataAccessException e) {
 			LOGGER.error(e.getMessage());
@@ -75,10 +77,10 @@ public class UsersController {
 		
 	
 	@PostMapping(path = "/createUser")
-	//@PreAuthorize("hasAnyAuthority('USERS')") Peta el postman no muestra datos
-	public ResponseEntity<?> createUser(@Valid @RequestBody User createUserRequest, BindingResult result) {
+	@PreAuthorize("hasAnyAuthority('USERS')")
+	public ResponseEntity<?> createUser(@Valid @RequestBody UserCompletDTO createUserRequest, BindingResult result) {
 		LOGGER.info("createUser in progress...");
-		User userNew = null;
+		UserDTO userNew = null;
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.CREATED;
 		String message = Constant.USER_CREATE_SUCCESS;

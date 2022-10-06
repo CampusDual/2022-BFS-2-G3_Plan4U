@@ -1,19 +1,14 @@
 package com.example.demo.service;
 
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.example.demo.entity.Section;
+import com.example.demo.dto.UserCompletDTO;
+import com.example.demo.dto.UserDTO;
+import com.example.demo.dto.mapper.UserCompletMapper;
+import com.example.demo.dto.mapper.UserMapper;
 import com.example.demo.entity.User;
-import com.example.demo.exception.DemoException;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.utils.Constant;
 
 
 @Service
@@ -26,18 +21,18 @@ public class UserServiceImpl implements IUserService {
 	private UserRepository userRepository;
 
 
-
-
-
 	@Override
-	public User getUser(Integer id) {
-		return userRepository.findById(id).orElse(null);
+	public UserDTO getUser(Integer id) {
+		User user = userRepository.findById(id).orElse(null);
+		return UserMapper.INSTANCE.userToUserDto(user);
 	}
 
 
 	@Override
 	@Transactional
-	public User createUser(User createUserRequest) {
-		return userRepository.save(createUserRequest);
+	public UserDTO createUser(UserCompletDTO createUserRequest) {
+		User userdto = UserCompletMapper.INSTANCE.userCompetDTOToUser(createUserRequest);
+		User usernew = userRepository.save(userdto);
+		return UserMapper.INSTANCE.userToUserDto(usernew);
 	}
 }

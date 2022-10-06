@@ -38,6 +38,7 @@ public class Constant {
 	public static final String USER_NOT_EXISTS ="USER_NOT_EXISTS";
 	public static final String NO_SECTIONS_ACCESS ="NO_SECTIONS_ACCESS";
 	public static final String USER_CONSTRAINT_VIOLATION ="USER_CONSTRAINT_VIOLATION";
+	public static final String SURNAME_REQUIRED ="SURNAME_REQUIRED";
 	
 	//Profile error
 	public static final String PROFILE_CONSTRAINT_VIOLATION ="PROFILE_CONSTRAINT_VIOLATION";
@@ -62,6 +63,6 @@ public class Constant {
 	public static final String EMAIL_ERROR = "EMAIL_ERROR";
 	public static final String EMAIL_ALREADY_EXIST = "EMAIL_ALREADY_EXISTS";
 	public static final String USER_NOT_CREATED = "USER_NOT_CREATED"; 
-			
+	public static final String PASSWORD_REQUIRED ="PASSWORD_REQUIRED";
 
 }

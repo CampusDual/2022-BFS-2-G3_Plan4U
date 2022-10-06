@@ -64,17 +64,17 @@ public class ContactsController {
 			if(contact==null) {
 				response.put(Constant.MESSAGE, Constant.CONTACT_NOT_EXISTS);
 				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.KO.getValue());
-				re = new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+				re = new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}else {
 				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.OK.getValue());
-				re = new ResponseEntity<ContactDTO>(contact, HttpStatus.OK);
+				re = new ResponseEntity<>(contact, HttpStatus.OK);
 			}
 		} catch (DataAccessException e) {
 			LOGGER.error(e.getMessage());
 			response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.KO.getValue());
 			response.put(Constant.MESSAGE, Constant.DATABASE_QUERY_ERROR);
 			response.put(Constant.ERROR, e.getMessage());
-			re=  new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+			re=  new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		} 
 		LOGGER.info("getContact is finished...");
 		return re;
