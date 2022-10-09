@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+
 
 
 
@@ -16,7 +16,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 const routes: Routes = [
   {
     path: '',
-    // component: ContactsLayoutComponent,
+    //component: UsersLayoutComponent,  revisar esto!!
     children: [
       { path: "", component: UsersComponent },
       { path: 'add', component: EditUserComponent },

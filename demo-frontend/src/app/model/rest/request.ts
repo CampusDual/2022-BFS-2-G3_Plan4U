@@ -62,4 +62,14 @@ export class CreateUserRequest {
    // this.password = user.password;
    
   }
+  
 }
+  export class EditUserRequest extends CreateUserRequest {
+    id: number;
+  
+    constructor(user: User) {
+      super(user);
+      this.id = user.id;
+    }
+  }
+

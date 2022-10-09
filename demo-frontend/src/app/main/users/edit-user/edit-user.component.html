@@ -1,26 +1,62 @@
-<form>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Name</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<form [formGroup]="userForm" (ngSubmit)="save()" class="h-full">
+  <div fxLayout="column" fxLayoutGap="20px" class="form-content">
+    <div class="input-row">
+      <mat-card fxFlex>
+        <mat-card-header>
+          <mat-card-title>{{ 'form.user' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+            <mat-form-field fxFlex>
+              <input matInput type="text" color="primary" placeholder="{{ 'table.users.name' | translate }}"
+                formControlName="name" name="user-name" required />
+                <mat-error>{{'namerequired'| translate}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="input-row">
+            <mat-form-field fxFlex>
+              <input matInput type="text" color="primary" placeholder="{{ 'table.users.surname' | translate }}"
+                formControlName="surname" name="user-surname" required />
+                <mat-error>
+                  {{'surnamerequired'| translate}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex>
+              <input matInput type="text" color="primary" placeholder="{{ 'table.users.login' | translate }}"
+                formControlName="login" name="user-login" />
+            </mat-form-field>
+          </div>
+          <div class="input-row">
+            <mat-form-field fxFlex>
+              <input matInput type="tel" color="primary" placeholder="{{ 'table.users.phone' | translate }}"
+                formControlName="phone" name="user-phone" required />
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-error *ngIf="userForm.get('phone').hasError('required')">
+                  {{'phonerequired'| translate}}
+                </mat-error>
+                <mat-error *ngIf="userForm.get('phone').hasError('pattern')">
+                  {{'phonepattern'| translate}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex>
+              <input matInput type="email" color="primary" placeholder="{{ 'table.users.email' | translate }}"
+                formControlName="email" name="user-email" email />
+                <mat-icon matSuffix>mail</mat-icon>
+                <mat-error>
+                  {{'emailpattern'| translate}}
+                </mat-error>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <div fclass="input-row" xLayoutGap="20px" fxLayoutAlign="center center">
+            <button fxFlex="25" fxFlex.xs="30" mat-raised-button type="button" (click)="cancel()"
+              [formNoValidate]="true">{{ 'button.cancel' | translate }}</button>
+            <button fxFlex="25" fxFlex.xs="30" mat-raised-button type="submit" color="primary"
+              [disabled]="!userForm.valid">{{ 'button.save' | translate }}</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
+</form>
