@@ -26,10 +26,10 @@ public class UserDTO {
 	private String email;
 	
 	@NotNull(message = Constant.LOGIN_REQUIRED)
-	private Integer login;
+	private String login;
 	
 	@NotNull(message = Constant.PASSWORD_REQUIRED)
-	private Integer password;
+	private String password;
 
 	public Integer getId() {
 		return id;
@@ -79,19 +79,19 @@ public class UserDTO {
 		this.email = email;
 	}
 
-	public Integer getLogin() {
+	public String getLogin() {
 		return login;
 	}
 
-	public void setLogin(Integer login) {
+	public void setLogin(String login) {
 		this.login = login;
 	}
 
-	public Integer getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(Integer password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 

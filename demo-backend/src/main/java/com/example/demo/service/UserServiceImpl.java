@@ -9,6 +9,7 @@ import com.example.demo.dto.mapper.UserCompletMapper;
 import com.example.demo.dto.mapper.UserMapper;
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.utils.CipherUtils;
 
 
 @Service
@@ -32,6 +33,7 @@ public class UserServiceImpl implements IUserService {
 	@Transactional
 	public UserDTO createUser(UserCompletDTO createUserRequest) {
 		User userdto = UserCompletMapper.INSTANCE.userCompetDTOToUser(createUserRequest);
+		userdto.setPassword(new CipherUtils().encrypt(createUserRequest.getLogin(), createUserRequest.getPassword()));
 		User usernew = userRepository.save(userdto);
 		return UserMapper.INSTANCE.userToUserDto(usernew);
 	}

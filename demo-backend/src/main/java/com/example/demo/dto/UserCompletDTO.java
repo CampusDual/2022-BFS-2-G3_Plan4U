@@ -15,6 +15,7 @@ import com.example.demo.utils.Constant;
 
 public class UserCompletDTO {
 	
+	
 	private Integer id;
 	@NotEmpty(message = Constant.NAME_REQUIRED)
 	private String name;
@@ -33,14 +34,11 @@ public class UserCompletDTO {
 	private String email;
 	
 	@NotNull(message = Constant.LOGIN_REQUIRED)
-	private Integer login;
+	private String login;
 	
 	@NotNull(message = Constant.PASSWORD_REQUIRED)
-	private Integer password;
+	private String password;
 	
-	@ManyToMany
-	@JoinTable(name = "users_profiles_map", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "profile_id") })
 	private Set<Profile> profiles = new HashSet<>();
 
 	public Integer getId() {
@@ -91,19 +89,19 @@ public class UserCompletDTO {
 		this.email = email;
 	}
 
-	public Integer getLogin() {
+	public String getLogin() {
 		return login;
 	}
 
-	public void setLogin(Integer login) {
+	public void setLogin(String login) {
 		this.login = login;
 	}
 
-	public Integer getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(Integer password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 

@@ -116,6 +116,6 @@ public class UsersController {
 		LOGGER.info("createContact is finished...");
 		response.put(Constant.MESSAGE, message);
 		
-		return new ResponseEntity<Map<String, Object>>(response, status);
+		return new ResponseEntity<>(response, status);
 	}
 }
