@@ -37,15 +37,15 @@ import { CoreModule } from '../core/core.module';
 import { FilterItemDirective } from './directives/filter-item.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
-import { UsersComponent } from './users/users.component';
-import { EditUserComponent } from './users/edit-user/edit-user.component';
+//import { UsersComponent } from './users/users.component';
+// import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
     MainHomeComponent,
     FilterItemDirective,
-    UsersComponent,
-    EditUserComponent,
+    //UsersComponent,
+   // EditUserComponent,
   ],
   imports: [
     TranslateModule,

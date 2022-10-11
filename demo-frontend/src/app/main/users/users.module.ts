@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
-import { UsersComponent } from './users-routing.module';
+import { UsersComponent } from './users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -16,7 +16,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule } from '@ngx-translate/core';
-//import { UsersLayoutComponent } from './users-layout.component';
+import { UserLayoutComponent } from './user-layout.component';
 
 @NgModule({
     imports: [
@@ -36,9 +36,9 @@ import { TranslateModule } from '@ngx-translate/core';
         TranslateModule,
     ],
     declarations: [
-        UsersComponent
-        //EditUserComponent,
-        //UsersLayoutComponent
+        UsersComponent,
+        UserLayoutComponent,
+        EditUserComponent
     ]
 })
 export class UsersModule { }
