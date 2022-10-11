@@ -29,7 +29,7 @@ export class UserService {
     const body: CreateUserRequest = new CreateUserRequest(user);
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+     // Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.post<User>(url, body, { headers }).pipe(
       catchError(e =>{

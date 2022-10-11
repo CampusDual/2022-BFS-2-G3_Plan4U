@@ -27,10 +27,20 @@
       "surname2": "Second Surname",
       "phone": "Phone",
       "email": "E-Mail"
-    }
+    },
+    "users": {
+     "name": "Name",
+     "surname": "Surname",
+     "login": "Login",
+     "phone": "Phone",
+     "email": "E-Mail",
+     "nif": "Identity Document",
+     "password": "Password"
+   }
   },
   "form": {
-    "contact": "Contact"
+    "contact": "Contact",
+    "user":"User"
   },
   "button": {
     "cancel": "Cancel",
@@ -85,5 +95,9 @@
   "surname1required": "Surname is a required field",
   "phonerequired":"Phone is a required field",
   "phonepattern": "The phone format is not correct",
-  "emailpattern": "The email format is not correct"
+  "emailpattern": "The email format is not correct",
+  "passwordrequired": "Password is a required field",
+  "nifrequired": "NIF is a required field",
+  "minlengthrequired": "La contraseña debe tener mínimo 6 caracteres",
+  "maxlengthrequired": "La contraseña no puede tener más de 20 caracteres"
 }

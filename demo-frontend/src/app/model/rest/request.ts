@@ -49,24 +49,24 @@ export class CreateUserRequest {
     phone: number;
     email: string;
     login: string;
-    // password: string;
+    password: string;
 
   constructor(user: User) {
-    
+
     this.name = user.name;
     this.nif = user.nif;
     this.phone = user.phone;
     this.email = user.email;
     this.login = user.login;
     this.surname = user.surname;
-   // this.password = user.password;
-   
+    this.password = user.password;
+
   }
-  
+
 }
   export class EditUserRequest extends CreateUserRequest {
     id: number;
-  
+
     constructor(user: User) {
       super(user);
       this.id = user.id;

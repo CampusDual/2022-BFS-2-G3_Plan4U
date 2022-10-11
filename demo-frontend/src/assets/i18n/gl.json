@@ -27,10 +27,20 @@
       "surname2": "Segundo apelido",
       "phone": "Teléfono",
       "email": "E-Mail"
+    },
+     "users": {
+      "name": "Nome",
+      "surname": "Primer apelido",
+      "login": "Nome usuario",
+      "phone": "Teléfono",
+      "email": "E-Mail",
+      "nif": "Documento de identidade",
+      "password": "Contrasinal"
     }
   },
   "form": {
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "user":"Usuario"
   },
   "button": {
     "cancel": "Cancelar",
@@ -85,5 +95,9 @@
   "surname1required": "O apelido é un campo obrigatorio",
   "phonerequired":"O teléfono é un campo requirido",
   "phonepattern": "O formato do teléfono non é correcto",
-  "emailpattern": "O formato do email non é correcto"
+  "emailpattern": "O formato do email non é correcto",
+  "passwordrequired": "O contrasinal é un campo obrigatorio",
+  "nifrequired": "O NIF é un campo obrigatorio",
+  "minlengthrequired": "La contraseña debe tener mínimo 6 caracteres",
+  "maxlengthrequired": "La contraseña no puede tener más de 20 caracteres"
 }

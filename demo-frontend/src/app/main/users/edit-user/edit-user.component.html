@@ -3,57 +3,169 @@
     <div class="input-row">
       <mat-card fxFlex>
         <mat-card-header>
-          <mat-card-title>{{ 'form.user' | translate }}</mat-card-title>
+          <mat-card-title>{{ "form.user" | translate }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <div
+            class="input-row"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutGap="20px"
+            fxLayoutGap.lt-md="0px"
+          >
             <mat-form-field fxFlex>
-              <input matInput type="text" color="primary" placeholder="{{ 'table.users.name' | translate }}"
-                formControlName="name" name="user-name" required />
-                <mat-error>{{'namerequired'| translate}}</mat-error>
+              <input
+                matInput
+                type="text"
+                color="primary"
+                placeholder="{{ 'table.users.name' | translate }}"
+                formControlName="name"
+                name="user-name"
+                required
+              />
+              <mat-error>{{ "namerequired" | translate }}</mat-error>
             </mat-form-field>
           </div>
           <div class="input-row">
             <mat-form-field fxFlex>
-              <input matInput type="text" color="primary" placeholder="{{ 'table.users.surname' | translate }}"
-                formControlName="surname" name="user-surname" required />
-                <mat-error>
-                  {{'surnamerequired'| translate}}
-                </mat-error>
+              <input
+                matInput
+                type="text"
+                color="primary"
+                placeholder="{{ 'table.users.surname' | translate }}"
+                formControlName="surname"
+                name="user-surname"
+                required
+              />
+              <mat-error>
+                {{ "surnamerequired" | translate }}
+              </mat-error>
             </mat-form-field>
             <mat-form-field fxFlex>
-              <input matInput type="text" color="primary" placeholder="{{ 'table.users.login' | translate }}"
-                formControlName="login" name="user-login" />
+              <input
+                matInput
+                type="text"
+                color="primary"
+                placeholder="{{ 'table.users.login' | translate }}"
+                formControlName="login"
+                name="user-login"
+              />
             </mat-form-field>
           </div>
           <div class="input-row">
             <mat-form-field fxFlex>
-              <input matInput type="tel" color="primary" placeholder="{{ 'table.users.phone' | translate }}"
-                formControlName="phone" name="user-phone" required />
-                <mat-icon matSuffix>phone</mat-icon>
-                <mat-error *ngIf="userForm.get('phone').hasError('required')">
-                  {{'phonerequired'| translate}}
-                </mat-error>
-                <mat-error *ngIf="userForm.get('phone').hasError('pattern')">
-                  {{'phonepattern'| translate}}
-                </mat-error>
+              <input
+                matInput
+                type="tel"
+                color="primary"
+                placeholder="{{ 'table.users.phone' | translate }}"
+                formControlName="phone"
+                name="user-phone"
+                required
+              />
+              <mat-icon matSuffix>phone</mat-icon>
+              <mat-error *ngIf="userForm.get('phone').hasError('required')">
+                {{ "phonerequired" | translate }}
+              </mat-error>
+              <mat-error *ngIf="userForm.get('phone').hasError('pattern')">
+                {{ "phonepattern" | translate }}
+              </mat-error>
             </mat-form-field>
             <mat-form-field fxFlex>
-              <input matInput type="email" color="primary" placeholder="{{ 'table.users.email' | translate }}"
-                formControlName="email" name="user-email" email />
-                <mat-icon matSuffix>mail</mat-icon>
-                <mat-error>
-                  {{'emailpattern'| translate}}
-                </mat-error>
+              <input
+                matInput
+                type="email"
+                color="primary"
+                placeholder="{{ 'table.users.email' | translate }}"
+                formControlName="email"
+                name="user-email"
+                email
+              />
+              <mat-icon matSuffix>mail</mat-icon>
+              <mat-error>
+                {{ "emailpattern" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div
+            class="input-row"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutGap="20px"
+            fxLayoutGap.lt-md="0px"
+          >
+            <mat-form-field fxFlex>
+              <input
+                matInput
+                type="password"
+                color="primary"
+                placeholder="{{ 'table.users.password' | translate }}"
+                formControlName="password"
+                name="user-password"
+                minlength=6
+                maxlength=20
+                required
+              />
+              <mat-error *ngIf="userForm.get('password').hasError('required')">
+                {{ "passwordrequired" | translate }}
+              </mat-error>
+              <mat-error *ngIf="userForm.get('password').hasError('minLength')">
+                {{ "minlengthrequired" | translate }}
+              </mat-error>
+              <mat-error *ngIf="userForm.get('password').hasError('maxLength')">
+                {{ "maxlengthrequired" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div
+            class="input-row"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutGap="20px"
+            fxLayoutGap.lt-md="0px"
+          >
+            <mat-form-field fxFlex>
+              <input
+                matInput
+                type="text"
+                color="primary"
+                placeholder="{{ 'table.users.nif' | translate }}"
+                formControlName="nif"
+                name="user-nif"
+                required
+              />
+              <mat-error>{{ "nifrequired" | translate }}</mat-error>
             </mat-form-field>
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <div fclass="input-row" xLayoutGap="20px" fxLayoutAlign="center center">
-            <button fxFlex="25" fxFlex.xs="30" mat-raised-button type="button" (click)="cancel()"
-              [formNoValidate]="true">{{ 'button.cancel' | translate }}</button>
-            <button fxFlex="25" fxFlex.xs="30" mat-raised-button type="submit" color="primary"
-              [disabled]="!userForm.valid">{{ 'button.save' | translate }}</button>
+          <div
+            fclass="input-row"
+            xLayoutGap="20px"
+            fxLayoutAlign="center center"
+          >
+            <button
+              fxFlex="25"
+              fxFlex.xs="30"
+              mat-raised-button
+              type="button"
+              (click)="cancel()"
+              [formNoValidate]="true"
+            >
+              {{ "button.cancel" | translate }}
+            </button>
+            <button
+              fxFlex="25"
+              fxFlex.xs="30"
+              mat-raised-button
+              type="submit"
+              color="primary"
+              [disabled]="!userForm.valid"
+            >
+              {{ "button.save" | translate }}
+            </button>
           </div>
         </mat-card-actions>
       </mat-card>
