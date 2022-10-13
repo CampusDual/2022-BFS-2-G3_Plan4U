@@ -110,10 +110,10 @@
               <mat-error *ngIf="userForm.get('password').hasError('required')">
                 {{ "passwordrequired" | translate }}
               </mat-error>
-              <mat-error *ngIf="userForm.get('password').hasError('minLength')">
+              <mat-error *ngIf="userForm.get('password').hasError('minlength')">
                 {{ "minlengthrequired" | translate }}
               </mat-error>
-              <mat-error *ngIf="userForm.get('password').hasError('maxLength')">
+              <mat-error *ngIf="userForm.get('password').hasError('maxlength')">
                 {{ "maxlengthrequired" | translate }}
               </mat-error>
             </mat-form-field>
