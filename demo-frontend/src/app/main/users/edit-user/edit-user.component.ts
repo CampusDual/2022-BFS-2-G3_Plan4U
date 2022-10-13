@@ -90,7 +90,7 @@ export class EditUserComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/users']);
   }
 
 }

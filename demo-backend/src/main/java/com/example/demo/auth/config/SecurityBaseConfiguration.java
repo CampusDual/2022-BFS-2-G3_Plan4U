@@ -38,7 +38,7 @@ public class SecurityBaseConfiguration extends ResourceServerConfigurerAdapter {
         	.authorizeRequests()
 		    	.antMatchers(
 		    		"/demo/**",
-		    	    "/users/**",  
+		    	    "/users/add",  
 		            "/oauth/check_token",
 		            "/oauth/token")
 				.permitAll()

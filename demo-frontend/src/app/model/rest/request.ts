@@ -50,6 +50,7 @@ export class CreateUserRequest {
     email: string;
     login: string;
     password: string;
+    profiles: string [];
 
   constructor(user: User) {
 
@@ -60,7 +61,7 @@ export class CreateUserRequest {
     this.login = user.login;
     this.surname = user.surname;
     this.password = user.password;
-
+    this.profiles = ["2"];
   }
 
 }
