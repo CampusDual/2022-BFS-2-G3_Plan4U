@@ -9,4 +9,5 @@ public interface IUserService {
 	UserDTO getUser(Integer id);
 	UserDTO createUser(UserCompletDTO createUserRequest);
 	
+	Integer editUser(UserDTO editUserRequest);
 }
