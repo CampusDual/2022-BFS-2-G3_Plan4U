@@ -75,7 +75,7 @@ export class EditUserComponent implements OnInit {
 
   redirectList(response: any) {
     if (response.responseCode === 'OK') {
-      this.router.navigate(['/users']);
+      this.router.navigate(['/login']);
     }else{
       console.log(response);
     }
@@ -90,7 +90,7 @@ export class EditUserComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/login']);
   }
 
 }

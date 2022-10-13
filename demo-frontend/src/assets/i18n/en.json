@@ -98,6 +98,6 @@
   "emailpattern": "The email format is not correct",
   "passwordrequired": "Password is a required field",
   "nifrequired": "NIF is a required field",
-  "minlengthrequired": "La contraseña debe tener mínimo 6 caracteres",
-  "maxlengthrequired": "La contraseña no puede tener más de 20 caracteres"
+  "passwordminlength": "Password requires at least 6 characters",
+  "passwordmaxlength": "Password can't be over 20 characters"
 }

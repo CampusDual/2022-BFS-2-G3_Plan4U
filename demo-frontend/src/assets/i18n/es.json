@@ -99,8 +99,8 @@
   "emailpattern": "El formato del email no es correcto",
   "passwordrequired": "La contraseña es un campo obligatorio",
   "nifrequired": "El NIF es un campo obligatorio",
-  "minlengthrequired": "La contraseña debe tener mínimo 6 caracteres",
-  "maxlengthrequired": "La contraseña no puede tener más de 20 caracteres"
+  "passwordminlength": "La contraseña debe tener mínimo 6 caracteres",
+  "passwordmaxlength": "La contraseña no puede tener más de 20 caracteres"
 
 
 }
