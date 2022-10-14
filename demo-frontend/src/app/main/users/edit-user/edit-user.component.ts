@@ -52,9 +52,9 @@ export class EditUserComponent implements OnInit {
       id: [this.user.id],
       name: [this.user.name, Validators.required],
       surname: [this.user.surname],
-      login: [this.user.login],
+      login: [this.user.login, Validators.required],
       phone: [this.user.phone, [Validators.required, Validators.pattern("^[0-9]{9}$")]],
-      email: [this.user.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")],
+      email: [this.user.email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: [this.user.password, [Validators.required, Validators.minLength(6),Validators.maxLength(20)]],
       nif: [this.user.nif, Validators.required],
     });

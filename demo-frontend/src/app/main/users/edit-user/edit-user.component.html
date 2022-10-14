@@ -51,7 +51,9 @@
                 placeholder="{{ 'table.users.login' | translate }}"
                 formControlName="login"
                 name="user-login"
+                required
               />
+              <mat-error>{{ "loginrequired" | translate }}</mat-error>
             </mat-form-field>
           </div>
           <div class="input-row">
@@ -84,9 +86,13 @@
                 formControlName="email"
                 name="user-email"
                 email
+                required
               />
               <mat-icon matSuffix>mail</mat-icon>
-              <mat-error>
+              <mat-error *ngIf="userForm.get('email').hasError('required')">
+                {{ "emailrequired" | translate }}
+              </mat-error>
+              <mat-error *ngIf="userForm.get('email').hasError('pattern')">
                 {{ "emailpattern" | translate }}
               </mat-error>
             </mat-form-field>
