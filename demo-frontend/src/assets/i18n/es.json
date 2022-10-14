@@ -102,7 +102,7 @@
   "passwordminlength": "La contraseña debe tener mínimo 6 caracteres",
   "passwordmaxlength": "La contraseña no puede tener más de 20 caracteres",
   "loginrequired": "El nombre de usuario es obligatorio",
-  "emailrequired": "El email es obligatorio"
-
+  "emailrequired": "El email es obligatorio",
+  "USER_CREATE_SUCCESS": "Usuario creado correctamente"
 
 }

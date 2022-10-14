@@ -99,5 +99,8 @@
   "passwordrequired": "Password is a required field",
   "nifrequired": "NIF is a required field",
   "passwordminlength": "Password requires at least 6 characters",
-  "passwordmaxlength": "Password can't be over 20 characters"
+  "passwordmaxlength": "Password can't be over 20 characters",
+  "loginrequired": "User name is a required field",
+  "emailrequired": "Email is a required field",
+  "USER_CREATE_SUCCESS": "User created"
 }
