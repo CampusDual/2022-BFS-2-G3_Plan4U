@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.ContactDTO;
 import com.example.demo.dto.UserCompletDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.entity.User;
@@ -117,5 +119,58 @@ public class UsersController {
 		response.put(Constant.MESSAGE, message);
 		
 		return new ResponseEntity<>(response, status);
+	}
+	
+	//EditUser
+	
+	@PostMapping(path = "/editUser", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PreAuthorize("hasAnyAuthority('USERS')")
+	public ResponseEntity<?> editUser(@Valid @RequestBody UserCompletDTO editUserRequest, BindingResult result) {
+		LOGGER.info("editUser in progress...");
+		int id = 0;
+		UserDTO userOlder = userService.getUser(editUserRequest.getId());
+		Map<String, Object> response = new HashMap<>();
+		HttpStatus status = HttpStatus.CREATED;
+		String message = Constant.USER_EDIT_SUCCESS;
+		if(userOlder!=null) {
+			if(!result.hasErrors()) {
+				try {
+					id = userService.editUser(editUserRequest);
+					response.put("userid", id);
+					response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.OK.getValue());
+				}catch (DataAccessException e) {
+					if(e.getMostSpecificCause().getMessage().contains(Constant.PHONE_ERROR)) {
+						message = Constant.PHONE_ALREADY_EXISTS;
+						status= HttpStatus.OK;
+					}else {
+						message = Constant.DATABASE_QUERY_ERROR;
+						status= HttpStatus.BAD_REQUEST;
+					}
+					response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.KO.getValue());
+					response.put(Constant.ERROR, e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+				}
+				
+			}else {
+				List<String> errors = new ArrayList<>();
+				for(FieldError error : result.getFieldErrors()) {
+					errors.add(error.getDefaultMessage());
+				}
+				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.WARNING.getValue());
+				message = Constant.CONTACT_NOT_EDIT;
+				response.put(Constant.ERROR, errors);
+				status = HttpStatus.OK;
+			}
+		}else {
+			response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.KO.getValue());
+			message = Constant.ID_NOT_EXISTS;
+			status = HttpStatus.BAD_REQUEST;
+		}
+			
+
+		
+		response.put(Constant.MESSAGE, message);
+		LOGGER.info("editUser is finished...");
+		return new ResponseEntity<Map<String, Object>>(response, status);
+	
 	}
 }

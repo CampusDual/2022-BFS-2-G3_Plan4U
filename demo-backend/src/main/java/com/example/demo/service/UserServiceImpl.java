@@ -33,16 +33,17 @@ public class UserServiceImpl extends AbstractDemoService implements IUserService
 	@Override
 	@Transactional
 	public UserDTO createUser(UserCompletDTO createUserRequest) {
-		User userdto = UserCompletMapper.INSTANCE.userCompetDTOToUser(createUserRequest);
+		User userdto = UserCompletMapper.INSTANCE.userCompletDTOToUser(createUserRequest);
 		userdto.setPassword(new CipherUtils().encrypt(createUserRequest.getLogin(), createUserRequest.getPassword()));
 		User usernew = userRepository.save(userdto);
 		return UserMapper.INSTANCE.userToUserDto(usernew);
 	}
 	
 	@Override
-	public Integer editUser(UserDTO editUserRequest) {
-		User userdto = UserMapper.INSTANCE.userDTOtoUser(editUserRequest);
-		User editUser = userRepository.save(fromEditUserRequest(userdto));
+	public Integer editUser(UserCompletDTO editUserRequest) {
+		User userdto = UserCompletMapper.INSTANCE.userCompletDTOToUser(editUserRequest);
+		userdto.setPassword(new CipherUtils().encrypt(editUserRequest.getLogin(), editUserRequest.getPassword()));
+		User editUser = userRepository.save(userdto);
 		return editUser.getId();
 	}
 	

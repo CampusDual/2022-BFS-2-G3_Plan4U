@@ -12,6 +12,6 @@ public interface UserCompletMapper {
 	UserCompletMapper INSTANCE = Mappers.getMapper(UserCompletMapper.class);
 	
 	UserCompletDTO userToUserCompletDTO (User user);
-	User userCompetDTOToUser(UserCompletDTO userdto);
+	User userCompletDTOToUser(UserCompletDTO userdto);
 	
 }
