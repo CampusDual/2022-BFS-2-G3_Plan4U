@@ -24,8 +24,8 @@ public class UserServiceImpl extends AbstractDemoService implements IUserService
 
 
 	@Override
-	public UserDTO getUser(Integer id) {
-		User user = userRepository.findById(id).orElse(null);
+	public UserDTO getUser(String login) {
+		User user = userRepository.findByLogin(login).orElse(null);
 		return UserMapper.INSTANCE.userToUserDto(user);
 	}
 

@@ -6,8 +6,9 @@ import com.example.demo.dto.UserDTO;
 
 public interface IUserService {
 
-	UserDTO getUser(Integer id);
+	UserDTO getUser(String login);
 	UserDTO createUser(UserCompletDTO createUserRequest);
 	
 	Integer editUser(UserCompletDTO editUserRequest);
+	
 }

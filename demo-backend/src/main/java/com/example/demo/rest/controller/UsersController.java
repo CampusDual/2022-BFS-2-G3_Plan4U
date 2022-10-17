@@ -51,13 +51,13 @@ public class UsersController {
 	 */
 	@GetMapping("/getUser")
 	@PreAuthorize("hasAnyAuthority('USERS')")
-	public ResponseEntity<?> getUser(@RequestParam(value = "id") Integer id) {
+	public ResponseEntity<?> getUser(@RequestParam(value = "login") String login) {
 		LOGGER.info("getUser in progress...");
 		UserDTO user = null;
 		Map<String, Object> response = new HashMap<>();
 		ResponseEntity<?>re = null;
 		try {
-			user = userService.getUser(id);
+			user = userService.getUser(login);
 			if(user==null) {
 				response.put(Constant.MESSAGE, Constant.USER_NOT_EXISTS);
 				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.KO.getValue());
@@ -128,7 +128,7 @@ public class UsersController {
 	public ResponseEntity<?> editUser(@Valid @RequestBody UserCompletDTO editUserRequest, BindingResult result) {
 		LOGGER.info("editUser in progress...");
 		int id = 0;
-		UserDTO userOlder = userService.getUser(editUserRequest.getId());
+		UserDTO userOlder = userService.getUser(editUserRequest.getLogin());
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.CREATED;
 		String message = Constant.USER_EDIT_SUCCESS;

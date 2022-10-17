@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./edit-user.component.scss']
 })
 export class EditUserComponent implements OnInit {
-  idUser: number;
+ loginUser: string;
 
   userForm: FormGroup;
   user: User;
@@ -29,9 +29,9 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit() {
     this.createFormGroup();
-    this.idUser = this.route.snapshot.params['id'];
-    if (this.idUser) {
-      this.userService.getUser(this.idUser).subscribe(
+    this.loginUser = this.route.snapshot.params['login'];
+    if (this.loginUser) {
+      this.userService.getUser(this.loginUser).subscribe(
         response => {
           this.user = response;
           this.userForm.patchValue(this.user, { emitEvent: false, onlySelf: false });
@@ -62,7 +62,7 @@ export class EditUserComponent implements OnInit {
 
   save() {
     const newUser: User = Object.assign({}, this.userForm.value);
-    if (newUser.id) {
+    if (newUser.login) {
       this.userService.editUser(newUser).subscribe((response) =>{
         this.redirectList(response);
       });
@@ -83,7 +83,7 @@ export class EditUserComponent implements OnInit {
 
   compareObjects(o1: any, o2: any): boolean {
     if (o1 && o2) {
-      return o1.id === o2.id;
+      return o1.login === o2.login;
     } else {
       return false;
     }
