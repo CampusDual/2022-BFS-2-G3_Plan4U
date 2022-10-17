@@ -6,6 +6,7 @@ import { CreateUserRequest } from '../model/rest/request';
 import { EditUserRequest } from '../model/rest/request';
 import { User } from '../model/user';
 import { API_CONFIG } from '../shared/api.config';
+import { Buffer } from "buffer";
 
 @Injectable({
   providedIn: 'root'
