@@ -148,11 +148,12 @@
               formControlName="confirmPassword"
               name="user-confirmPassword"
               required
+              (input)="notMatchPassword()"
             />
             <mat-error *ngIf="userForm.get('confirmPassword').hasError('required')">
               {{ "passwordrequired" | translate }}
             </mat-error>
-            <mat-error *ngIf="checarSiSonIguales()">
+            <mat-error *ngIf="userForm.get('confirmPassword').invalid">
               {{"matchpassword" | translate}}
             </mat-error>
           </mat-form-field>

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-users',
@@ -14,6 +15,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+
+  userName: string;
 
   //dataSource: ContactDataSource;
   displayedColumns = [
@@ -43,8 +46,11 @@ export class UsersComponent implements OnInit {
     private userService: UserService,
     private translate: TranslateService,
     private router: Router,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private authService: AuthService
+  ) {
+    this.userName = authService.getUserName();
+  }
 
 
   ngOnInit(): void {
@@ -55,9 +61,8 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/users/add']);
   }
 
-  onEdit(row: User) {
-    this.highlightedRow = row;
-    this.router.navigate(['/users/edit/' + row.id]);
+  onEdit() {
+    this.router.navigate(['/users/edit/' + this.userName]);
   }
 
 

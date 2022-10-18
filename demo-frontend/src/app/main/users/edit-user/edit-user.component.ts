@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { LoggerService } from 'src/app/services/logger.service';
 import { UserService } from 'src/app/services/user.service';
-import { validarQueSeanIguales } from './edit-user.validators';
+import { checkMatch  } from './edit-user.validators';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -17,22 +18,26 @@ export class EditUserComponent implements OnInit {
   userForm: FormGroup;
   user: User;
   errores: string[];
+  userName: string;
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
     private router: Router,
     private route: ActivatedRoute,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private authService: AuthService
   ) {
     this.user = new User();
+    this.userName = authService.getUserName();
+  
   }
 
   ngOnInit() {
     this.createFormGroup();
-    this.loginUser = this.route.snapshot.params['login'];
-    if (this.loginUser) {
-      this.userService.getUser(this.loginUser).subscribe(
+    this.userName = this.route.snapshot.params['userName'];
+    if (this.userName) {
+      this.userService.getUser(this.userName).subscribe(
         response => {
           this.user = response;
           this.userForm.patchValue(this.user, { emitEvent: false, onlySelf: false });
@@ -57,23 +62,22 @@ export class EditUserComponent implements OnInit {
       phone: [this.user.phone, [Validators.required, Validators.pattern("^[0-9]{9}$")]],
       email: [this.user.email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: [this.user.password, [Validators.required, Validators.minLength(6),Validators.maxLength(20)]],
-      'confirmPassword':['', Validators.required],
+      'confirmPassword':['', Validators.required ],
       nif: [this.user.nif, Validators.required],
     },
     {
-      validators: validarQueSeanIguales
+      validators: checkMatch
     });
 
   }
 
-  checarSiSonIguales(): boolean {
-
-    return this.userForm.hasError('noSonIguales') &&
-
-      this.userForm.get('password').dirty &&
-
-      this.userForm.get('confirmPassword').dirty;
-
+  notMatchPassword() {
+    if(this.userForm.hasError('notMatch')){
+      this.userForm.get('confirmPassword').setErrors([{'notMatch':true}])
+    }else{
+      this.userForm.get('confirmPassword').setErrors(null)
+    }
+    
   }
 
   save() {

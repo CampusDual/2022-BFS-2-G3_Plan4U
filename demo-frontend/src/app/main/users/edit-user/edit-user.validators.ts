@@ -2,7 +2,7 @@ import { FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 
 
-export const validarQueSeanIguales: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
+export const checkMatch: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
 
   const password = control.get('password');
 
@@ -10,6 +10,6 @@ export const validarQueSeanIguales: ValidatorFn = (control: FormGroup): Validati
 
 
 
-  return password.value === confirmPassword.value ? null : { 'noSonIguales': true };
+  return password.value === confirmPassword.value ? null : { 'notMatch': true };
 
 };
