@@ -102,5 +102,6 @@
   "passwordmaxlength": "Password can't be over 20 characters",
   "loginrequired": "User name is a required field",
   "emailrequired": "Email is a required field",
-  "USER_CREATE_SUCCESS": "User created"
+  "USER_CREATE_SUCCESS": "User created",
+  "matchpassword": "Passwords doesn't match"
 }

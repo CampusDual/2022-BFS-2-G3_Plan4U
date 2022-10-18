@@ -102,5 +102,6 @@
   "passwordmaxlength": "O contrasinal non pode tener máis de 20 caracteres",
   "loginrequired": "O nome de usuario é un campo obrigatorio",
   "emailrequired": "O email é un campo obrigatorio",
-  "USER_CREATE_SUCCESS": "Usuario creado correctamente"
+  "USER_CREATE_SUCCESS": "Usuario creado correctamente",
+  "matchpassword": "Os contrasinais non coinciden"
 }

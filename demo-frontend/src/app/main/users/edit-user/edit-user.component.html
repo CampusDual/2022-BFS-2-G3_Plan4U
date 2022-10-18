@@ -130,6 +130,34 @@
             </mat-form-field>
           </div>
 
+
+
+          <div
+          class="input-row"
+          fxLayout="row"
+          fxLayout.lt-md="column"
+          fxLayoutGap="20px"
+          fxLayoutGap.lt-md="0px"
+        >
+          <mat-form-field fxFlex>
+            <input
+              matInput
+              type="password"
+              color="primary"
+              placeholder="confirmPassword"
+              formControlName="confirmPassword"
+              name="user-confirmPassword"
+              required
+            />
+            <mat-error *ngIf="userForm.get('confirmPassword').hasError('required')">
+              {{ "passwordrequired" | translate }}
+            </mat-error>
+            <mat-error *ngIf="checarSiSonIguales()">
+              {{"matchpassword" | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
           <div
             class="input-row"
             fxLayout="row"

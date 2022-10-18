@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { LoggerService } from 'src/app/services/logger.service';
 import { UserService } from 'src/app/services/user.service';
+import { validarQueSeanIguales } from './edit-user.validators';
 
 @Component({
   selector: 'app-edit-user',
@@ -56,13 +57,28 @@ export class EditUserComponent implements OnInit {
       phone: [this.user.phone, [Validators.required, Validators.pattern("^[0-9]{9}$")]],
       email: [this.user.email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: [this.user.password, [Validators.required, Validators.minLength(6),Validators.maxLength(20)]],
+      'confirmPassword':['', Validators.required],
       nif: [this.user.nif, Validators.required],
+    },
+    {
+      validators: validarQueSeanIguales
     });
+
+  }
+
+  checarSiSonIguales(): boolean {
+
+    return this.userForm.hasError('noSonIguales') &&
+
+      this.userForm.get('password').dirty &&
+
+      this.userForm.get('confirmPassword').dirty;
+
   }
 
   save() {
     const newUser: User = Object.assign({}, this.userForm.value);
-    if (newUser.login) {
+    if (newUser.id) {
       this.userService.editUser(newUser).subscribe((response) =>{
         this.redirectList(response);
       });
