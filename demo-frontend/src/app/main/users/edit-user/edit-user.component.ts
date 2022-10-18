@@ -29,13 +29,13 @@ export class EditUserComponent implements OnInit {
     private authService: AuthService
   ) {
     this.user = new User();
-    this.userName = authService.getUserName();
+    
   
   }
 
   ngOnInit() {
     this.createFormGroup();
-    this.userName = this.route.snapshot.params['userName'];
+    this.userName = this.authService.getUserName();
     if (this.userName) {
       this.userService.getUser(this.userName).subscribe(
         response => {
@@ -83,7 +83,7 @@ export class EditUserComponent implements OnInit {
   save() {
     const newUser: User = Object.assign({}, this.userForm.value);
     if (newUser.id) {
-      this.userService.editUser(newUser).subscribe((response) =>{
+      this.authService.getUserName().subscribe((response) =>{
         this.redirectList(response);
       });
     } else {

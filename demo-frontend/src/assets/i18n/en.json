@@ -13,7 +13,8 @@
   "menu": {
     "home": "Home",
     "contacts": "Contacts",
-    "logout": "Logout"
+    "logout": "Logout",
+    "edituser": "Edit user"
   },
   "language": {
     "spanish": "Spanish",

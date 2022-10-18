@@ -43,4 +43,9 @@ export class NavigationBarComponent {
     this.selectedLanguage = lang;
     this.translateService.use(lang);
   }
+
+  onEdit() {
+    this.router.navigate(['/users/edit/' + this.authService.getUserName]);
+  }
+
 }

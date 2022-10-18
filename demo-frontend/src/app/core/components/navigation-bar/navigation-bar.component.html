@@ -37,10 +37,14 @@
           </button>
           <mat-menu #auth="matMenu">
             <span matSubheader><strong>{{userName}}</strong></span>
+            <button mat-menu-item (click)="onEdit()">
+              <mat-icon>create</mat-icon> 
+              <span>{{ 'menu.edituser' | translate }}</span>
+            </button>
             <button mat-menu-item (click)="logout()">
               <mat-icon>exit_to_app</mat-icon>
               <span>{{ 'menu.logout' | translate }}</span>
-            </button>
+            </button>  
           </mat-menu>
         </li>
       </ul>

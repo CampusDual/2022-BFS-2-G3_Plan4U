@@ -62,7 +62,7 @@ export class UsersComponent implements OnInit {
   }
 
   onEdit() {
-    this.router.navigate(['/users/edit/' + this.userName]);
+    this.router.navigate(['/users/edit/' + this.authService.getUserName]);
   }
 
 
