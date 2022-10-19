@@ -105,6 +105,8 @@
   "loginrequired": "El nombre de usuario es obligatorio",
   "emailrequired": "El email es obligatorio",
   "USER_CREATE_SUCCESS": "Usuario creado correctamente",
-  "matchpassword": "Las contraseñas no coinciden"
+  "matchpassword": "Las contraseñas no coinciden",
+  "USER_DUPLICATE_LOGIN": "El login ya existe",
+  "USER_DUPLICATE_EMAIL": "El email ya existe"
 
 }

@@ -104,5 +104,7 @@
   "loginrequired": "O nome de usuario é un campo obrigatorio",
   "emailrequired": "O email é un campo obrigatorio",
   "USER_CREATE_SUCCESS": "Usuario creado correctamente",
-  "matchpassword": "Os contrasinais non coinciden"
+  "matchpassword": "Os contrasinais non coinciden",
+  "USER_DUPLICATE_LOGIN": "O login xa existe",
+  "USER_DUPLICATE_EMAIL": "O email xa existe"
 }

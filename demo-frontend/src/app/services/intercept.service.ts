@@ -68,6 +68,16 @@ export class InterceptService implements HttpInterceptor {
             if (err.url.includes('token')) {
               this.snackBar.openSnackBar(this.translate.instant(err.error.error_description),
                 this.translate.instant('CLOSE'), 'red-snackbar');
+            } else if (err.status === 400) {
+              if (err.error.errors.includes('already exists')) {
+                if(err.error.errors.includes('users_login_key')){ 
+                  this.snackBar.openSnackBar(this.translate.instant('USER_DUPLICATE_LOGIN'),
+                  this.translate.instant('CLOSE'), 'red-snackbar');
+                } else {
+                  this.snackBar.openSnackBar(this.translate.instant('USER_DUPLICATE_EMAIL'),
+                  this.translate.instant('CLOSE'), 'red-snackbar');
+                }
+              }
             } else {
               this.snackBar.openSnackBar(err.message, this.translate.instant('CLOSE'), 'red-snackbar');
             }

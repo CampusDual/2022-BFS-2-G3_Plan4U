@@ -104,5 +104,7 @@
   "loginrequired": "User name is a required field",
   "emailrequired": "Email is a required field",
   "USER_CREATE_SUCCESS": "User created",
-  "matchpassword": "Passwords doesn't match"
+  "matchpassword": "Passwords doesn't match",
+  "USER_DUPLICATE_LOGIN": "Login already exist",
+  "USER_DUPLICATE_EMAIL": "Email already exist"
 }
