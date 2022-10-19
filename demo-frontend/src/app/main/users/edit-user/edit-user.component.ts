@@ -34,7 +34,7 @@ export class EditUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.authService.getUserName ){
+    if(this.route.snapshot.routeConfig['path'] === 'edit'){
       this.createFormGroup();
       this.userName =  this.authService.getUserName();
       if (this.userName) {

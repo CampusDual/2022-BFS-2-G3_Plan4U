@@ -45,7 +45,7 @@ export class NavigationBarComponent {
   }
 
   onEdit() {
-    this.router.navigate(['/users/edit/' + this.authService.getUserName]);
+    this.router.navigate(['/users/edit']);
   }
 
 }
