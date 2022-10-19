@@ -87,7 +87,7 @@ export class EditUserComponent implements OnInit {
   save() {
     const newUser: User = Object.assign({}, this.userForm.value);
     if (newUser.id) {
-      this.authService.getUserName().subscribe((response) =>{
+      this.userService.editUser(newUser).subscribe((response) =>{
         this.redirectList(response);
       });
     } else {
