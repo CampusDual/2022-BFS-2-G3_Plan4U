@@ -34,16 +34,20 @@ export class EditUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createFormGroup();
-    this.userName =  this.authService.getUserName();
-    if (this.userName) {
-      this.userService.getUser(this.userName).subscribe(
-        response => {
-          this.user = response;
-          this.userForm.patchValue(this.user, { emitEvent: false, onlySelf: false });
-          this.logger.info(this.user);
-        }
-      );
+    if(this.authService.getUserName != null){
+      this.createFormGroup();
+      this.userName =  this.authService.getUserName();
+      if (this.userName) {
+        this.userService.getUser(this.userName).subscribe(
+          response => {
+            this.user = response;
+            this.userForm.patchValue(this.user, { emitEvent: false, onlySelf: false });
+            this.logger.info(this.user);
+          }
+        );
+      }
+    }else{
+      this.createFormGroup();
     }
   }
 
