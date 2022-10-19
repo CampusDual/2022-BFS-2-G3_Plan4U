@@ -29,13 +29,13 @@ export class EditUserComponent implements OnInit {
     private authService: AuthService
   ) {
     this.user = new User();
-    
+   
   
   }
 
   ngOnInit() {
     this.createFormGroup();
-    this.userName = this.authService.getUserName();
+    this.userName =  this.authService.getUserName();
     if (this.userName) {
       this.userService.getUser(this.userName).subscribe(
         response => {
