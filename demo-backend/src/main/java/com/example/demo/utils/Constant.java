@@ -24,7 +24,25 @@ public class Constant {
 	public static final String CONTACT_NOT_EDIT ="CONTACT_NOT_EDIT";
 	public static final String CONTACT_DELETE_SUCCESS ="CONTACT_DELETE_SUCCESS";
 	public static final String CONTACT_NOT_DELETE ="CONTACT_NOT_DELETE";
+
+	//Publication error
+	public static final String TITLE_REQUIRED ="TITLE_REQUIRED";
+	public static final String CONTENT_REQUIRED ="CONTENT_REQUIRED";
+	public static final String CREATEDATE_REQUIRED ="CREATEDATE_REQUIRED";
+	public static final String USERID_REQUIRED ="USERID_REQUIRED";
+	public static final String PUBLICATION_NOT_EXISTS ="PUBLICATION_NOT_EXISTS";
+	public static final String PUBLICATION_CONSTRAINT_VIOLATION ="PUBLICATION_CONSTRAINT_VIOLATION";
+	public static final String PUBLICATION_DATABASE_ERROR ="PUBLICATION_DATABASE_ERROR";
 	
+	
+	//Publication message
+	public static final String PUBLICATION_CREATE_SUCCESS ="PUBLICATION_CREATE_SUCCESS";
+	public static final String PUBLICATION_NOT_CREATED ="PUBLICATION_NOT_CREATED";
+	public static final String PUBLICATION_EDIT_SUCCESS ="PUBLICATION_EDIT_SUCCESS";
+	public static final String PUBLICATION_NOT_EDIT ="PUBLICATION_NOT_EDIT";
+	public static final String PUBLICATION_DELETE_SUCCESS ="PUBLICATION_DELETE_SUCCESS";
+	public static final String PUBLICATION_NOT_DELETE ="PUBLICATION_NOT_DELETE";
+
 	//User message
 	public static final String USER_CREATE_SUCCESS ="USER_CREATE_SUCCESS";
 	public static final String USER_EDIT_SUCCESS ="USER_EDIT_SUCCESS";
