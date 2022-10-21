@@ -29,8 +29,8 @@ export class EditUserComponent implements OnInit {
     private authService: AuthService
   ) {
     this.user = new User();
-   
-  
+
+
   }
 
   ngOnInit() {
@@ -67,7 +67,7 @@ export class EditUserComponent implements OnInit {
       email: [this.user.email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: [this.user.password, [Validators.required, Validators.minLength(6),Validators.maxLength(20)]],
       'confirmPassword':['', Validators.required ],
-      nif: [this.user.nif, Validators.required],
+      // nif: [this.user.nif, Validators.required],
     },
     {
       validators: checkMatch
@@ -81,7 +81,7 @@ export class EditUserComponent implements OnInit {
     }else{
       this.userForm.get('confirmPassword').setErrors(null)
     }
-    
+
   }
 
   save() {
@@ -96,7 +96,7 @@ export class EditUserComponent implements OnInit {
       });
     }
   }
-  
+
 
   redirectList(response: any) {
     if (response.responseCode === 'OK') {

@@ -23,7 +23,7 @@ public class UserCompletDTO {
 	@NotEmpty(message = Constant.SURNAME_REQUIRED)
 	private String surname;
 	
-	@NotEmpty(message = Constant.NIF_REQUIRED)
+	// @NotEmpty(message = Constant.NIF_REQUIRED)
 	private String nif;
 	
 	@NotNull(message = Constant.PHONE_REQUIRED)

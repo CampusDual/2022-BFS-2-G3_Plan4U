@@ -1,4 +1,3 @@
-
 .form-content {
   margin: 8px;
   min-height: 640px;
@@ -7,6 +6,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 10em;
 
   .form-inner-container {
     box-sizing: content-box;
@@ -16,15 +16,11 @@
     transform: translate(-50%, 0);
     -moz-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
-    width: 450px;
+    width: 38%;
     padding: 1em;
     background-color: #FFFFFF;
 
     mat-card {
-      // height: 100vh;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
       padding: 5% 25% 5% 25%;
 
 
@@ -34,9 +30,6 @@
         box-sizing: content-box;
         width: 100%;
 
-
-
-
         mat-card-title {
           text-align: center;
           justify-content: center;
@@ -45,31 +38,69 @@
           color: #003366;
           font-weight: bold;
           text-shadow: 0.1em 0.1em 0.18em #494b50;
+          position: relative;
+          margin-top: -60px;
+          margin-right: 130px;
         }
-
 
       }
 
       mat-card-content {
         margin-left: 7%;
 
+        .columnas {
+          width: 200%;
+          height: 100%;
+          position: relative;
+          right: 178px;
+          margin-top: 20px;
+          display: inline-flex;
+          justify-content: space-evenly;
+
+
+        }
+
+        .columnaslognif {
+
+          width: 200%;
+          height: 100%;
+          position: relative;
+          right: 319px;
+          margin-top: 20px;
+          display: inline-flex;
+          justify-content: space-evenly;
+
+        }
+
+
+
       }
 
       mat-card-actions {
-        margin-left: 7%;
-
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        margin-top: 30px;
       }
 
-      .p4u-button{
+      .p4u-button {
         background-color: #003366;
         color: #ffffff;
-
       }
-      .p4u-raised-button{
+
+      .p4u-button:disabled {
+        background-color: #666666;
+        color: #ffffff;
+        font-weight: 100;
+      }
+
+      .p4u-raised-button {
         background-color: #66cccc;
         color: #000000;
 
       }
+
 
     }
 
@@ -82,9 +113,9 @@
     height: 150px;
     position: relative;
     background-color: #FFFFFF;
-    top: -75px;
+    top: -105px;
     left: 50%;
-    -webkit-transform: translate(-50%,0%);
+    -webkit-transform: translate(-50%, 0%);
 
     img {
       max-height: 125px;
@@ -94,4 +125,5 @@
     }
   }
 }
+
 

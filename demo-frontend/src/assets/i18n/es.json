@@ -36,7 +36,8 @@
       "phone": "Teléfono",
       "email": "E-Mail",
       "nif": "Documento de identidad",
-      "password": "Contraseña"
+      "password": "Contraseña",
+      "confirmpassword":"Confirmar contraseña"
     }
   },
 
