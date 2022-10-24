@@ -37,13 +37,15 @@
       "phone": "Teléfono",
       "email": "E-Mail",
       "nif": "Documento de identidad",
-      "password": "Contraseña"
+      "password": "Contraseña",
+      "confirmpassword": "Confirmar contraseña"
     }
   },
 
   "form": {
     "contact": "Contacto",
-    "user":"Usuario"
+    "user":"Usuario",
+    "publications": "Publicaciones"
   },
   "button": {
     "cancel": "Cancelar",
@@ -108,6 +110,14 @@
   "USER_CREATE_SUCCESS": "Usuario creado correctamente",
   "matchpassword": "Las contraseñas no coinciden",
   "USER_DUPLICATE_LOGIN": "El login ya existe",
-  "USER_DUPLICATE_EMAIL": "El email ya existe"
+  "USER_DUPLICATE_EMAIL": "El email ya existe",
+  "titlerequired": "El título es un campo obligatorio",
+  "contentrequired": "El contenido es un campo obligatorio",
+  "PUBLICATION_CREATE_SUCCESS": "Publicación creada correctamente",
+  "PUBLICATION_DELETE_SUCCESS": "Publicación borrada",
+  "PUBLICATION_EDIT_SUCCESS": "Publicación editada correctamente",
+  "PUBLICATION_NOT_CREATED": "La publicación no ha sido creada",
+  "PUBLICATION_NOT_EDIT": "Error al editar la publicación",
+  "PUBLICATION_NOT_DELETE": "Publicación no borrada"
 
 }

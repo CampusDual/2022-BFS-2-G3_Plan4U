@@ -37,12 +37,14 @@
       "phone": "Teléfono",
       "email": "E-Mail",
       "nif": "Documento de identidade",
-      "password": "Contrasinal"
+      "password": "Contrasinal",
+      "confirmpassword": "Confirmar contrasinal"
     }
   },
   "form": {
     "contact": "Contacto",
-    "user":"Usuario"
+    "user":"Usuario",
+    "publications": "Publicacións"
   },
   "button": {
     "cancel": "Cancelar",
