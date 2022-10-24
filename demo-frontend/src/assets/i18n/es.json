@@ -14,7 +14,8 @@
     "home": "Home",
     "contacts": "Contactos",
     "logout": "Cerrar sesión",
-    "edituser": "Editar usuario"
+    "edituser": "Editar usuario",
+    "publications": "Publicaciones"
   },
   "language": {
     "spanish": "Español",
@@ -36,15 +37,13 @@
       "phone": "Teléfono",
       "email": "E-Mail",
       "nif": "Documento de identidad",
-      "password": "Contraseña",
-      "confirmpassword":"Confirmar contraseña"
+      "password": "Contraseña"
     }
   },
 
   "form": {
     "contact": "Contacto",
-    "user":"Registro de Usuario"
-
+    "user":"Usuario"
   },
   "button": {
     "cancel": "Cancelar",
@@ -110,6 +109,5 @@
   "matchpassword": "Las contraseñas no coinciden",
   "USER_DUPLICATE_LOGIN": "El login ya existe",
   "USER_DUPLICATE_EMAIL": "El email ya existe"
-
 
 }

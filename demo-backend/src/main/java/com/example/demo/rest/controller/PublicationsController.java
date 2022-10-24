@@ -73,10 +73,10 @@ public class PublicationsController {
 		return re;
 	}
 
-	@PostMapping(path = "/getPublication", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/getPublications", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
 	public @ResponseBody DataSourceRESTResponse<List<PublicationDTO>> getPublication(@RequestBody AnyPageFilter pageFilter) {
-		LOGGER.info("getPublication in progress...");
+		LOGGER.info("getPublications in progress...");
 		DataSourceRESTResponse<List<PublicationDTO>> dres = new DataSourceRESTResponse<>();
 		try {
 			dres = publicationService.getPublications(pageFilter);

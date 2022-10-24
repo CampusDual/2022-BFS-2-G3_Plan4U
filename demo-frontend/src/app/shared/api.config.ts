@@ -24,6 +24,13 @@ export const API_CONFIG = {
   editUser: environment.usersBaseUrl + '/editUser',
   deleteUser: environment.usersBaseUrl + '/deleteUser',
 
+  // Publications API
+  getPublications: environment.publicationsBaseUrl + '/getPublications',
+  getPublication: environment.publicationsBaseUrl + '/getPublication',
+  createPublication: environment.publicationsBaseUrl + '/createPublication',
+  editPublication: environment.publicationsBaseUrl + '/editPublication',
+  deletePublication: environment.publicationsBaseUrl + '/deletePublication',
+
   
 
 };

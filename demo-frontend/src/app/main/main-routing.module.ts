@@ -4,6 +4,7 @@ import { MainHomeComponent } from './main-home/main-home.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { ContactsComponent } from './contacts/contacts.component';
 import { UsersComponent } from './users/users.component';
+import { PublicationsComponent } from './publications/publications.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
       data: {
       allowedRoles: ['USERS'],
+    },
+  },
+  {
+    path: 'publications',
+    component: PublicationsComponent,
+    canActivate: [AuthGuard],
+      data: {
+      allowedRoles: ['PUBLICATIONS'],
     },
   },
 ];

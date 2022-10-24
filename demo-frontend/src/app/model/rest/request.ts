@@ -1,4 +1,5 @@
 import { Contact } from '../contact';
+import { Publication } from '../publication';
 import { User } from '../user';
 
 export class QuerySortPaginationRequest {
@@ -72,5 +73,28 @@ export class CreateUserRequest {
       super(user);
       this.id = user.id;
     }
+}
+
+export class CreatePublicationRequest {
+  title: string;
+  content: string;
+  createDate: string;
+  userLogin: string;
+
+  constructor(publication: Publication) {
+    this.title = publication.title;
+    this.content = publication.content;
+    this.createDate = publication.createDate;
+    this.userLogin = publication.userLogin;
   }
+}
+
+export class EditPublicationRequest extends CreatePublicationRequest {
+  id : number;
+
+  constructor(publication: Publication) {
+    super(publication);
+    this.id = publication.id;
+  }
+}
 

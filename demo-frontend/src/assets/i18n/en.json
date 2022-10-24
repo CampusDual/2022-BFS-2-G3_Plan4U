@@ -14,7 +14,8 @@
     "home": "Home",
     "contacts": "Contacts",
     "logout": "Logout",
-    "edituser": "Edit user"
+    "edituser": "Edit user",
+    "publications": "Publications"
   },
   "language": {
     "spanish": "Spanish",
@@ -36,13 +37,12 @@
      "phone": "Phone",
      "email": "E-Mail",
      "nif": "Identity Document",
-     "password": "Password",
-     "confirmpassword":"Confirm password"
+     "password": "Password"
    }
   },
   "form": {
     "contact": "Contact",
-    "user":"User register"
+    "user":"User"
   },
   "button": {
     "cancel": "Cancel",
@@ -107,5 +107,13 @@
   "USER_CREATE_SUCCESS": "User created",
   "matchpassword": "Passwords doesn't match",
   "USER_DUPLICATE_LOGIN": "Login already exist",
-  "USER_DUPLICATE_EMAIL": "Email already exist"
+  "USER_DUPLICATE_EMAIL": "Email already exist",
+  "titlerequired": "Title is a required field",
+  "contentrequired": "Content is a required field",
+  "PUBLICATION_CREATE_SUCCESS": "Publication created",
+  "PUBLICATION_DELETE_SUCCESS": "Publication deleted",
+  "PUBLICATION_EDIT_SUCCESS": "Edited publication",
+  "PUBLICATION_NOT_CREATED": "Publication not created",
+  "PUBLICATION_NOT_EDIT": "Publication not edited",
+  "PUBLICATION_NOT_DELETE": "Publication not deleted"
 }
