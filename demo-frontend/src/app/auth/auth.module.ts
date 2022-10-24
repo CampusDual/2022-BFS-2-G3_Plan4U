@@ -13,13 +13,14 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { JwtModule } from '@auth0/angular-jwt';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LandingComponent } from './landing/landing.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, LandingComponent],
   imports: [
     TranslateModule,
     CommonModule,
