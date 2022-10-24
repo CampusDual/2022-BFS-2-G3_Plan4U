@@ -14,7 +14,8 @@
     "home": "Home",
     "contacts": "Contactos",
     "logout": "Pechar sesión",
-    "edituser": "Editar usuario"
+    "edituser": "Editar usuario",
+    "publications": "Publicacións"
   },
   "language": {
     "spanish": "Castelán",
@@ -37,11 +38,18 @@
       "email": "E-Mail",
       "nif": "Documento de identidade",
       "password": "Contrasinal"
+    },
+    "publications": {
+      "title": "Título",
+      "content": "Contenido",
+      "createDate": "Data de creación",
+      "userLogin": "Usuario"
     }
   },
   "form": {
     "contact": "Contacto",
-    "user":"Usuario"
+    "user":"Usuario",
+    "publication": "Publicación"
   },
   "button": {
     "cancel": "Cancelar",
@@ -106,5 +114,13 @@
   "USER_CREATE_SUCCESS": "Usuario creado correctamente",
   "matchpassword": "Os contrasinais non coinciden",
   "USER_DUPLICATE_LOGIN": "O login xa existe",
-  "USER_DUPLICATE_EMAIL": "O email xa existe"
+  "USER_DUPLICATE_EMAIL": "O email xa existe",
+  "titlerequired": "O título é un campo obrigatorio",
+  "contentrequired": "O contido é un campo obrigatorio",
+  "PUBLICATION_CREATE_SUCCESS": "Publicación creada",
+  "PUBLICATION_DELETE_SUCCESS": "Publicación eliminada",
+  "PUBLICATION_EDIT_SUCCESS": "Publicación editada",
+  "PUBLICATION_NOT_CREATED": "Publicación non creada",
+  "PUBLICATION_NOT_EDIT": "Publicación non editada",
+  "PUBLICATION_NOT_DELETE": "Publicación non eliminada"
 }
