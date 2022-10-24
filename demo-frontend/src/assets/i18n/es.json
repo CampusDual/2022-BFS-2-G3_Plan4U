@@ -36,13 +36,15 @@
       "phone": "Teléfono",
       "email": "E-Mail",
       "nif": "Documento de identidad",
-      "password": "Contraseña"
+      "password": "Contraseña",
+      "confirmpassword":"Confirmar contraseña"
     }
   },
 
   "form": {
     "contact": "Contacto",
-    "user":"Usuario"
+    "user":"Registro de Usuario"
+
   },
   "button": {
     "cancel": "Cancelar",
@@ -108,5 +110,6 @@
   "matchpassword": "Las contraseñas no coinciden",
   "USER_DUPLICATE_LOGIN": "El login ya existe",
   "USER_DUPLICATE_EMAIL": "El email ya existe"
+
 
 }

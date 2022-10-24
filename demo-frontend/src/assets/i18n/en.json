@@ -36,12 +36,13 @@
      "phone": "Phone",
      "email": "E-Mail",
      "nif": "Identity Document",
-     "password": "Password"
+     "password": "Password",
+     "confirmpassword":"Confirm password"
    }
   },
   "form": {
     "contact": "Contact",
-    "user":"User"
+    "user":"User register"
   },
   "button": {
     "cancel": "Cancel",
