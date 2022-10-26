@@ -35,7 +35,7 @@
       background-position: center;
       transition: 1s all ease-in;
 
-      h4{
+      h4 {
         color: rgb(255, 255, 255);
         font-weight: 400;
         z-index: 1;
@@ -62,7 +62,7 @@
         font-size: 20px;
       }
 
-      .btnregister{
+      .btnregister {
         z-index: 1;
         text-decoration: none;
         text-transform: uppercase;
@@ -78,12 +78,12 @@
         height: 50px;
         border-radius: 0.5pc;
         margin-top: 20px;
-    }
+      }
 
-    .btnregister:hover{
+      .btnregister:hover {
         background: #66cccc88;
         transform: translateY(5px);
-    }
+      }
 
     }
 
@@ -102,7 +102,7 @@
       height: 50px;
       width: 50px;
       border: none;
-      background:#ff8000;
+      background: #ff8000;
       cursor: pointer;
       font-size: 40px;
       color: white;
@@ -112,6 +112,12 @@
       border-radius: 50%;
     }
 
+    #boton:hover {
+      background: #66cccc88;
+      transform: translateY(5px);
+    }
+
+
   }
 
   &__steps {
@@ -120,15 +126,18 @@
     width: 100%;
     display: flex;
     justify-content: center;
+
     &-step {
       height: 8px;
       width: 25px;
       margin: 0 5px;
       border-radius: 5px;
-      border: 1px solid rgba(255,255,255,0.7);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       cursor: pointer;
       transition: 0.75s all ease-in-out;
-      &:hover,&-active {
+
+      &:hover,
+      &-active {
         opacity: 0.7;
         background: white;
       }

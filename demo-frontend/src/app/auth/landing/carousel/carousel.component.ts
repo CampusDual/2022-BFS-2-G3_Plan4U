@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICarouselItem } from './Icarousel-item.metadata';
 
 @Component({
@@ -14,7 +15,7 @@ export class CarouselComponent implements OnInit {
 
   public finalHeight: string | number = 0;
   public currentPosition = 0;
-  constructor() {
+  constructor(private router: Router) {
     this.finalHeight = this.isFullscreen ? '100vh' : `${this.height}px`;
 
   }
@@ -55,6 +56,10 @@ export class CarouselComponent implements OnInit {
     }
     this.items.find(i => i.id === 0 ).marginLeft = finalPercentage;
     this.currentPosition=backPosition;
+  }
+
+  onRegister() {
+    this.router.navigate(['/login']);
   }
 }
 

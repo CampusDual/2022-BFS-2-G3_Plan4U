@@ -10,7 +10,9 @@ import { ICarouselItem } from './carousel/Icarousel-item.metadata';
 export class LandingComponent implements OnInit {
 
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit(): void {
   }
@@ -18,5 +20,6 @@ export class LandingComponent implements OnInit {
   slidePhoto(): void {
     document.querySelector('.slider').scrollIntoView({ behavior: "smooth" });
   }
+
 
 }
