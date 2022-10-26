@@ -3,12 +3,13 @@ import { ICarouselItem } from "./Icarousel-item.metadata";
 export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     {
         id: 1,
+
         title:{
             first: 'Conoce gente',
-            second: 'nueva'
+            second: ' nueva'
         },
         subtitle:'¡Siempre habrá un plan para ti!',
-        // parrafo:'Deja de lado el aburrimiento y comparte tus aficiones con nuevos amigos',
+        summary:'Deja de lado el aburrimiento y comparte tus aficiones con nuevos amigos',
         link: '/',
         image: '../../../assets/images/senderismo.jpg'
 
@@ -16,11 +17,11 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     {
         id: 2,
         title:{
-            first: 'segunda foto',
-            second: 'nueva'
+            first: 'Descubre nuevas',
+            second: ' Aficiones'
         },
-        subtitle:'¡segundo texto!',
-        // parrafo:'Deja de lado el aburrimiento y comparte tus aficiones con nuevos amigos',
+        subtitle:'¡Disfruta de nuevas experiencias!',
+        summary:'Muchos planes de están esperando',
 
         link: '/',
         image: '../../../assets/images/yoga.jpg'
@@ -29,11 +30,11 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     {
         id: 3,
         title:{
-            first: 'tercera foto',
-            second: 'nueva'
+            first: 'Crea tu',
+            second: ' Publicación'
         },
-        subtitle:'¡tercer texto!',
-        // parrafo:'Deja de lado el aburrimiento y comparte tus aficiones con nuevos amigos',
+        subtitle:'¡Encuentra con quien compartir!',
+        summary:'Otras personas podrán contactarte y unirse a tu plan',
 
         link: '/',
         image: '../../../assets/images/tenis.jpg'
@@ -42,11 +43,11 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     {
         id: 4,
         title:{
-            first: 'cuarta foto',
-            second: 'nueva'
+            first: 'Promociona tu',
+            second: ' negocio'
         },
-        subtitle:'¡cuarto texto!',
-        // parrafo:'Deja de lado el aburrimiento y comparte tus aficiones con nuevos amigos',
+        subtitle:'¡Llena tus eventos!',
+        summary:'La comunidad está aguardando tu oferta de actividades',
 
         link: '/',
         image: '../../../assets/images/cine.jpg'
@@ -55,11 +56,12 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     {
         id: 5,
         title:{
-            first: ' quinta foto',
-            second: 'nueva'
+            first: '¿ Te',
+            second: ' Apuntas ?'
+
         },
-        subtitle:'¡quinto texto!',
-        // parrafo:'Deja de lado el aburrimiento y comparte tus aficiones con nuevos amigos',
+        subtitle:'¡Tenemos plan!',
+        summary:'Pulsa el botón y únete',
         link: '/',
         image: '../../../assets/images/concierto.jpg'
 

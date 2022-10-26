@@ -32,7 +32,7 @@
 
 .firstContainer #btn-izquierda:hover,
 .firstContainer #btn-derecha:hover{
-    background: #66cccc88; 
+    background: #66cccc88;
     transform: translateY(5px);
 }
 
@@ -49,9 +49,9 @@
 .slider{
     display: flex;
     overflow: hidden;
-    height: calc(100vh - 80px); 
+    height: calc(100vh - 80px);
     scroll-behavior: smooth;
-} 
+}
 
 .firstContainer{
     // display: flex;
@@ -90,7 +90,7 @@
 
 
 .mat-icon{
-    height: 34px; 
+    height: 34px;
     width: 40px;
 }
 
@@ -112,15 +112,14 @@
     border: 0px solid;
     cursor: pointer;
     position: relative;
-    top: 41em;
-    right: 69.2em;
+
     transition: 0.5s;
     height: 50px;
     border-radius: 0.5pc;
 }
 
 .btnregister:hover{
-    background: #66cccc88; 
+    background: #66cccc88;
     transform: translateY(5px);
 }
 

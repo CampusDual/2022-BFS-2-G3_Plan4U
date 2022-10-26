@@ -1,7 +1,7 @@
 <div class="dsc-carousel" [ngStyle]="{'min-height': finalHeight}">
   <div class="dsc-carousel__btns">
-    <i (click)="setBack()"><</i>
-    <i (click)="setNext()">></i>
+    <button id="boton" class= "btnizq"(click)="setBack()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <button id="boton" class= "btnder"(click)="setNext()"><mat-icon>keyboard_arrow_right</mat-icon></button>
   </div>
 
   <div class="dsc-carousel__content">
@@ -13,10 +13,14 @@
           'margin-left': section.marginLeft + '%'
         }"
       >
+      <h4>
+        {{ section.subtitle }}
+      </h4>
         <h1>
           {{ section.title.first }}<span>{{ section.title.second }}</span>
         </h1>
-        <p>{{ section.subtitle }}</p>
+        <p>{{section.summary}}</p>
+        <button class="btnregister"> Regístrate <span class="fas fa-angle-right"></span></button>
       </div>
     </ng-container>
   </div>
