@@ -15,7 +15,8 @@
     "contacts": "Contacts",
     "logout": "Logout",
     "edituser": "Edit user",
-    "publications": "Publications"
+    "publications": "Publications",
+    "menu" : "Menu"
   },
   "language": {
     "spanish": "Spanish",
@@ -39,12 +40,18 @@
      "nif": "Identity Document",
      "password": "Password",
      "confirmpassword": "Confirm password"
+   },
+   "publications": {
+     "title": "Title",
+     "content": "Content",
+     "createDate": "Create Date",
+     "userLogin": "User"
    }
   },
   "form": {
     "contact": "Contact",
     "user":"User",
-    "publications": "Publications"
+    "publication": "Publication"
   },
   "button": {
     "cancel": "Cancel",

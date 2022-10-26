@@ -15,7 +15,8 @@
     "contacts": "Contactos",
     "logout": "Pechar sesión",
     "edituser": "Editar usuario",
-    "publications": "Publicacións"
+    "publications": "Publicacións",
+    "menu" : "Menú"
   },
   "language": {
     "spanish": "Castelán",
@@ -39,12 +40,18 @@
       "nif": "Documento de identidade",
       "password": "Contrasinal",
       "confirmpassword": "Confirmar contrasinal"
+    },
+    "publications": {
+      "title": "Título",
+      "content": "Contido",
+      "createDate": "Data de creación",
+      "userLogin": "Usuario"
     }
   },
   "form": {
     "contact": "Contacto",
     "user":"Usuario",
-    "publications": "Publicacións"
+    "publication": "Publicación"
   },
   "button": {
     "cancel": "Cancelar",
