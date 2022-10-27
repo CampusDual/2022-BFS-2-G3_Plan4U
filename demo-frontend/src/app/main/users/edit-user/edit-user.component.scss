@@ -60,16 +60,32 @@
 
         }
 
+        // .columnaslognif {
+
+        //   width: 200%;
+        //   height: 100%;
+        //   position: relative;
+        //   right: 319px;
+        //   margin-top: 20px;
+        //   display: inline-flex;
+        //   justify-content: space-evenly;
+
+        // }
         .columnaslognif {
 
-          width: 200%;
+           width: 200%;
           height: 100%;
           position: relative;
-          right: 319px;
+          right: 178px;
           margin-top: 20px;
           display: inline-flex;
           justify-content: space-evenly;
 
+        }
+
+        .nif{
+          visibility: hidden;
+      
         }
 
 
