@@ -1,11 +1,12 @@
 <!--Prueba rama 1-->
 <form [formGroup]="userForm" (ngSubmit)="save()" class="h-full">
   <div fxLayout="column" fxLayoutGap="20px" class="form-content">
+    <div class="logo-container mat-elevation-z4">
+      <img src="./assets/images/campus-dual-azul-squared-negative.png" alt="Logo" />
+    </div>
     <div class="input-row form-inner-container">
       <mat-card fxFlex>
-        <div class="logo-container mat-elevation-z4">
-          <img src="./assets/images/campus-dual-azul-squared.png" alt="Logo" />
-        </div>
+
         <mat-card-header>
           <mat-card-title>{{ "form.user" | translate }}</mat-card-title>
         </mat-card-header>
@@ -67,7 +68,7 @@
 
           <!-- Botón NIF oculto -->
           <div
-            class="input-row" 
+            class="input-row"
             class="nif"
             fxLayout="row"
             fxLayout.lt-md="column"
@@ -75,19 +76,18 @@
             fxLayoutGap.lt-md="0px"
           >
             <mat-form-field fxFlex>
-              <input 
-                
+              <input
+
                 matInput
                 type="text"
-               
-                
-                formControlName="nif"
                 name="user-nif"
-                required
               />
+              <!-- formControlName="nif"  ESTO VA dentro del input-->
+
+
               <!-- <input
               type="text"
-            
+
             /> -->
               <!-- <mat-error>{{ "nifrequired" | translate }}</mat-error> -->
             </mat-form-field>

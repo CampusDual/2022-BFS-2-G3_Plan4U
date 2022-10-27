@@ -1,12 +1,40 @@
+.logo-container {
+  position: absolute;
+  z-index: 20;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  background-color: #FFFFFF;
+  top: 8px;
+  left: 3em;
+  -webkit-transform: translate(-50%, 0%);
+
+  img {
+    max-height: 125px;
+    max-width: 125px;
+    margin-left: 12px;
+    margin-top: 46px;
+  }
+}
+
 .form-content {
-  margin: 8px;
   min-height: 640px;
   background-color: #bdbdbd;
-  background-image: url(/../../../assets/images/code_background.jpg);
+  background-image: url(/../../../assets/images/register-bg_low.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 10em;
+  padding-bottom: 11.5em;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.48);
+  }
 
   .form-inner-container {
     box-sizing: content-box;
@@ -19,6 +47,7 @@
     width: 38%;
     padding: 1em;
     background-color: #FFFFFF;
+    border-radius: 0.5pc;
 
     mat-card {
       padding: 5% 25% 5% 25%;
@@ -35,12 +64,12 @@
           justify-content: center;
           box-sizing: content-box;
           width: 100%;
-          color: #003366;
+          color: #ff8000;
           font-weight: bold;
-          text-shadow: 0.1em 0.1em 0.18em #494b50;
           position: relative;
-          margin-top: -60px;
+          margin-top: 2px;
           margin-right: 130px;
+          font-size: 30px;
         }
 
       }
@@ -73,7 +102,7 @@
         // }
         .columnaslognif {
 
-           width: 200%;
+          width: 200%;
           height: 100%;
           position: relative;
           right: 178px;
@@ -83,9 +112,9 @@
 
         }
 
-        .nif{
+        .nif {
           visibility: hidden;
-      
+
         }
 
 
@@ -101,7 +130,7 @@
       }
 
       .p4u-button {
-        background-color: #003366;
+        background-color: #ff8000;
         color: #ffffff;
       }
 
@@ -123,23 +152,25 @@
 
   }
 
-  .logo-container {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    position: relative;
-    background-color: #FFFFFF;
-    top: -105px;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0%);
+  // .logo-container {
+  //   border-radius: 50%;
+  //   width: 150px;
+  //   height: 150px;
+  //   position: relative;
+  //   background-color: #FFFFFF;
+  //   top: -105px;
+  //   left: 50%;
+  //   -webkit-transform: translate(-50%, 0%);
 
-    img {
-      max-height: 125px;
-      max-width: 125px;
-      margin-left: 12px;
-      margin-top: 46px;
-    }
-  }
+  //   img {
+  //     max-height: 125px;
+  //     max-width: 125px;
+  //     margin-left: 12px;
+  //     margin-top: 46px;
+  //   }
+  // }
+
+
+
+
 }
-
-

@@ -51,7 +51,7 @@
 
   "form": {
     "contact": "Contacto",
-    "user":"Registro de usuario",
+    "user":"Datos de usuario",
     "publication": "Publicacion"
   },
   "button": {
