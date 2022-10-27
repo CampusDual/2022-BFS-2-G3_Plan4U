@@ -1,7 +1,7 @@
 // https://material.angular.io/guide/theming-your-components
 
 .mat-sidenav-container {
-  height: 100%;
+  height: -webkit-fill-available;
 }
 
 // https://github.com/angular/material2/blob/master/src/lib/core/style/_variables.scss
@@ -30,4 +30,9 @@ $sidenav-width: 320px; // 240px;
 
 .mat-list-icon{
   color: #ff8000;
+}
+
+.mat-button-wrapper{
+  z-index: 3;
+  color: green
 }

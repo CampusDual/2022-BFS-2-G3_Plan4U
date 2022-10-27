@@ -49,6 +49,7 @@ body {
 
 div.page-content {
   height: calc(100% - 100px);
+  overflow: hidden;
 }
 
 div.pane {

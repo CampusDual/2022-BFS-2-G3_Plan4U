@@ -1,5 +1,5 @@
 .logo-container {
-  position: absolute;
+  position: relative;
   z-index: 20;
   border-radius: 50%;
   width: 0;
@@ -24,7 +24,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 11.5em;
+  padding-bottom: 13em;
 
   &::before {
     content: '';
@@ -46,11 +46,12 @@
     -webkit-transform: translate(-50%, 0);
     width: 38%;
     padding: 1em;
-    background-color: #FFFFFF;
+    background-color: #FFFFFFD2;
     border-radius: 0.5pc;
 
     mat-card {
       padding: 5% 25% 5% 25%;
+      background-color: #ffffff00;
 
 
       mat-card-header {
@@ -170,7 +171,5 @@
   //   }
   // }
 
-
-
-
 }
+
