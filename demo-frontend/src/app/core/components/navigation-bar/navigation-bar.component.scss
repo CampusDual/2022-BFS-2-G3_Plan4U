@@ -12,8 +12,21 @@ $app-toolbar-title-padding: 16px !default;
   cursor: pointer;
 }
 .mat-toolbar-row{
-  background-color: #ff8000;
+  background-color: #3a3530;
 }
 .mat-list-item-content{
   background-color: #ff8000;
+}
+
+.logo-container {
+  position: absolute;
+
+
+  img {
+    max-height: 55px;
+    max-width: 125px;
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+
 }
