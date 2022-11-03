@@ -81,7 +81,7 @@ public class PublicationServiceImpl extends AbstractDemoService implements IPubl
 	@Override
 	public Integer editPublication(PublicationDTO editPublicationRequest) {
 		Publication publicationdto = PublicationMapper.INSTANCE.publicationDTOtoPublication(editPublicationRequest);
-		Publication editPublication = publicationRepository.save(fromEditPublicationRequest(publicationdto));
+		Publication editPublication = publicationRepository.save(publicationdto);
 		return editPublication.getId();
 	}
 

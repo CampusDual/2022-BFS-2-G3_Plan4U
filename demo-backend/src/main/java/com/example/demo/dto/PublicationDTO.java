@@ -25,6 +25,12 @@ public class PublicationDTO {
 	@NotNull(message = Constant.USERID_REQUIRED)
 	private String userLogin;
 
+	//@NotEmpty(message = Constant.CONTENT_REQUIRED)
+	private Integer categoryId;
+	
+	//@NotEmpty(message = Constant.CONTENT_REQUIRED)
+	private Integer provinceId;
+	
 
 	public Integer getId() {
 		return id;
@@ -66,6 +72,22 @@ public class PublicationDTO {
 
 	public void setUserLogin(String userLogin) {
 		this.userLogin = userLogin;
+	}
+
+	public Integer getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public Integer getProvinceId() {
+		return provinceId;
+	}
+
+	public void setProvinceId(Integer provinceId) {
+		this.provinceId = provinceId;
 	}
 	
 

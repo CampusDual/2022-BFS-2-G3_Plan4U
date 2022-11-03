@@ -42,30 +42,38 @@ public class Publication implements Serializable{
 	
 	@Column(nullable=false, name = "user_login")
 	private String userLogin;
+	
+	@Column(name = "category_id")
+	private Integer categoryId;
+	
+	@Column(name = "province_id")
+	private Integer provinceId;
 
 	
 	public Publication() {
 	}
 	
-	public Publication(String title, String content, Date createDate, String userLogin) {
+	public Publication(String title, String content, Date createDate, String userLogin, Integer categoryId, Integer provinceId) {
 		this.title = title;
 		this.content = content;
 		this.createDate = createDate;
 		this.userLogin = userLogin;
+		this.categoryId = categoryId;
+		this.provinceId = provinceId;
 	}
 
-	public Publication(Integer id, String title, String content, Date createDate, String userLogin) {
-		this(title, content, createDate, userLogin);
+	public Publication(Integer id, String title, String content, Date createDate, String userLogin, Integer categoryId, Integer provinceId) {
+		this(title, content, createDate, userLogin, categoryId, provinceId);
 		this.id = id;
 	}
 
-	public Publication(String title, String content, String userLogin) {
+	public Publication(String title, String content, String userLogin) {	// potencialmente inútil; si no añadir provincia y categoría
 		this.title = title;
 		this.content = content;
 		this.userLogin = userLogin;
 	}
 	
-	public Publication(Integer id, String title, String content, String userLogin) {
+	public Publication(Integer id, String title, String content, String userLogin) {	// potencialmente inútil; si no añadir provincia y categoría
 		this(title, content, userLogin);
 		this.id = id;
 	}
@@ -110,6 +118,22 @@ public class Publication implements Serializable{
 		this.userLogin = userLogin;
 	}
 
+	
+	public Integer getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public Integer getProvinceId() {
+		return provinceId;
+	}
+
+	public void setProvinceId(Integer provinceId) {
+		this.provinceId = provinceId;
+	}
 
 
 	private static final long serialVersionUID = 1L;

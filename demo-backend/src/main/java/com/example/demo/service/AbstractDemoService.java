@@ -39,12 +39,13 @@ public class AbstractDemoService {
 				contactRequest.getPhone(), contactRequest.getEmail());
 	}
 
+	
+	/*
 	public Publication fromEditPublicationRequest(Publication publicationRequest) {
 		return new Publication(publicationRequest.getId(), publicationRequest.getTitle(), publicationRequest.getContent(),
 				publicationRequest.getCreateDate(), publicationRequest.getUserLogin());
 	}
 	
-	/*
 	public Publication fromCreatePublicationRequest(PublicationDTO publicationRequest) {
 		return new Publication(publicationRequest.getTitle(), publicationRequest.getContent(), publicationRequest.getCreateDate(),
 				publicationRequest.getUserLogin());
