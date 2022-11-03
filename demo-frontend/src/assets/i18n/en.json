@@ -45,7 +45,9 @@
      "title": "Title",
      "content": "Content",
      "createDate": "Create Date",
-     "userLogin": "User"
+     "userLogin": "User",
+     "categoryName": "Category",
+     "provinceName": "Province"
    }
   },
   "form": {

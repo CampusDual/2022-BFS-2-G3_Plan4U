@@ -1,10 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { AnyPageFilter } from '../../../model/rest/filter';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger.service';
 import { Publication } from 'src/app/model/publication';
 import { PublicationService } from 'src/app/services/publication.service';
+import { Category } from 'src/app/model/category';
+import { catchError, map, Observable, throwError } from 'rxjs';
+import { API_CONFIG } from '../../../shared/api.config';
+import { DataSourceRESTResponse } from '../../../model/rest/response';
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+
+
 
 @Component({
   templateUrl: './edit-publication.component.html',
@@ -15,6 +24,7 @@ export class EditPublicationComponent implements OnInit {
 
   publicationForm: FormGroup;
   publication: Publication;
+  categories: Category[];
   errores: string[];
 
   constructor(
@@ -22,7 +32,9 @@ export class EditPublicationComponent implements OnInit {
     private publicationService: PublicationService,
     private router: Router,
     private route: ActivatedRoute,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private http: HttpClient
+
   ) {
     this.publication = new Publication();
   }
@@ -39,6 +51,9 @@ export class EditPublicationComponent implements OnInit {
         }
       );
     }
+    
+    this.publicationService.getCategories().subscribe(response => {this.categories = response});
+
   }
 
   onFormChanges() {
@@ -87,5 +102,6 @@ export class EditPublicationComponent implements OnInit {
   cancel() {
     this.router.navigate(['/publications']);
   }
+
 
 }

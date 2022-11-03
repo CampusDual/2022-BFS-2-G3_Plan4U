@@ -101,7 +101,24 @@
           </mat-cell>
         </ng-container>
   
-  
+        <ng-container matColumnDef="categoryName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "table.publications.categoryName" | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="categoryName">
+            {{ row.categoryName }}
+          </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="provinceName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "table.publications.provinceName" | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="provinceName">
+            {{ row.provinceName  }}
+          </mat-cell>
+        </ng-container>
+
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row
           *matRowDef="let row; columns: displayedColumns"

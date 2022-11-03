@@ -45,7 +45,9 @@
       "title": "Título",
       "content": "Contenido",
       "createDate": "Fecha de creación",
-      "userLogin": "Usuario"
+      "userLogin": "Usuario",
+      "categoryName": "Categoría",
+      "provinceName": "Provincia"
     }
   },
 

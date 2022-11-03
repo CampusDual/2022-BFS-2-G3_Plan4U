@@ -8,6 +8,7 @@ import { DataSourceRESTResponse } from '../model/rest/response';
 import { CreatePublicationRequest, EditPublicationRequest } from '../model/rest/request';
 import { Buffer } from 'buffer';
 import { Publication } from '../model/publication';
+import { Category } from '../model/category';
 
 @Injectable({
   providedIn: 'root'
@@ -72,6 +73,17 @@ export class PublicationService {
     });
     const params = new HttpParams().set('id', id.toString());
     return this.http.delete<any>(url, { params, headers });
+  }
+
+
+  public getCategories(): Observable<Category[]> {
+    const url = API_CONFIG.getCategories;
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json; charset=utf-8',
+      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
+      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+    });
+    return this.http.get<Category[]>(url, { headers });
   }
 
 }

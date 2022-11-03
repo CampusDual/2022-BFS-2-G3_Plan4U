@@ -26,10 +26,10 @@ public class PublicationDTO {
 	private String userLogin;
 
 	//@NotEmpty(message = Constant.CONTENT_REQUIRED)
-	private Integer categoryId;
+	private String categoryName;
 	
 	//@NotEmpty(message = Constant.CONTENT_REQUIRED)
-	private Integer provinceId;
+	private String provinceName;
 	
 
 	public Integer getId() {
@@ -74,21 +74,23 @@ public class PublicationDTO {
 		this.userLogin = userLogin;
 	}
 
-	public Integer getCategoryId() {
-		return categoryId;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
-	public Integer getProvinceId() {
-		return provinceId;
+	public String getProvinceName() {
+		return provinceName;
 	}
 
-	public void setProvinceId(Integer provinceId) {
-		this.provinceId = provinceId;
+	public void setProvinceName(String provinceName) {
+		this.provinceName = provinceName;
 	}
+
+	
 	
 
 }

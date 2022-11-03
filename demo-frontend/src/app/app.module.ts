@@ -23,9 +23,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
-
-
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 
 
@@ -59,7 +58,9 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     MatSnackBarModule,
     NgxSpinnerModule,
-    NgIdleKeepaliveModule.forRoot()
+    NgIdleKeepaliveModule.forRoot(),
+    MatSelectModule,
+    MatOptionModule
   ],
   entryComponents: [
     ConfirmationDialogComponent

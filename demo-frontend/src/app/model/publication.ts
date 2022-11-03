@@ -4,6 +4,6 @@ export class Publication {
     content: string;
     createDate: string;
     userLogin: string;
-    categoryId: number;
-    provinceId: number;
+    categoryName: string;
+    provinceName: string;
 }

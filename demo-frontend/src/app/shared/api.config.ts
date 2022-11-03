@@ -30,6 +30,7 @@ export const API_CONFIG = {
   createPublication: environment.publicationsBaseUrl + '/createPublication',
   editPublication: environment.publicationsBaseUrl + '/editPublication',
   deletePublication: environment.publicationsBaseUrl + '/deletePublication',
+  getCategories: environment.publicationsBaseUrl + '/getCategories',
 
   
 

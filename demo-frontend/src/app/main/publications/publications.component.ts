@@ -32,9 +32,11 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
     'title',
     'content',
     'createDate',
-    'userLogin'
+    'userLogin',
+    'categoryName',
+    'provinceName'
   ];
-  fields = ['title', 'content', 'createDate', 'userLogin'];
+  fields = ['title', 'content', 'createDate', 'userLogin', 'categoryName', 'provinceName'];
 
   selection = new SelectionModel<Publication>(true, []);
   error = false;

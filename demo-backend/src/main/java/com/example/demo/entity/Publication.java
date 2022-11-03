@@ -2,12 +2,18 @@ package com.example.demo.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -43,27 +49,29 @@ public class Publication implements Serializable{
 	@Column(nullable=false, name = "user_login")
 	private String userLogin;
 	
-	@Column(name = "category_id")
-	private Integer categoryId;
+	@Column(name = "category_name")
+	private String categoryName;
 	
-	@Column(name = "province_id")
-	private Integer provinceId;
+	@Column(name = "province_name")
+	private String provinceName;
 
+	
+	
 	
 	public Publication() {
 	}
 	
-	public Publication(String title, String content, Date createDate, String userLogin, Integer categoryId, Integer provinceId) {
+	public Publication(String title, String content, Date createDate, String userLogin, String categoryName, String provinceName) {
 		this.title = title;
 		this.content = content;
 		this.createDate = createDate;
 		this.userLogin = userLogin;
-		this.categoryId = categoryId;
-		this.provinceId = provinceId;
+		this.categoryName = categoryName;
+		this.provinceName = provinceName;
 	}
 
-	public Publication(Integer id, String title, String content, Date createDate, String userLogin, Integer categoryId, Integer provinceId) {
-		this(title, content, createDate, userLogin, categoryId, provinceId);
+	public Publication(Integer id, String title, String content, Date createDate, String userLogin, String categoryName, String provinceName) {
+		this(title, content, createDate, userLogin, categoryName, provinceName);
 		this.id = id;
 	}
 
@@ -119,20 +127,20 @@ public class Publication implements Serializable{
 	}
 
 	
-	public Integer getCategoryId() {
-		return categoryId;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
-	public Integer getProvinceId() {
-		return provinceId;
+	public String getProvinceName() {
+		return provinceName;
 	}
 
-	public void setProvinceId(Integer provinceId) {
-		this.provinceId = provinceId;
+	public void setProvinceName(String provinceName) {
+		this.provinceName = provinceName;
 	}
 
 
