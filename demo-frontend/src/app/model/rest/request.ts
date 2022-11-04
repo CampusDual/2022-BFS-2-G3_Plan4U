@@ -80,12 +80,16 @@ export class CreatePublicationRequest {
   content: string;
   createDate: string;
   userLogin: string;
+  categoryName: string;
+  provinceName: string;
 
   constructor(publication: Publication) {
     this.title = publication.title;
     this.content = publication.content;
     this.createDate = publication.createDate;
     this.userLogin = publication.userLogin;
+    this.categoryName= publication.categoryName;
+    this.provinceName= publication.provinceName;
   }
 }
 

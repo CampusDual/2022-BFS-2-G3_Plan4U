@@ -127,6 +127,9 @@
   "PUBLICATION_EDIT_SUCCESS": "Publicación editada correctamente",
   "PUBLICATION_NOT_CREATED": "La publicación no ha sido creada",
   "PUBLICATION_NOT_EDIT": "Error al editar la publicación",
-  "PUBLICATION_NOT_DELETE": "Publicación no borrada"
+  "PUBLICATION_NOT_DELETE": "Publicación no borrada",
+  "categoryrequired": "La categoría es un campo obligatorio",
+  "provincerequired": "La provincia es un campo obligatorio"
+
 
 }

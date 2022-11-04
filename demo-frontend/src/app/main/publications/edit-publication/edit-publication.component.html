@@ -42,21 +42,28 @@
           </div>
 
           <mat-form-field appearance="fill">
-            <mat-label>Category</mat-label>
+            <mat-label>{{'table.publications.categoryName' | translate}}</mat-label>
             <mat-select formControlName="categoryName" name="categoryName">
               <mat-option *ngFor="let item of categories" [value]="item.category">
                 {{item.category}}
               </mat-option>
             </mat-select>
+            <mat-error>
+              {{ "categoryrequired" | translate }}
+            </mat-error>
           </mat-form-field>
 
+
           <mat-form-field appearance="fill">
-            <mat-label>Province</mat-label>
+            <mat-label>{{'table.publications.provinceName' | translate}}</mat-label>
             <mat-select formControlName="provinceName" name="provinceName">
               <mat-option *ngFor="let item of provinces" [value]="item.provinceName">
                 {{item.provinceName}}
               </mat-option>
             </mat-select>
+            <mat-error>
+              {{ "provincerequired" | translate }}
+            </mat-error>
           </mat-form-field>
 
 

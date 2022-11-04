@@ -126,5 +126,7 @@
   "PUBLICATION_EDIT_SUCCESS": "Edited publication",
   "PUBLICATION_NOT_CREATED": "Publication not created",
   "PUBLICATION_NOT_EDIT": "Publication not edited",
-  "PUBLICATION_NOT_DELETE": "Publication not deleted"
+  "PUBLICATION_NOT_DELETE": "Publication not deleted",
+  "categoryrequired": "Category is a required field",
+  "provincerequired": "Province is a required field"
 }

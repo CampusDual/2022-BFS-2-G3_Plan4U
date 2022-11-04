@@ -126,5 +126,7 @@
   "PUBLICATION_EDIT_SUCCESS": "Publicación editada",
   "PUBLICATION_NOT_CREATED": "Publicación non creada",
   "PUBLICATION_NOT_EDIT": "Publicación non editada",
-  "PUBLICATION_NOT_DELETE": "Publicación non eliminada"
+  "PUBLICATION_NOT_DELETE": "Publicación non eliminada",
+  "categoryrequired": "A categoría é un campo obrigatorio",
+  "provincerequired": "A provincia é un campo obrigatorio"
 }
