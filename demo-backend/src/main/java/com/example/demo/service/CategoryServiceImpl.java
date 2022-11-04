@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,7 +42,7 @@ public class CategoryServiceImpl extends AbstractDemoService implements ICategor
 	
 	@Override
 	public List<CategoryDTO> findAll() {
-		List<Category> categorydto = categoryRepository.findAll();
+		List<Category> categorydto = categoryRepository.findAll(Sort.by(Sort.Direction.ASC,"category"));
 		return CategoryMapper.INSTANCE.categoryToCategoryDtoList(categorydto);
 	}
 

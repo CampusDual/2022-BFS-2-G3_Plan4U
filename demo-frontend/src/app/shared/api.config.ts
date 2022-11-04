@@ -31,6 +31,7 @@ export const API_CONFIG = {
   editPublication: environment.publicationsBaseUrl + '/editPublication',
   deletePublication: environment.publicationsBaseUrl + '/deletePublication',
   getCategories: "http://localhost:9999/categories/getCategories",
+  getProvinces: "http://localhost:9999/provinces/getProvinces",
 
 
 

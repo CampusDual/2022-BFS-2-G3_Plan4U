@@ -12,6 +12,7 @@ import { API_CONFIG } from '../../../shared/api.config';
 import { DataSourceRESTResponse } from '../../../model/rest/response';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Province } from 'src/app/model/province';
 
 
 
@@ -25,6 +26,7 @@ export class EditPublicationComponent implements OnInit {
   publicationForm: FormGroup;
   publication: Publication;
   categories: Category[];
+  provinces:Province[];
   errores: string[];
 
   constructor(
@@ -53,6 +55,7 @@ export class EditPublicationComponent implements OnInit {
     }
 
     this.publicationService.getCategories().subscribe(response => {this.categories = response});
+    this.publicationService.getProvinces().subscribe(response => {this.provinces = response});
 
   }
 
@@ -67,7 +70,8 @@ export class EditPublicationComponent implements OnInit {
       content: [this.publication.content],
       createDate: [this.publication.createDate],
       userLogin: [this.publication.userLogin, Validators.required],
-      categoryName: [this.publication.categoryName]
+      categoryName: [this.publication.categoryName],
+      provinceName: [this.publication.provinceName]
 
     });
   }

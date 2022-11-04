@@ -50,6 +50,15 @@
             </mat-select>
           </mat-form-field>
 
+          <mat-form-field appearance="fill">
+            <mat-label>Province</mat-label>
+            <mat-select formControlName="provinceName" name="provinceName">
+              <mat-option *ngFor="let item of provinces" [value]="item.provinceName">
+                {{item.provinceName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
 
           <div>
             <mat-form-field fxFlex class="input-content">

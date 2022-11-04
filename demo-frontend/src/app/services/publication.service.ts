@@ -9,12 +9,13 @@ import { CreatePublicationRequest, EditPublicationRequest } from '../model/rest/
 import { Buffer } from 'buffer';
 import { Publication } from '../model/publication';
 import { Category } from '../model/category';
+import { Province } from '../model/province';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PublicationService {
-    
+
   constructor(private http: HttpClient) { }
 
   public getPublications(pageFilter: AnyPageFilter): Observable<DataSourceRESTResponse<Publication[]>> {
@@ -84,6 +85,16 @@ export class PublicationService {
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.get<Category[]>(url, { headers });
+  }
+
+  public getProvinces(): Observable<Province[]> {
+    const url = API_CONFIG.getProvinces;
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json; charset=utf-8',
+      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
+      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+    });
+    return this.http.get<Province[]>(url, { headers });
   }
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,7 +53,7 @@ public class ProvinceServiceImpl extends AbstractDemoService implements IProvinc
 	
 	@Override
 	public List<ProvinceDTO> findAll() {
-		List<Province> provincedto = provinceRepository.findAll();
+		List<Province> provincedto = provinceRepository.findAll(Sort.by(Sort.Direction.ASC,"provinceName"));
 		return ProvinceMapper.INSTANCE.provinceToProvinceDtoList(provincedto);
 	}
 
