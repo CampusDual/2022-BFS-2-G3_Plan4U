@@ -17,6 +17,8 @@ import { PublicationsComponent } from './publications.component';
 import { PublicationsLayoutComponent } from './publications-layout.component';
 import { PublicationsRoutingModule } from './publications-routing.module';
 import { EditPublicationComponent } from './edit-publication/edit-publication.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
     imports: [
@@ -34,6 +36,8 @@ import { EditPublicationComponent } from './edit-publication/edit-publication.co
         MatCardModule,
         MatCheckboxModule,
         TranslateModule,
+        MatSelectModule,
+        MatOptionModule
     ],
     declarations: [
         PublicationsComponent,

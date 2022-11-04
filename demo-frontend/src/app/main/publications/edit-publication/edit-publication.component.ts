@@ -51,7 +51,7 @@ export class EditPublicationComponent implements OnInit {
         }
       );
     }
-    
+
     this.publicationService.getCategories().subscribe(response => {this.categories = response});
 
   }
@@ -66,7 +66,9 @@ export class EditPublicationComponent implements OnInit {
       title: [this.publication.title, Validators.required],
       content: [this.publication.content],
       createDate: [this.publication.createDate],
-      userLogin: [this.publication.userLogin, Validators.required]
+      userLogin: [this.publication.userLogin, Validators.required],
+      categoryName: [this.publication.categoryName]
+
     });
   }
 

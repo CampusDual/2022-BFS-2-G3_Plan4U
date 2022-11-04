@@ -15,8 +15,8 @@ export const API_CONFIG = {
   createContact: environment.contactsBaseUrl + '/createContact',
   editContact: environment.contactsBaseUrl + '/editContact',
   deleteContact: environment.contactsBaseUrl + '/deleteContact',
-  
-  
+
+
   // Users API
   getUsers: environment.usersBaseUrl + '/getUsers',
   getUser: environment.usersBaseUrl + '/getUser',
@@ -30,8 +30,8 @@ export const API_CONFIG = {
   createPublication: environment.publicationsBaseUrl + '/createPublication',
   editPublication: environment.publicationsBaseUrl + '/editPublication',
   deletePublication: environment.publicationsBaseUrl + '/deletePublication',
-  getCategories: environment.publicationsBaseUrl + '/getCategories',
+  getCategories: "http://localhost:9999/categories/getCategories",
 
-  
+
 
 };

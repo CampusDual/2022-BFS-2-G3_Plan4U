@@ -41,19 +41,14 @@
             </mat-form-field>
           </div>
 
-        
           <mat-form-field appearance="fill">
-            <mat-select multiple formControlName="categoryName">
-              <mat-label>Category</mat-label>
-              <!--
-              <mat-option *ngFor="let item of categories" [value]="category = item.category">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="categoryName" name="categoryName">
+              <mat-option *ngFor="let item of categories" [value]="item.category">
                 {{item.category}}
               </mat-option>
-              -->
-              <mat-option ></mat-option>
             </mat-select>
           </mat-form-field>
-        
 
 
           <div>
