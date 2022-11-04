@@ -16,6 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LandingComponent } from './landing/landing.component';
 import { CarouselComponent } from './landing/carousel/carousel.component';
 
+
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }

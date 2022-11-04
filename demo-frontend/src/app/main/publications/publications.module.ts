@@ -19,6 +19,11 @@ import { PublicationsRoutingModule } from './publications-routing.module';
 import { EditPublicationComponent } from './edit-publication/edit-publication.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import {MatDatepickerModule,} from '@angular/material/datepicker';
+import {MatNativeDateModule,} from '@angular/material/core';
+
+
+
 
 @NgModule({
     imports: [
@@ -37,7 +42,9 @@ import { MatOptionModule } from '@angular/material/core';
         MatCheckboxModule,
         TranslateModule,
         MatSelectModule,
-        MatOptionModule
+        MatOptionModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ],
     declarations: [
         PublicationsComponent,

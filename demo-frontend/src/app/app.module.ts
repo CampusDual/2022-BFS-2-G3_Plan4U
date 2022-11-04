@@ -25,6 +25,8 @@ import { CustomMatPaginatorIntl } from './model/custom-mat-paginator';
 import { CoreModule } from './core/core.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import {MatDatepickerModule,} from '@angular/material/datepicker';
+import {MatNativeDateModule,} from '@angular/material/core';
 
 
 
@@ -34,7 +36,7 @@ import { MatOptionModule } from '@angular/material/core';
     AppComponent,
     ConfirmationDialogComponent,
     MatSnackBarComponent,
-    
+
   ],
   imports: [
     TranslateModule.forRoot({
@@ -44,7 +46,7 @@ import { MatOptionModule } from '@angular/material/core';
         deps: [HttpClient]
       }
     }),
-    
+
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -60,7 +62,9 @@ import { MatOptionModule } from '@angular/material/core';
     NgxSpinnerModule,
     NgIdleKeepaliveModule.forRoot(),
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   entryComponents: [
     ConfirmationDialogComponent

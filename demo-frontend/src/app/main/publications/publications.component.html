@@ -34,7 +34,7 @@
         </mat-form-field>
       </div>
     </div>
-  
+
     <div class="mat-elevation-z8 table-responsive">
       <table
         mat-table
@@ -64,7 +64,7 @@
             </mat-checkbox>
           </td>
         </ng-container>
-  
+
         <ng-container matColumnDef="title">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.title" | translate }}
@@ -73,7 +73,7 @@
             {{ row.title }}
           </mat-cell>
         </ng-container>
-  
+
         <ng-container matColumnDef="content">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.content" | translate }}
@@ -82,7 +82,7 @@
             {{ row.content }}
           </mat-cell>
         </ng-container>
-  
+
         <ng-container matColumnDef="createDate">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.createDate" | translate }}
@@ -91,7 +91,7 @@
             {{ row.createDate | date:"dd/MM/yyyy" }}
           </mat-cell>
         </ng-container>
-  
+
         <ng-container matColumnDef="userLogin">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.userLogin" | translate }}
@@ -100,7 +100,7 @@
             {{ row.userLogin }}
           </mat-cell>
         </ng-container>
-  
+
         <ng-container matColumnDef="categoryName">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.categoryName" | translate }}
@@ -109,13 +109,22 @@
             {{ row.categoryName }}
           </mat-cell>
         </ng-container>
-    
+
         <ng-container matColumnDef="provinceName">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.provinceName" | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef="let row" data-label="provinceName">
             {{ row.provinceName  }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="eventDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "table.publications.eventDate" | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="eventDate">
+            {{ row.eventDate | date:"dd/MM/yyyy" }}
           </mat-cell>
         </ng-container>
 
@@ -132,14 +141,14 @@
         >
         </mat-row>
       </table>
-  
+
       <mat-card
         *ngIf="dataSource.loading$ | async"
         style="display: flex; justify-content: center; align-items: center"
       >
         <mat-spinner></mat-spinner>
       </mat-card>
-  
+
       <mat-paginator
         [length]="dataSource.totalElements"
         [pageSize]="20"

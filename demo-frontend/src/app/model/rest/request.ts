@@ -82,6 +82,7 @@ export class CreatePublicationRequest {
   userLogin: string;
   categoryName: string;
   provinceName: string;
+  eventDate: Date;
 
   constructor(publication: Publication) {
     this.title = publication.title;
@@ -90,6 +91,7 @@ export class CreatePublicationRequest {
     this.userLogin = publication.userLogin;
     this.categoryName= publication.categoryName;
     this.provinceName= publication.provinceName;
+    this.eventDate= publication.eventDate;
   }
 }
 

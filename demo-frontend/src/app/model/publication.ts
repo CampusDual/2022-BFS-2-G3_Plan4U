@@ -6,4 +6,5 @@ export class Publication {
     userLogin: string;
     categoryName: string;
     provinceName: string;
+    eventDate: Date;
 }

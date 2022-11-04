@@ -18,6 +18,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "publications")
@@ -55,23 +56,29 @@ public class Publication implements Serializable{
 	@Column(name = "province_name")
 	private String provinceName;
 
+	@NotNull	
+	@Column(name = "event_date")
+	@Temporal(TemporalType.DATE)
+	private Date eventDate;
 	
+		
 	
 	
 	public Publication() {
 	}
 	
-	public Publication(String title, String content, Date createDate, String userLogin, String categoryName, String provinceName) {
+	public Publication(String title, String content, Date createDate, String userLogin, String categoryName, String provinceName, Date eventDate) {
 		this.title = title;
 		this.content = content;
 		this.createDate = createDate;
 		this.userLogin = userLogin;
 		this.categoryName = categoryName;
 		this.provinceName = provinceName;
+		this.eventDate=eventDate;
 	}
 
-	public Publication(Integer id, String title, String content, Date createDate, String userLogin, String categoryName, String provinceName) {
-		this(title, content, createDate, userLogin, categoryName, provinceName);
+	public Publication(Integer id, String title, String content, Date createDate, String userLogin, String categoryName, String provinceName, Date eventDate) {
+		this(title, content, createDate, userLogin, categoryName, provinceName, eventDate);
 		this.id = id;
 	}
 
@@ -141,6 +148,15 @@ public class Publication implements Serializable{
 
 	public void setProvinceName(String provinceName) {
 		this.provinceName = provinceName;
+	}
+
+	
+	public Date getEventDate() {
+		return eventDate;
+	}
+
+	public void setEventDate(Date eventDate) {
+		this.eventDate = eventDate;
 	}
 
 

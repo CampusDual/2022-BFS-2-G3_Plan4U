@@ -67,6 +67,32 @@
           </mat-form-field>
 
 
+
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Fecha de plan</mat-label>
+            <input
+              matInput
+              type="text"
+              color="primary"
+              placeholder="{{ 'table.publications.title' | translate }}"
+              formControlName="title"
+              name="publication-title"
+              required
+            />
+            <mat-error>{{ "titlerequired" | translate }}</mat-error>
+          </mat-form-field> -->
+
+
+          <mat-form-field appearance="fill">
+            <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
+            <mat-datepicker #eventDate></mat-datepicker>
+            <mat-error>{{ "daterequired" | translate }}</mat-error>
+          </mat-form-field>
+
+
+
           <div>
             <mat-form-field fxFlex class="input-content">
               <textarea

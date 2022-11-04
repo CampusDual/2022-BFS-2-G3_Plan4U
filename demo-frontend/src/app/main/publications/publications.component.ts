@@ -34,9 +34,10 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
     'createDate',
     'userLogin',
     'categoryName',
-    'provinceName'
+    'provinceName',
+    'eventDate'
   ];
-  fields = ['title', 'content', 'createDate', 'userLogin', 'categoryName', 'provinceName'];
+  fields = ['title', 'content', 'createDate', 'userLogin', 'categoryName', 'provinceName', 'eventDate'];
 
   selection = new SelectionModel<Publication>(true, []);
   error = false;
@@ -127,7 +128,7 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
       : this.dataSource.publicationsSubject.value.forEach((row) =>
           this.selection.select(row)
         );
-  } 
+  }
 
   onDelete() {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {

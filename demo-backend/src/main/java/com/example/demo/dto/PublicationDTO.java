@@ -2,6 +2,7 @@ package com.example.demo.dto;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
@@ -30,6 +31,10 @@ public class PublicationDTO {
 	
 	//@NotEmpty(message = Constant.CONTENT_REQUIRED)
 	private String provinceName;
+	
+	
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Date eventDate;
 	
 
 	public Integer getId() {
@@ -89,6 +94,16 @@ public class PublicationDTO {
 	public void setProvinceName(String provinceName) {
 		this.provinceName = provinceName;
 	}
+
+	public Date getEventDate() {
+		return eventDate;
+	}
+
+	public void setEventDate(Date eventDate) {
+		this.eventDate = eventDate;
+	}
+	
+	
 
 	
 	
