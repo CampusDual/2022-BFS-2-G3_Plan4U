@@ -20,7 +20,7 @@ import { EditPublicationComponent } from './edit-publication/edit-publication.co
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import {MatDatepickerModule,} from '@angular/material/datepicker';
-import {MatNativeDateModule,} from '@angular/material/core';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 
 
 
@@ -44,8 +44,8 @@ import {MatNativeDateModule,} from '@angular/material/core';
         MatSelectModule,
         MatOptionModule,
         MatDatepickerModule,
-        MatNativeDateModule
-    ],
+        MatMomentDateModule
+        ],
     declarations: [
         PublicationsComponent,
         PublicationsComponent,

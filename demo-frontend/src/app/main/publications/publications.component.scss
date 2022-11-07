@@ -10,5 +10,30 @@
   button {
     margin-right: 10px;
   }
+  .p4u_scroll{
+    margin-left: 4em;
+    margin-right: 4em;
+  }
+  
+  .mat-cell{
+    
+    justify-content: space-around;
+   
+  }
 
+  .mat-header-cell {
+    margin-left: 7px;
+    justify-content: center;
+  }
 
+  #header{
+    right: 7px;
+    position: relative;
+  }
+
+  .title{
+    margin-top: 15px;
+    font-size: 37px;
+    font-weight: 500;
+    color: #3a3530;
+  }

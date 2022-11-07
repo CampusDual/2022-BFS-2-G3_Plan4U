@@ -30,7 +30,6 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
   displayedColumns = [
     'select',
     'title',
-    'content',
     'createDate',
     'userLogin',
     'categoryName',
@@ -39,7 +38,7 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
     'contact',
     'optionalContact'
   ];
-  fields = ['title', 'content', 'createDate', 'userLogin', 'categoryName', 'provinceName', 'eventDate', 'contact', 'optionalContact'];
+  fields = ['title', 'createDate', 'userLogin', 'categoryName', 'provinceName', 'eventDate', 'contact', 'optionalContact'];
 
   selection = new SelectionModel<Publication>(true, []);
   error = false;

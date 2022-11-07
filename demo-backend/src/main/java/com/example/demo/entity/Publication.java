@@ -58,7 +58,7 @@ public class Publication implements Serializable{
 
 	@NotNull	
 	@Column(name = "event_date")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date eventDate;
 	
 	@NotNull	

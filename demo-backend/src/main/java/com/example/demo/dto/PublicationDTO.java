@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.example.demo.utils.Constant;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class PublicationDTO {
 
@@ -21,6 +22,7 @@ public class PublicationDTO {
 	private String content;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(timezone = "Europe/Madrid")
 	private Date createDate;
 	
 	@NotNull(message = Constant.USERID_REQUIRED)
@@ -34,6 +36,7 @@ public class PublicationDTO {
 	
 	
 //	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(timezone = "Europe/Madrid")
 	private Date eventDate;
 	
 	@NotNull(message = Constant.CONTACT_REQUIRED)
