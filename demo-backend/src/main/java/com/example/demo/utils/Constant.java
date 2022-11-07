@@ -33,6 +33,8 @@ public class Constant {
 	public static final String PUBLICATION_NOT_EXISTS ="PUBLICATION_NOT_EXISTS";
 	public static final String PUBLICATION_CONSTRAINT_VIOLATION ="PUBLICATION_CONSTRAINT_VIOLATION";
 	public static final String PUBLICATION_DATABASE_ERROR ="PUBLICATION_DATABASE_ERROR";
+	public static final String CONTACT_REQUIRED ="CONTACT_REQUIRED";
+	
 	
 	
 	//Publication message

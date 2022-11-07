@@ -36,6 +36,10 @@ public class PublicationDTO {
 //	@Temporal(TemporalType.TIMESTAMP)
 	private Date eventDate;
 	
+	@NotNull(message = Constant.CONTACT_REQUIRED)
+	private String contact;
+	
+	private String optionalContact;
 
 	public Integer getId() {
 		return id;
@@ -102,10 +106,23 @@ public class PublicationDTO {
 	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
 	}
-	
-	
 
-	
-	
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getOptionalContact() {
+		return optionalContact;
+	}
+
+	public void setOptionalContact(String optionalContact) {
+		this.optionalContact = optionalContact;
+	}
+
+
 
 }

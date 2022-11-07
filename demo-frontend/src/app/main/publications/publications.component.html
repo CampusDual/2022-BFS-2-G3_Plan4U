@@ -1,4 +1,4 @@
-<div>
+<div class="p4u_scroll">
     <div
       fxLayout="row"
       fxLayoutAlign="space-between"
@@ -127,6 +127,27 @@
             {{ row.eventDate | date:"dd/MM/yyyy" }}
           </mat-cell>
         </ng-container>
+
+        <ng-container matColumnDef="contact">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "table.publications.contact" | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="contact">
+            {{ row.contact }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="optionalContact">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "table.publications.optionalContact" | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="optionalContact">
+            {{ row.optionalContact }}
+          </mat-cell>
+        </ng-container>
+
+        
+
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row

@@ -47,7 +47,10 @@
       "createDate": "Data de creación",
       "userLogin": "Usuario",
       "categoryName": "Categoría",
-      "provinceName": "Provincia"
+      "provinceName": "Provincia",
+      "eventDate": "Data do plan",
+      "contact": "Contacto",
+      "optionalContact": "Contacto opcional"
     }
   },
   "form": {
@@ -128,5 +131,7 @@
   "PUBLICATION_NOT_EDIT": "Publicación non editada",
   "PUBLICATION_NOT_DELETE": "Publicación non eliminada",
   "categoryrequired": "A categoría é un campo obrigatorio",
-  "provincerequired": "A provincia é un campo obrigatorio"
+  "provincerequired": "A provincia é un campo obrigatorio",
+  "daterequired": "A data do plan é obrigatoria",
+  "contactrequired": "O xeito de contacto é obrigatorio"
 }

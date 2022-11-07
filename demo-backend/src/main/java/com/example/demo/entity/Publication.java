@@ -61,24 +61,30 @@ public class Publication implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date eventDate;
 	
-		
+	@NotNull	
+	private String contact;
+	
+	@Column(name = "optional_contact")
+	private String optionalContact;
 	
 	
 	public Publication() {
 	}
 	
-	public Publication(String title, String content, Date createDate, String userLogin, String categoryName, String provinceName, Date eventDate) {
+	public Publication(String title, String content, Date createDate, String userLogin, String categoryName, String provinceName, Date eventDate, String contact, String optionalContact) {
 		this.title = title;
 		this.content = content;
 		this.createDate = createDate;
 		this.userLogin = userLogin;
 		this.categoryName = categoryName;
 		this.provinceName = provinceName;
-		this.eventDate=eventDate;
+		this.eventDate = eventDate;
+		this.contact = contact;
+		this.optionalContact = optionalContact;
 	}
 
-	public Publication(Integer id, String title, String content, Date createDate, String userLogin, String categoryName, String provinceName, Date eventDate) {
-		this(title, content, createDate, userLogin, categoryName, provinceName, eventDate);
+	public Publication(Integer id, String title, String content, Date createDate, String userLogin, String categoryName, String provinceName, Date eventDate, String contact, String optionalContact) {
+		this(title, content, createDate, userLogin, categoryName, provinceName, eventDate, contact, optionalContact);
 		this.id = id;
 	}
 
@@ -157,6 +163,23 @@ public class Publication implements Serializable{
 
 	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
+	}
+	
+	
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getOptionalContact() {
+		return optionalContact;
+	}
+
+	public void setOptionalContact(String optionalContact) {
+		this.optionalContact = optionalContact;
 	}
 
 

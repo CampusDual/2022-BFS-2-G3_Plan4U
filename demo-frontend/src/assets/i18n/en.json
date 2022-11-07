@@ -47,7 +47,10 @@
      "createDate": "Create Date",
      "userLogin": "User",
      "categoryName": "Category",
-     "provinceName": "Province"
+     "provinceName": "Province",
+    "eventDate": "Event date",
+     "contact": "Contact",
+     "optionalContact": "Optional Contact"
    }
   },
   "form": {
@@ -128,5 +131,7 @@
   "PUBLICATION_NOT_EDIT": "Publication not edited",
   "PUBLICATION_NOT_DELETE": "Publication not deleted",
   "categoryrequired": "Category is a required field",
-  "provincerequired": "Province is a required field"
+  "provincerequired": "Province is a required field",
+  "daterequired": "Event date is required",
+  "contactrequired": "Contact is required"
 }

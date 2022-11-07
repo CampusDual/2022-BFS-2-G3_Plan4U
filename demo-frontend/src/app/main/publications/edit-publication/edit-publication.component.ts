@@ -56,9 +56,6 @@ export class EditPublicationComponent implements OnInit {
 
     this.publicationService.getCategories().subscribe(response => {this.categories = response});
     this.publicationService.getProvinces().subscribe(response => {this.provinces = response});
-
-
-
   }
 
   onFormChanges() {
@@ -74,8 +71,9 @@ export class EditPublicationComponent implements OnInit {
       userLogin: [this.publication.userLogin, Validators.required],
       categoryName: [this.publication.categoryName, Validators.required],
       provinceName: [this.publication.provinceName, Validators.required],
-      eventDate: [this.publication.eventDate, Validators.required]
-
+      eventDate: [this.publication.eventDate, Validators.required],
+      contact: [this.publication.contact, Validators.required],
+      optionalContact: [this.publication.optionalContact]
     });
   }
 

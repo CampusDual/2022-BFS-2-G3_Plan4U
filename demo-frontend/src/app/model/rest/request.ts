@@ -83,6 +83,8 @@ export class CreatePublicationRequest {
   categoryName: string;
   provinceName: string;
   eventDate: Date;
+  contact: string;
+  optionalContact: string;
 
   constructor(publication: Publication) {
     this.title = publication.title;
@@ -92,6 +94,8 @@ export class CreatePublicationRequest {
     this.categoryName= publication.categoryName;
     this.provinceName= publication.provinceName;
     this.eventDate= publication.eventDate;
+    this.contact = publication.contact;
+    this.optionalContact = publication.optionalContact;
   }
 }
 

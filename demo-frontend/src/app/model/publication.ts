@@ -7,4 +7,6 @@ export class Publication {
     categoryName: string;
     provinceName: string;
     eventDate: Date;
+    contact: string;
+    optionalContact: string;
 }

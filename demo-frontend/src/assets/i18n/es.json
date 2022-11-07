@@ -47,7 +47,10 @@
       "createDate": "Fecha de creación",
       "userLogin": "Usuario",
       "categoryName": "Categoría",
-      "provinceName": "Provincia"
+      "provinceName": "Provincia",
+      "eventDate": "Fecha del plan",
+      "contact": "Contacto",
+      "optionalContact": "Contacto opcional"
     }
   },
 
@@ -129,7 +132,8 @@
   "PUBLICATION_NOT_EDIT": "Error al editar la publicación",
   "PUBLICATION_NOT_DELETE": "Publicación no borrada",
   "categoryrequired": "La categoría es un campo obligatorio",
-  "provincerequired": "La provincia es un campo obligatorio"
-
+  "provincerequired": "La provincia es un campo obligatorio",
+  "daterequired": "La fecha del plan es obligatoria",
+  "contactrequired": "La forma de contacto es obligatoria"
 
 }
