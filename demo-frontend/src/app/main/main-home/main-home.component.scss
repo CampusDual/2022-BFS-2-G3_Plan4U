@@ -1,20 +1,69 @@
-.container {
-  // width: 500px;
-  // height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+// .container {
+//   // width: 500px;
+//   // height: 300px;
+//   border: 1px solid rgba(0, 0, 0, 0.5);
+// }
+
+// .sidenav-content {
+//   // display: flex;
+//   height: 100%;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .sidenav {
+//   padding: 20px;
+// }
+
+// .div-tab-content {
+//   margin: 8px;
+// }
+
+.card{
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #d3d3d3a8;
+  margin-top: 2em;
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+  width: 30%;
+  align-content: stretch;
+  transition: 0.5s;
+  margin-left: 4em;
+  overflow: hidden;
+  margin-bottom: 3em;
+  padding-top: 8px;
+  box-shadow: 2px 2px 5px lightgray;
 }
 
-.sidenav-content {
-  // display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+.card:hover {
+  scale: 1.05;
+  .card-text:hover{
+    -webkit-line-clamp: 10;
+    cursor: pointer
+}
 }
 
-.sidenav {
-  padding: 20px;
+.card-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.div-tab-content {
-  margin: 8px;
+.card-body{
+  margin-left: 1em;
+  margin-right: 1em;
 }
+
+.card-title{
+  color: #3a3530;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  text-align: center;
+  border-bottom: solid 2px #ff8000;
+  padding-bottom: 1em;
+}
+
