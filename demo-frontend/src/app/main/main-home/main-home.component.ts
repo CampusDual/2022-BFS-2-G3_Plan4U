@@ -6,6 +6,7 @@ import {Idle, DEFAULT_INTERRUPTSOURCES} from '@ng-idle/core';
 import { Keepalive } from '@ng-idle/keepalive';
 import { Publication } from 'src/app/model/publication';
 import { PublicationService } from 'src/app/services/publication.service';
+import { Category } from 'src/app/model/category';
 
 @Component({
   selector: 'app-main-home',
@@ -15,6 +16,7 @@ import { PublicationService } from 'src/app/services/publication.service';
 export class MainHomeComponent {
 
 publications: Publication[];
+categories: Category[] ;
 
 
   // idleState = 'Not started.';
@@ -64,6 +66,7 @@ publications: Publication[];
 
   ngOnInit () {
     this.publicationService.getPublicationsUsers().subscribe(response => {this.publications = response});
+    this.publicationService.getCategories().subscribe(response => {this.categories = response});
   }
   // reset() {
   //   this.idle.watch();

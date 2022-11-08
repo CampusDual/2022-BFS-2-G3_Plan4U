@@ -57,7 +57,8 @@
   "form": {
     "contact": "Contacto",
     "user":"Datos de usuario",
-    "publication": "Publicación"
+    "publication": "Publicación",
+    "publications": "Publicaciones Recientes"
   },
   "button": {
     "cancel": "Cancelar",

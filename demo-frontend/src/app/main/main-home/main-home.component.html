@@ -12,9 +12,15 @@
     [yAxis]="true"
     [gradient]="true">
 </ngx-charts-bar-vertical> -->
+
+
 <div class="page-content" style="overflow: auto; margin: -1px;">
+  <h1 class="pageTitle">{{ "form.publications" | translate }} </h1>
 <div class="card" style="width: 25rem;" *ngFor="let publication of publications">
-    <img src="../../../assets/images/senderismo.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
+    
+      
+    <img   src="../../../assets/images/{{publication.categoryName}}.jpg" class="card-img-top"/>
+    
     <div class="card-body">
       <h5 class="card-title">{{publication.title}}</h5>
       <p class="card-text">{{publication.content}}</p>

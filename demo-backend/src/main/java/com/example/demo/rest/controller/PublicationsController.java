@@ -89,7 +89,7 @@ public class PublicationsController {
 	}
 	
 	@GetMapping(path = "/getPublications")
-	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
+	@PreAuthorize("hasAnyAuthority('PUBLICATIONSUSER')")
 	public @ResponseBody List<PublicationDTO> findAll() {
 		LOGGER.info("findAll in progress...");
 		return publicationService.findAll();
