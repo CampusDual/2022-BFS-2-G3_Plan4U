@@ -37,6 +37,8 @@ import { CoreModule } from '../core/core.module';
 import { FilterItemDirective } from './directives/filter-item.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { FilterPipe } from './main-home/filter.pipe';
+import { MainHomeLayoutComponent } from './main-home/main-home-layout.component';
 //import { PublicationsComponent } from './publications/publications.component';
 //import { UsersComponent } from './users/users.component';
 // import { EditUserComponent } from './users/edit-user/edit-user.component';
@@ -45,6 +47,8 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
   declarations: [
     MainHomeComponent,
     FilterItemDirective,
+    FilterPipe,
+    MainHomeLayoutComponent,
     //PublicationsComponent,
     //UsersComponent,
    // EditUserComponent,
