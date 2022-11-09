@@ -74,3 +74,19 @@
   text-align: center;
   padding-bottom: 1em;
 }
+
+.filters{
+  padding: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.filterCategory{
+  position: absolute;
+  margin-left: 88%;}
+
+.filterProvince{
+  margin-left: 77%;
+}

@@ -7,6 +7,7 @@ import { Keepalive } from '@ng-idle/keepalive';
 import { Publication } from 'src/app/model/publication';
 import { PublicationService } from 'src/app/services/publication.service';
 import { Category } from 'src/app/model/category';
+import { Province } from 'src/app/model/province';
 
 @Component({
   selector: 'app-main-home',
@@ -17,6 +18,9 @@ export class MainHomeComponent {
 
 publications: Publication[];
 categories: Category[] ;
+provinces: Province[];
+filterPost= '';
+filterPost2='';
 
 
   // idleState = 'Not started.';
@@ -67,6 +71,8 @@ categories: Category[] ;
   ngOnInit () {
     this.publicationService.getPublicationsUsers().subscribe(response => {this.publications = response});
     this.publicationService.getCategories().subscribe(response => {this.categories = response});
+    this.publicationService.getProvinces().subscribe(response => {this.provinces = response});
+
   }
   // reset() {
   //   this.idle.watch();

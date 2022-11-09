@@ -13,12 +13,33 @@
     [gradient]="true">
 </ngx-charts-bar-vertical> -->
 
-
 <div class="page-content" style="overflow: auto; margin: -1px;">
   <h1 class="pageTitle">{{ "form.publications" | translate }} </h1>
-<div class="card" style="width: 25rem;" *ngFor="let publication of publications">
-    
-      
+
+  <div class="filterCategory">
+    <mat-form-field>
+      <mat-label>{{'table.publications.categoryName' | translate}}</mat-label>
+      <mat-select name="categoryName" [(ngModel)]="filterPost">
+        <mat-option value="">Mostrar todas</mat-option>
+        <mat-option *ngFor="let item of categories" [value]="item.category">
+          {{item.category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="filterProvince">
+    <mat-form-field>
+      <mat-label>{{'table.publications.provinceName' | translate}}</mat-label>
+      <mat-select name="provinceName" [(ngModel)]="filterPost2">
+        <mat-option value="">Mostrar todas</mat-option>
+        <mat-option *ngFor="let item of provinces" [value]="item.provinceName">
+          {{item.provinceName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="card" style="width: 25rem;" *ngFor="let publication of publications | filter : filterPost | filter : filterPost2">
     <img   src="../../../assets/images/{{publication.categoryName}}.jpg" class="card-img-top"/>
     
     <div class="card-body">
