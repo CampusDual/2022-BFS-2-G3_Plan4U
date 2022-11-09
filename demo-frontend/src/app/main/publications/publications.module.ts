@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import {MatDatepickerModule,} from '@angular/material/datepicker';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import { EditPublicationUserComponent } from './edit-publication-user/edit-publication-user.component';
 
 
 
@@ -50,7 +51,8 @@ import {MatMomentDateModule} from '@angular/material-moment-adapter';
         PublicationsComponent,
         PublicationsComponent,
         PublicationsLayoutComponent,
-        EditPublicationComponent
+        EditPublicationComponent,
+        EditPublicationUserComponent
     ]
 })
 export class PublicationsModule {}

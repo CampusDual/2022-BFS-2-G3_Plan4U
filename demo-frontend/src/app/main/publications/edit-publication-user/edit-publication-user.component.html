@@ -1,0 +1,181 @@
+<form [formGroup]="publicationForm" (ngSubmit)="save()" class="h-full">
+  <div fxLayout="column" fxLayoutGap="20px" class="form-content">
+    <div class="input-row form-inner-container">
+      <mat-card fxFlex>
+        
+        <mat-card-header>
+          <mat-card-title>{{ "form.publication" | translate }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="columnas">
+            <div
+              class="input-row"
+              fxLayout="row"
+              fxLayout.lt-md="column"
+              fxLayoutGap="20px"
+              fxLayoutGap.lt-md="0px"
+            >
+              <mat-form-field fxFlex class="filas" >
+                <input
+                  matInput
+                  type="text"
+                  color="primary"
+                  placeholder="{{ 'table.publications.title' | translate }}"
+                  formControlName="title"
+                  name="publication-title"
+                  required
+                />
+                <mat-error>{{ "titlerequired" | translate }}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="input-row">
+              <mat-form-field appearance="fill">
+                <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
+                <mat-datepicker #eventDate></mat-datepicker>
+                <mat-error>{{ "daterequired" | translate }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="columnas">
+            <div
+            class="input-row"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutGap="20px"
+            fxLayoutGap.lt-md="0px"
+            >
+            <mat-form-field appearance="fill">
+              <mat-label>{{'table.publications.categoryName' | translate}}</mat-label>
+              <mat-select formControlName="categoryName" name="categoryName">
+                <mat-option *ngFor="let item of categories" [value]="item.category">
+                  {{item.category}}
+                </mat-option>
+              </mat-select>
+              <mat-error>
+                {{ "categoryrequired" | translate }}
+              </mat-error>
+            </mat-form-field>
+            </div>
+            <div
+            class="input-row"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutGap="20px"
+            fxLayoutGap.lt-md="0px"
+            >
+            <mat-form-field appearance="fill">
+              <mat-label>{{'table.publications.provinceName' | translate}}</mat-label>
+              <mat-select formControlName="provinceName" name="provinceName">
+                <mat-option *ngFor="let item of provinces" [value]="item.provinceName">
+                  {{item.provinceName}}
+                </mat-option>
+              </mat-select>
+              <mat-error>
+                {{ "provincerequired" | translate }}
+              </mat-error>
+            </mat-form-field>
+            </div>
+          </div>
+
+          <div class="columnaContenido">
+            
+            <mat-form-field fxFlex class="input-content">
+              <textarea
+                matInput
+                color="primary"
+                placeholder="{{ 'table.publications.content' | translate }}"
+                formControlName="content"
+                name="publication-content"
+                required
+                rows="10"
+                
+              ></textarea>
+              <mat-error>
+                {{ "contentrequired" | translate }}
+              </mat-error>
+            </mat-form-field>
+            
+          </div>
+
+          <div class="columnas">
+            <div
+            class="input-row"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutGap="20px"
+            fxLayoutGap.lt-md="0px"
+            >
+            <mat-form-field fxFlex>
+              <input
+                matInput
+                type="text"
+                color="primary"
+                placeholder="{{ 'table.publications.contact' | translate }}"
+                formControlName="contact"
+                name="publication-contact"
+                required
+              />
+              <mat-error>{{ "contactrequired" | translate }}</mat-error>
+            </mat-form-field>
+            </div>
+            <div
+            class="input-row"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutGap="20px"
+            fxLayoutGap.lt-md="0px"
+            >
+            <mat-form-field fxFlex>
+              <input
+                matInput
+                type="text"
+                color="primary"
+                placeholder="{{ 'table.publications.optionalContact' | translate }}"
+                formControlName="optionalContact"
+                name="publication-optionalContact"
+              />
+            </mat-form-field>
+            </div>
+          </div>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+          <div
+          fclass="input-row"
+          xLayoutGap="20px"
+          fxLayoutAlign="center center"
+        >
+          <button
+            class="p4u-button"
+            fxFlex="25"
+            fxFlex.xs="30"
+            mat-raised-button
+            type="button"
+            (click)="cancel()"
+            [formNoValidate]="true"
+          >
+            {{ "button.cancel" | translate }}
+          </button>
+          <button
+            class="p4u-button"
+            fxFlex="25"
+            fxFlex.xs="30"
+            mat-raised-button
+            type="submit"
+            color="primary"
+            [disabled]="!publicationForm.valid"
+          >
+            {{ "button.save" | translate }}
+          </button>
+        </div>
+        </mat-card-actions>
+
+      </mat-card>
+    </div>
+  </div>
+</form>

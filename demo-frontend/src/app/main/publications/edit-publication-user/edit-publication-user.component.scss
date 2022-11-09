@@ -1,0 +1,120 @@
+.form-content {
+  min-height: 640px;
+  background-color: #bdbdbd;
+  background-image: url(/../../../assets/images/register-bg_low.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 13em;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.48);
+  }
+}
+
+.form-inner-container {
+  box-sizing: content-box;
+  position: relative;
+  left: 50%;
+  top: 5em;
+  transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  width: 50%;
+  padding: 1em;
+  background-color: #FFFFFFD2;
+  border-radius: 0.5pc;
+
+  mat-card {
+    padding: 5% 25% 5% 25%;
+    background-color: #ffffff00;
+
+
+    mat-card-header {
+      // align-self: flex-start;
+      margin-bottom: 0px;
+      box-sizing: content-box;
+      width: 100%;
+
+      mat-card-title {
+        text-align: center;
+        justify-content: center;
+        box-sizing: content-box;
+        width: 100%;
+        color: #ff8000;
+        font-weight: bold;
+        position: relative;
+        margin-top: 2px;
+        margin-right: 130px;
+        font-size: 30px;
+      }
+
+    }
+
+    mat-card-content {
+      margin-left: 7%;
+
+      .columnas {
+        width: 200%;
+        height: 100%;
+        position: relative;
+        right: 178px;
+        margin-top: 20px;
+        display: inline-flex;
+        justify-content: space-evenly;
+      }
+
+      .columnaContenido {
+        width: 129%;
+        height: 100%;
+        position: relative;
+        right: 26px;
+        margin-top: 20px;
+        display: inline-flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+
+        .input-content{
+          width: 100%;
+        }
+        
+      }
+
+    }
+
+    mat-card-actions {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .p4u-button {
+      background-color: #ff8000;
+      color: #ffffff;
+    }
+
+    .p4u-button:disabled {
+      background-color: #666666;
+      color: #ffffff;
+      font-weight: 100;
+    }
+
+    .p4u-raised-button {
+      background-color: #66cccc;
+      color: #000000;
+
+    }
+
+
+  }
+
+
+}

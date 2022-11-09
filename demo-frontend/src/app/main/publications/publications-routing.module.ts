@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EditPublicationUserComponent } from './edit-publication-user/edit-publication-user.component';
 import { EditPublicationComponent } from './edit-publication/edit-publication.component';
 import { PublicationsLayoutComponent } from './publications-layout.component';
 import { PublicationsComponent } from './publications.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
       children: [
         { path: "", component: PublicationsComponent },
         { path: 'add', component: EditPublicationComponent },
+        { path: 'addpublicationuser', component: EditPublicationUserComponent },
         { path: 'edit/:id', component: EditPublicationComponent },
       ],
     },
