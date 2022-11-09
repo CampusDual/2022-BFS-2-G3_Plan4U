@@ -8,16 +8,17 @@
         </mat-card-header>
 
         <mat-card-content>
-          <div class="columnas">
+          <div class="columnas title-date" >
             <div
               class="input-row"
               fxLayout="row"
               fxLayout.lt-md="column"
               fxLayoutGap="20px"
               fxLayoutGap.lt-md="0px"
+              
             >
-              <mat-form-field fxFlex class="filas" >
-                <input
+              <mat-form-field  class="filas" >
+                <input style="width: 400px;"
                   matInput
                   type="text"
                   color="primary"
@@ -30,7 +31,7 @@
               </mat-form-field>
             </div>
             <div class="input-row">
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" class="eventDate">
                 <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required>
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
@@ -48,7 +49,7 @@
             fxLayoutGap="20px"
             fxLayoutGap.lt-md="0px"
             >
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="categoryName">
               <mat-label>{{'table.publications.categoryName' | translate}}</mat-label>
               <mat-select formControlName="categoryName" name="categoryName">
                 <mat-option *ngFor="let item of categories" [value]="item.category">
@@ -67,7 +68,7 @@
             fxLayoutGap="20px"
             fxLayoutGap.lt-md="0px"
             >
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="provinceName">
               <mat-label>{{'table.publications.provinceName' | translate}}</mat-label>
               <mat-select formControlName="provinceName" name="provinceName">
                 <mat-option *ngFor="let item of provinces" [value]="item.provinceName">
@@ -109,7 +110,7 @@
             fxLayoutGap="20px"
             fxLayoutGap.lt-md="0px"
             >
-            <mat-form-field fxFlex>
+            <mat-form-field fxFlex class="contact">
               <input
                 matInput
                 type="text"
@@ -129,7 +130,7 @@
             fxLayoutGap="20px"
             fxLayoutGap.lt-md="0px"
             >
-            <mat-form-field fxFlex>
+            <mat-form-field fxFlex class="optionalContact">
               <input
                 matInput
                 type="text"

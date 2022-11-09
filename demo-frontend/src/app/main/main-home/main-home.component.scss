@@ -75,18 +75,63 @@
   padding-bottom: 1em;
 }
 
-.filters{
-  padding: 5px;
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
-}
+// .filters{
+//   padding: 5px;
+//   position: relative;
+//   display: flex;
+//   flex-direction: row-reverse;
+//   justify-content: flex-start;
+// }
 
 .filterCategory{
-  position: absolute;
-  margin-left: 88%;}
+  
+  left: 40.7em;
+}
 
 .filterProvince{
-  margin-left: 77%;
+  
+  left: 208px;
+}
+
+.btnregister {
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  background: #ff8000;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 0px solid;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  height: 50px;
+  border-radius: 0.5pc;
+  right: 178px;
+}
+
+.btnregister:hover {
+  background: #66cccc88;
+  transform: translateY(5px);
+}
+
+.btnfilter{
+  margin: 4px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.crear{
+  margin: 7px;
+  line-height: 30px;
+  position: relative;
+  top: -4px;
+  left: 4px;
+}
+
+.iconoCrear{
+  top: 1px;
+  position: relative;
 }

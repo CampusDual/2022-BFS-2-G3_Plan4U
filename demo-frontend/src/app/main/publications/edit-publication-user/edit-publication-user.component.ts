@@ -7,6 +7,7 @@ import { Province } from 'src/app/model/province';
 import { Publication } from 'src/app/model/publication';
 import { LoggerService } from 'src/app/services/logger.service';
 import { PublicationService } from 'src/app/services/publication.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   //selector: 'app-edit-publication-user',
@@ -27,7 +28,8 @@ export class EditPublicationUserComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private logger: LoggerService,
-    private http: HttpClient
+    private http: HttpClient,
+    private authService: AuthService
     ) { 
       this.publication = new Publication();
     }
@@ -59,7 +61,7 @@ export class EditPublicationUserComponent implements OnInit {
       title: [this.publication.title, Validators.required],
       content: [this.publication.content],
       createDate: [this.publication.createDate],
-      userLogin: [this.publication.userLogin, Validators.required],
+      userLogin: [this.authService.getUserName(), Validators.required],
       categoryName: [this.publication.categoryName, Validators.required],
       provinceName: [this.publication.provinceName, Validators.required],
       eventDate: [this.publication.eventDate, Validators.required],
@@ -83,7 +85,7 @@ export class EditPublicationUserComponent implements OnInit {
 
   redirectList(response: any) {
     if (response.responseCode === 'OK') {
-      this.router.navigate(['/publications']);
+      this.router.navigate(['/main']);
     }else{
       console.log(response);
     }
@@ -98,7 +100,7 @@ export class EditPublicationUserComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/publications']);
+    this.router.navigate(['/main']);
   }
 
 }

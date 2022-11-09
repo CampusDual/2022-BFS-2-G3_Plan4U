@@ -8,6 +8,7 @@ import { Publication } from 'src/app/model/publication';
 import { PublicationService } from 'src/app/services/publication.service';
 import { Category } from 'src/app/model/category';
 import { Province } from 'src/app/model/province';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-home',
@@ -36,7 +37,13 @@ filterPost2='';
   //   { name: "Mayo", value: 20000 }
   // ];
 
-  constructor(private idle: Idle, private keepalive: Keepalive, private authService: AuthService, private publicationService: PublicationService) {
+  constructor(
+    private idle: Idle, 
+    private keepalive: Keepalive, 
+    private authService: AuthService, 
+    private publicationService: PublicationService , 
+    private router: Router
+    ) {
 
     
 
@@ -79,4 +86,8 @@ filterPost2='';
   //   this.idleState = 'Started.';
   //   this.timedOut = false;
   // }
+
+  onAdd() {
+    this.router.navigate(['/publications/addpublicationuser']);
+  }
  }

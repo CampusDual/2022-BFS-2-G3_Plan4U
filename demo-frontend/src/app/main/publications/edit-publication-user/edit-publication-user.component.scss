@@ -26,7 +26,7 @@
   transform: translate(-50%, 0);
   -moz-transform: translate(-50%, 0);
   -webkit-transform: translate(-50%, 0);
-  width: 50%;
+  width: 55%;
   padding: 1em;
   background-color: #FFFFFFD2;
   border-radius: 0.5pc;
@@ -51,8 +51,9 @@
         font-weight: bold;
         position: relative;
         margin-top: 2px;
-        margin-right: 130px;
+        margin-right: 311px;
         font-size: 30px;
+        top: -20px;
       }
 
     }
@@ -64,7 +65,7 @@
         width: 200%;
         height: 100%;
         position: relative;
-        right: 178px;
+        right: 240px;
         margin-top: 20px;
         display: inline-flex;
         justify-content: space-evenly;
@@ -81,7 +82,8 @@
         flex-wrap: nowrap;
 
         .input-content{
-          width: 100%;
+          width: 98%;
+          right: 52px;
         }
         
       }
@@ -113,7 +115,36 @@
 
     }
 
+    .filas{
+      width: 200px;
+      right: 19px;
+    }
 
+    .eventDate{
+      margin-top: -14px;
+      width: 200px;
+      right: -3px;
+    }
+
+    .categoryName{
+      right: 28px;
+    }
+
+    .provinceName{
+      right: 7px
+    }
+
+    .contact{
+      left: -40px;
+    }
+
+    .optionalContact{
+      right: 13px;
+    }
+    
+    .title-date{
+      left: -250px;
+    }
   }
 
 
