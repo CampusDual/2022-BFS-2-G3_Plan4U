@@ -46,11 +46,11 @@ body {
 }
 
 .page-content {
-  margin-top: $mat-toolbar-height-desktop;
-  @media ($mat-xsmall) {
-    margin-top: $mat-toolbar-height-mobile;
-  }
-  padding: 0px;
+  // margin-top: $mat-toolbar-height-desktop;
+  // @media ($mat-xsmall) {
+  //   margin-top: $mat-toolbar-height-mobile;
+  // }
+  // padding: 0px;
 }
 
 #app-content {
