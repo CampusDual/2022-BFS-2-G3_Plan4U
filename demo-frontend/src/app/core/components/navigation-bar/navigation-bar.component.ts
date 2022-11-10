@@ -48,4 +48,13 @@ export class NavigationBarComponent {
     this.router.navigate(['/users/edit']);
   }
 
+  get navVisible(){
+    let navVisible:boolean = true;
+    if(this.router.url === '/' || this.router.url === '/landing'){
+      navVisible= false;
+    }
+    return navVisible;
+   }
+
+
 }
