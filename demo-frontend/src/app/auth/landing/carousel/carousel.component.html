@@ -1,15 +1,19 @@
 <div class="dsc-carousel" [ngStyle]="{'min-height': finalHeight}">
+
   <div class="logo-container mat-elevation-z4">
     <img
       src="./assets/images/campus-dual-azul-squared-negative.png"
       alt="Logo"
     />
   </div>
+  <div>
+    <button class="btnregister" (click)="onRegister()"> Entrar <span class="fas fa-angle-right"></span></button>
+  </div>
+
   <div class="dsc-carousel__btns">
     <button id="boton" class= "btnizq"(click)="setBack()"><mat-icon>keyboard_arrow_left</mat-icon></button>
     <button id="boton" class= "btnder"(click)="setNext()"><mat-icon>keyboard_arrow_right</mat-icon></button>
   </div>
-
   <div class="dsc-carousel__content">
     <ng-container *ngFor="let section of items">
       <div
@@ -26,7 +30,6 @@
           {{ section.title.first }}<span>{{ section.title.second }}</span>
         </h1>
         <p>{{section.summary}}</p>
-        <button class="btnregister" (click)="onRegister()"> Entrar <span class="fas fa-angle-right"></span></button>
       </div>
     </ng-container>
   </div>

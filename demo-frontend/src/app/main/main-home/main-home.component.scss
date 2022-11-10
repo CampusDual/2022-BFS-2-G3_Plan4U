@@ -37,18 +37,26 @@
   padding-top: 8px;
   box-shadow: 2px 2px 5px lightgray;
 }
+.ocultoOpcional {
+  visibility: hidden;
+  position: absolute;
+}
 
 .card:hover {
   scale: 1.05;
-  .card-text:hover{
+  border: 1px solid #ff8000;
+  .card-text {
     -webkit-line-clamp: 10;
-    cursor: pointer
-}
+    }
+    .ocultoOpcional{
+      visibility:visible;
+      position:relative;
+    }
 }
 
 .card-text{
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -84,12 +92,12 @@
 // }
 
 .filterCategory{
-  
+
   left: 40.7em;
 }
 
 .filterProvince{
-  
+
   left: 208px;
 }
 
