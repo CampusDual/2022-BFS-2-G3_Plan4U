@@ -16,7 +16,12 @@
 <div style="overflow: auto; margin: -1px; margin-top:64px;">
   <h1 class="pageTitle">{{ "form.publications" | translate }} </h1>
   <div class="btnfilter">
-    <button class="btnregister" (click)="onAdd()">  <span class="iconoCrear"><mat-icon>add_circle</mat-icon></span> <span class="crear">Crear</span>  <span class="fas fa-angle-right"></span></button>
+    <button class="btnregister" (click)="onAdd()">
+      <span class="iconoCrear">
+        <mat-icon>add_circle</mat-icon></span>
+        <span class="crear">{{ "button.create" | translate }}</span>
+      <span class="fas fa-angle-right"></span>
+    </button>
     <div>
       <mat-form-field class="filterCategory">
         <mat-label>{{'table.publications.categoryName' | translate}}</mat-label>

@@ -2,7 +2,9 @@
   "login": {
     "user": "Usuario",
     "password": "Contrasinal",
-    "enter": "Entrar"
+    "enter": "Entrar",
+    "textregister":"¿Non estás rexistrado? Preme en crear usuario",
+    "createuser":"Crear Usuario"
   },
   "item": {
     "title": "Titulo"
@@ -56,11 +58,13 @@
   "form": {
     "contact": "Contacto",
     "user":"Usuario",
-    "publication": "Publicación"
+    "publication": "Publicación",
+    "publications": "Próximos Plans"
   },
   "button": {
     "cancel": "Cancelar",
-    "save": "Gardar"
+    "save": "Gardar",
+    "create":"Crear"
   },
   "paginator": {
     "first_page": "Primeira páxina",

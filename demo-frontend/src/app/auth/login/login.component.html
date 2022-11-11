@@ -53,7 +53,7 @@
         class="p4u-buttons-color"
         [routerLink]="['/users/add']"
       >
-        Crear Usuario
+      {{ "login.createuser" | translate }}
       </button>
       <div
         fxlayout="column"
@@ -70,7 +70,9 @@
         ng-reflect-fx-layout="column"
         ng-reflect-fx-layout-align="center center"
       >
-        <span>¿No estás registrado? Pulsa en el botón </span>
+        <span>
+          {{ "login.textregister" | translate }}
+        </span>
       </div>
     </form>
   </div>

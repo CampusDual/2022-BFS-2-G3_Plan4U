@@ -2,7 +2,9 @@
   "login": {
     "user": "User",
     "password": "Password",
-    "enter": "Enter"
+    "enter": "Enter",
+    "textregister":"¿Not register? Click on create user",
+    "createuser":"Create User"
   },
   "item": {
     "title": "Title"
@@ -56,11 +58,13 @@
   "form": {
     "contact": "Contact",
     "user":"User",
-    "publication": "Publication"
+    "publication": "Publication",
+    "publications": "Plans to Come"
   },
   "button": {
     "cancel": "Cancel",
-    "save": "Save"
+    "save": "Save",
+    "create":"Create"
   },
   "paginator": {
     "first_page": "First page",
