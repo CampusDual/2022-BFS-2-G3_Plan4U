@@ -96,8 +96,8 @@
 
 
           <mat-form-field appearance="fill">
-            <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required>
-            <mat-hint>MM/DD/YYYY</mat-hint>
+            <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required >
+            <mat-label>{{'table.publications.eventDate' | translate}}</mat-label>
             <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
             <mat-datepicker #eventDate></mat-datepicker>
             <mat-error>{{ "daterequired" | translate }}</mat-error>
