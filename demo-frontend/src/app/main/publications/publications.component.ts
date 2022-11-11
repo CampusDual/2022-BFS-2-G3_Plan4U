@@ -93,7 +93,7 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
       '',
       this.fields.map((field) => new AnyField(field)),
       0,
-      20,
+      10,
       'title'
     );
     this.dataSource.getPublications(pageFilter);
