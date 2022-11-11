@@ -73,7 +73,7 @@ public class UserServiceImpl extends AbstractDemoService implements IUserService
    
    @Override
     public List<UserDTO> findAll() {
-        List<User> userdto = userRepository.findAll();
+        List<User> userdto = userRepository.findAll(Sort.by(Sort.Direction.ASC,"login"));
         return UserMapper.INSTANCE.userToUserDtoList(userdto);
     }
 }
