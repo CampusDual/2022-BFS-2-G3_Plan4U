@@ -23,13 +23,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.example.demo.dto.ContactDTO;
+import com.example.demo.dto.PublicationDTO;
 import com.example.demo.dto.UserCompletDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.entity.User;
 import com.example.demo.entity.enums.ResponseCodeEnum;
+import com.example.demo.exception.DemoException;
+import com.example.demo.rest.response.DataSourceRESTResponse;
 import com.example.demo.service.IUserService;
 import com.example.demo.utils.Constant;
 
@@ -76,6 +81,28 @@ public class UsersController {
 		LOGGER.info("getUser is finished...");
 		return re;
 	}
+	
+	@PostMapping(path = "/getUsers", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PreAuthorize("hasAnyAuthority('USERS')")
+    public @ResponseBody DataSourceRESTResponse<List<UserDTO>> getUser(@RequestBody AnyPageFilter pageFilter) {
+        LOGGER.info("getUsers in progress...");
+        DataSourceRESTResponse<List<UserDTO>> dres = new DataSourceRESTResponse<>();
+        try {
+            dres = userService.getUsers(pageFilter);
+        } catch (DemoException e) {
+            LOGGER.error(e.getMessage());
+            dres.setResponseMessage(e.getMessage());
+        } 
+        LOGGER.info("getUsers is finished...");
+        return dres;
+    }
+    
+    @GetMapping(path = "/getUsers")
+    @PreAuthorize("hasAnyAuthority('USERS')")
+    public @ResponseBody List<UserDTO> findAll() {
+        LOGGER.info("findAll in progress...");
+        return userService.findAll();
+    }
 		
 	
 	@PostMapping(path = "/createUser")

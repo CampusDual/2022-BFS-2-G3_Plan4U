@@ -13,6 +13,8 @@ import { DataSourceRESTResponse } from '../../../model/rest/response';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Province } from 'src/app/model/province';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/services/user.service';
 
 
 
@@ -28,6 +30,7 @@ export class EditPublicationComponent implements OnInit {
   categories: Category[];
   provinces:Province[];
   errores: string[];
+  users: User[];
 
   constructor(
     private fb: FormBuilder,
@@ -35,7 +38,8 @@ export class EditPublicationComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private logger: LoggerService,
-    private http: HttpClient
+    private http: HttpClient,
+    private userService: UserService
 
   ) {
     this.publication = new Publication();
@@ -56,6 +60,8 @@ export class EditPublicationComponent implements OnInit {
 
     this.publicationService.getCategories().subscribe(response => {this.categories = response});
     this.publicationService.getProvinces().subscribe(response => {this.provinces = response});
+    this.userService.getUsers().subscribe(response => {this.users = response});
+
   }
 
   onFormChanges() {

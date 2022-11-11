@@ -52,4 +52,14 @@ export class UserService {
       })
     );
   }
+
+  public getUsers(): Observable<User[]> {
+    const url = API_CONFIG.getUsers;
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json; charset=utf-8',
+      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
+      Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
+    });
+    return this.http.get<User[]>(url, { headers });
+  }
 }

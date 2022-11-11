@@ -26,7 +26,7 @@
               <mat-error>{{ "titlerequired" | translate }}</mat-error>
             </mat-form-field>
 
-            <mat-form-field fxFlex>
+            <!-- <mat-form-field fxFlex>
               <input
                 matInput
                 type="text"
@@ -38,7 +38,19 @@
               <mat-error>
                 {{ "loginrequired" | translate }}
               </mat-error>
+            </mat-form-field> -->
+            <mat-form-field appearance="fill">
+              <mat-label>{{'table.publications.userLogin' | translate}}</mat-label>
+              <mat-select formControlName="userLogin" name="userLogin">
+                <mat-option *ngFor="let item of users" [value]="item.login">
+                  {{item.login}}
+                </mat-option>
+              </mat-select>
+              <mat-error>
+                {{ "loginrequired" | translate }}
+              </mat-error>
             </mat-form-field>
+
           </div>
 
           <mat-form-field appearance="fill">
