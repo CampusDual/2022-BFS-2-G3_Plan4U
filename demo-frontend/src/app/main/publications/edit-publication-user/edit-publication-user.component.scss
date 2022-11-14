@@ -77,7 +77,7 @@
         height: 100%;
         position: relative;
         right: 26px;
-        margin-top: 20px;
+        margin-top: -50px;
         display: inline-flex;
         justify-content: flex-start;
         flex-wrap: nowrap;
@@ -117,18 +117,19 @@
     }
 
     .filas{
-      width: 200px;
-      right: 19px;
+      width: 614px;
+      right: 8px;
     }
 
     .eventDate{
-      margin-top: -14px;
+      
       width: 200px;
-      right: -3px;
+      right: 30px;
     }
 
     .categoryName{
-      right: 28px;
+      right: -177px;
+      bottom: 71px;
     }
 
     .provinceName{

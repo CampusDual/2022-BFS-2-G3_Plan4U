@@ -18,7 +18,7 @@
               
             >
               <mat-form-field  class="filas" >
-                <input style="width: 400px;"
+                <input style="width: 614px;"
                   matInput
                   type="text"
                   color="primary"
@@ -26,20 +26,12 @@
                   formControlName="title"
                   name="publication-title"
                   required
+                  maxlength="70"
                 />
                 <mat-error>{{ "titlerequired" | translate }}</mat-error>
               </mat-form-field>
             </div>
-            <div class="input-row">
-              <mat-form-field appearance="fill" class="eventDate">
-                <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required>
-                <mat-label>{{'table.publications.eventDate' | translate}}</mat-label>
-                <!-- <mat-hint>DD/MM/YYYY</mat-hint> -->
-                <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
-                <mat-datepicker #eventDate></mat-datepicker>
-                <mat-error>{{ "daterequired" | translate }}</mat-error>
-              </mat-form-field>
-            </div>
+           
           </div>
 
           <div class="columnas">
@@ -50,6 +42,16 @@
             fxLayoutGap="20px"
             fxLayoutGap.lt-md="0px"
             >
+            <div class="input-row">
+              <mat-form-field appearance="fill" class="eventDate">
+                <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required>
+                <mat-label>{{'table.publications.eventDate' | translate}}</mat-label>
+                <!-- <mat-hint>DD/MM/YYYY</mat-hint> -->
+                <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
+                <mat-datepicker #eventDate></mat-datepicker>
+                <mat-error>{{ "daterequired" | translate }}</mat-error>
+              </mat-form-field>
+            </div>
             <mat-form-field appearance="fill" class="categoryName">
               <mat-label>{{'table.publications.categoryName' | translate}}</mat-label>
               <mat-select formControlName="categoryName" name="categoryName">
@@ -94,6 +96,7 @@
                 name="publication-content"
                 required
                 rows="10"
+                maxlength="500"
                 
               ></textarea>
               <mat-error>
