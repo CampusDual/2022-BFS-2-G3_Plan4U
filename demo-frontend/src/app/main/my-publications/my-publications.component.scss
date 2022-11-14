@@ -1,0 +1,117 @@
+.card{
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #d3d3d3a8;
+  margin-top: 2em;
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+  width: 30%;
+  align-content: stretch;
+  transition: 0.5s;
+  margin-left: 4em;
+  overflow: hidden;
+  margin-bottom: 3em;
+  padding-top: 8px;
+  box-shadow: 2px 2px 5px lightgray;
+}
+.ocultoOpcional {
+  visibility: hidden;
+  position: absolute;
+}
+
+.card:hover {
+  scale: 1.05;
+  border: 1px solid #ff8000;
+  .card-text {
+    -webkit-line-clamp: 15;
+    }
+    .ocultoOpcional{
+      visibility:visible;
+      position:relative;
+    }
+}
+
+.card-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-body{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.card-title{
+  color: #3a3530;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  text-align: center;
+  border-bottom: solid 2px #ff8000;
+  padding-bottom: 1em;
+}
+
+.pageTitle{
+  color: #3a3530;
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.filterCategory{
+
+  left: 40.7em;
+}
+
+.filterProvince{
+
+  left: 208px;
+}
+
+.btnregister {
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #3a3530;
+  background: #d3d3d3a8;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 2px solid rgba(0,0,0,0.125);
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  height: 50px;
+  border-radius: 0.5pc;
+  right: 178px;
+  box-shadow: 2px 2px 5px lightgray;
+}
+
+.btnregister:hover {
+  color: #ff8000;
+  scale: 1.05;
+}
+
+.btnfilter{
+  margin: 4px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.crear{
+  margin: 7px;
+  line-height: 30px;
+  position: relative;
+  top: -4px;
+  left: 4px;
+}
+
+.iconoCrear{
+  top: 1px;
+  position: relative;
+}

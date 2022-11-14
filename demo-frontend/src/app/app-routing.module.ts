@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'contacts', loadChildren: () => import('./main/contacts/contacts.module').then(x => x.ContactsModule) },
   { path: 'users', loadChildren: () => import('./main/users/users.module').then(x => x.UsersModule) },
   { path: 'publications', loadChildren: () => import('./main/publications/publications.module').then(x => x.PublicationsModule) },
+  { path: 'my-publications', loadChildren: () => import('./main/my-publications/my-publications.module').then(x => x.MyPublicationsModule) },
   { path: 'landing', component: LandingComponent,  pathMatch: 'full'},
   
 

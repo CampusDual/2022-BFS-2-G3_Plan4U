@@ -1,0 +1,52 @@
+<div style="overflow: auto; margin: -1px; margin-top:64px;">
+  <h1 class="pageTitle">{{ "form.publications" | translate }} </h1>
+  <div class="btnfilter">
+    <button class="btnregister" (click)="onAdd()">
+      <span class="iconoCrear">
+        <mat-icon>add_circle</mat-icon></span>
+        <span class="crear">{{ "button.create" | translate }}</span>
+      <span class="fas fa-angle-right"></span>
+    </button>
+    <div>
+      <mat-form-field class="filterCategory">
+        <mat-label>{{'table.publications.categoryName' | translate}}</mat-label>
+        <mat-select name="categoryName" [(ngModel)]="filterPost">
+          <mat-option value="">Mostrar todas</mat-option>
+          <mat-option *ngFor="let item of categories" [value]="item.category">
+            {{item.category}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div >
+      <mat-form-field class="filterProvince">
+        <mat-label>{{'table.publications.provinceName' | translate}}</mat-label>
+        <mat-select name="provinceName" [(ngModel)]="filterPost2">
+          <mat-option value="">Mostrar todas</mat-option>
+          <mat-option *ngFor="let item of provinces" [value]="item.provinceName">
+            {{item.provinceName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="card" style="width: 25rem;" *ngFor="let publication of publications | filter : filterPost | filter : filterPost2">
+    <img   src="../../../assets/images/{{publication.categoryName}}.jpg" class="card-img-top"/>
+
+    <div class="card-body">
+      <h5 class="card-title">{{publication.title}}</h5>
+      <p class="card-text">{{publication.content}}</p>
+    </div>
+    <ul class="list-group list-group-light list-group-small" style = "list-style:none;">
+      <li class="list-group-item px-4">Provincia: <b>{{publication.provinceName}}</b></li>
+      <li class="list-group-item px-4">Categoría: <b>{{publication.categoryName}}</b></li>
+      <li class="list-group-item px-4">Fecha de plan: <b>{{publication.eventDate | date: 'dd/MM/yyyy'}}</b></li>
+      <li class="list-group-item px-4">Publicado por: <b>{{publication.userLogin}}</b></li>
+    </ul>
+    <div class="card-body">
+        <p>Contacto:</p>
+      <p><b>{{publication.contact}}</b></p>
+      <p class="ocultoOpcional"><b>{{publication.optionalContact}}</b></p>
+    </div>
+  </div>
+</div>

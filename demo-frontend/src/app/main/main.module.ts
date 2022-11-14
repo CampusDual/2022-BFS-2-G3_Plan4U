@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { FilterPipe } from './main-home/filter.pipe';
 import { MainHomeLayoutComponent } from './main-home/main-home-layout.component';
+import { MyPublicationsComponent } from './my-publications/my-publications.component';
 //import { PublicationsComponent } from './publications/publications.component';
 //import { UsersComponent } from './users/users.component';
 // import { EditUserComponent } from './users/edit-user/edit-user.component';
@@ -49,6 +50,7 @@ import { MainHomeLayoutComponent } from './main-home/main-home-layout.component'
     FilterItemDirective,
     FilterPipe,
     MainHomeLayoutComponent,
+    MyPublicationsComponent,
     //PublicationsComponent,
     //UsersComponent,
    // EditUserComponent,
