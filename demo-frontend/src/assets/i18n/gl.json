@@ -59,7 +59,8 @@
     "contact": "Contacto",
     "user":"Usuario",
     "publication": "Publicación",
-    "publications": "Próximos Plans"
+    "publications": "Próximos Plans",
+    "listPublications": "Publicaciones"
   },
   "button": {
     "cancel": "Cancelar",
