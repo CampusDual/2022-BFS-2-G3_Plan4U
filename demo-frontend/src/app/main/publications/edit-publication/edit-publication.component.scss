@@ -1,53 +1,7 @@
-// .margin-card {
-//   margin-top: 56px;
-// }
-// button {
-//   margin-right: 10px;
-// }
-
-// .mat-form-field {
-//   margin-right: 10px;
-// }
-
-// .input-content{
-//   width: 100%;
-// }
-
-// div.form-content {
-//   margin-bottom: 20px;
-//   height: calc(100vh - 206px);
-//   overflow: auto;
-//   padding: 2px;
-//   display: flex;
-//   width: 100%;
-//   flex-direction: column;
-//   align-items: center;
-//   margin-top: 64px;
-// }
-
-//   .mat-card-content {
-//   display: flex;
-//   margin-bottom: 16px;
-//   flex-direction: column;
-// }
-
-// .p4u-button {
-//   background-color: #ff8000;
-//   color: #ffffff;
-// }
-
-// .p4u-button:disabled {
-//   background-color: #666666;
-//   color: #ffffff;
-//   font-weight: 100;
-// }
-
-
 
 .form-content {
   min-height: 640px;
   background-color: #bdbdbd;
-  background-image: url(/../../../assets/images/publiusuarios.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,7 +15,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.48);
+    
   }
 }
 
