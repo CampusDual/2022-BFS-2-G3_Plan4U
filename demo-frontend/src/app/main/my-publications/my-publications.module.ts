@@ -22,6 +22,7 @@ import { PublicationsLayoutComponent } from '../publications/publications-layout
 import { PublicationsRoutingModule } from '../publications/publications-routing.module';
 import { PublicationsComponent } from '../publications/publications.component';
 import { MyPublicationsRoutingModule } from './my-publications-routing.module';
+import { EditMyPublicationsComponent } from './edit-my-publications/edit-my-publications.component';
 
 
 
@@ -52,6 +53,8 @@ import { MyPublicationsRoutingModule } from './my-publications-routing.module';
     // PublicationsLayoutComponent,
     // EditPublicationComponent,
     // EditPublicationUserComponent
+  
+    EditMyPublicationsComponent
   ]
 })
 export class MyPublicationsModule { }

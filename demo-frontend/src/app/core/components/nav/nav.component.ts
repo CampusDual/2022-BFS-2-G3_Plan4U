@@ -42,6 +42,12 @@ export class NavComponent implements OnInit, OnDestroy {
       title: 'menu.publications',
       allowedRoles: ['PUBLICATIONS']
     },
+    {
+      icon: 'folder_shared',
+      route: 'my-publications',
+      title: 'form.mypublications',
+      allowedRoles: ['USERS']
+    },
   ];
 
   protected subscription: Subscription;

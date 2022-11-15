@@ -19,6 +19,7 @@ export class MyPublicationsComponent implements OnInit {
   provinces: Province[];
   filterPost= '';
   filterPost2='';
+  filterUser: string[];
   
   constructor(
     private authService: AuthService, 
@@ -33,11 +34,16 @@ export class MyPublicationsComponent implements OnInit {
     this.publicationService.getPublicationsUsers().subscribe(response => {this.publications = response});
     this.publicationService.getCategories().subscribe(response => {this.categories = response});
     this.publicationService.getProvinces().subscribe(response => {this.provinces = response});
+    this.filterUser = this.authService.getUserName();
 
   }
   
   onAdd() {
     this.router.navigate(['/publications/addpublicationuser']);
+  }
+
+  onEdit(publication: Publication) {
+    this.router.navigate(['/my-publications/edit/' + publication.id]);
   }
 }
   

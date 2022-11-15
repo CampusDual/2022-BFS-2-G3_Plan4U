@@ -1,5 +1,5 @@
 <div style="overflow: auto; margin: -1px; margin-top:64px;">
-  <h1 class="pageTitle">{{ "form.publications" | translate }} </h1>
+  <h1 class="pageTitle">{{ "form.mypublications" | translate }} </h1>
   <div class="btnfilter">
     <button class="btnregister" (click)="onAdd()">
       <span class="iconoCrear">
@@ -30,23 +30,25 @@
       </mat-form-field>
     </div>
   </div>
-  <div class="card" style="width: 25rem;" *ngFor="let publication of publications | filter : filterPost | filter : filterPost2">
-    <img   src="../../../assets/images/{{publication.categoryName}}.jpg" class="card-img-top"/>
+  <div>
+    <div class="card" style="width: 25rem;" *ngFor="let publication of publications | filter : filterPost | filter : filterPost2 | filter: filterUser" (click)="onEdit(publication)">
+      <img   src="../../../assets/images/{{publication.categoryName}}.jpg" class="card-img-top"/>
 
-    <div class="card-body">
-      <h5 class="card-title">{{publication.title}}</h5>
-      <p class="card-text">{{publication.content}}</p>
-    </div>
-    <ul class="list-group list-group-light list-group-small" style = "list-style:none;">
-      <li class="list-group-item px-4">Provincia: <b>{{publication.provinceName}}</b></li>
-      <li class="list-group-item px-4">Categoría: <b>{{publication.categoryName}}</b></li>
-      <li class="list-group-item px-4">Fecha de plan: <b>{{publication.eventDate | date: 'dd/MM/yyyy'}}</b></li>
-      <li class="list-group-item px-4">Publicado por: <b>{{publication.userLogin}}</b></li>
-    </ul>
-    <div class="card-body">
-        <p>Contacto:</p>
-      <p><b>{{publication.contact}}</b></p>
-      <p class="ocultoOpcional"><b>{{publication.optionalContact}}</b></p>
+      <div class="card-body">
+        <h5 class="card-title">{{publication.title}}</h5>
+        <p class="card-text">{{publication.content}}</p>
+      </div>
+      <ul class="list-group list-group-light list-group-small" style = "list-style:none;">
+        <li class="list-group-item px-4">Provincia: <b>{{publication.provinceName}}</b></li>
+        <li class="list-group-item px-4">Categoría: <b>{{publication.categoryName}}</b></li>
+        <li class="list-group-item px-4">Fecha de plan: <b>{{publication.eventDate | date: 'dd/MM/yyyy'}}</b></li>
+        <li class="list-group-item px-4">Publicado por: <b>{{publication.userLogin}}</b></li>
+      </ul>
+      <div class="card-body">
+          <p>Contacto:</p>
+        <p><b>{{publication.contact}}</b></p>
+        <p class="ocultoOpcional"><b>{{publication.optionalContact}}</b></p>
+      </div>
     </div>
   </div>
 </div>

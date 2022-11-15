@@ -61,7 +61,8 @@
     "user":"Datos de usuario",
     "publication": "Publicación",
     "publications": "Próximos Planes",
-    "listPublications": "Publicaciones"
+    "listPublications": "Publicaciones",
+    "mypublications": "Mis Publicaciones"
   },
   "button": {
     "cancel": "Cancelar",

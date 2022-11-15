@@ -60,7 +60,8 @@
     "user":"Usuario",
     "publication": "Publicación",
     "publications": "Próximos Plans",
-    "listPublications": "Publicaciones"
+    "listPublications": "Publicaciones",
+    "mypublications": "As Miñas Publicacións"
   },
   "button": {
     "cancel": "Cancelar",
