@@ -46,7 +46,7 @@ public class PublicationsController {
 	private IPublicationService publicationService;
 
 	@GetMapping("/getPublication")
-	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
+	@PreAuthorize("hasAnyAuthority('PUBLICATIONSUSER')")
 	public ResponseEntity<?> getPublication(@RequestParam(value = "id") Integer id) {
 		LOGGER.info("getPublication in progress...");
 		PublicationDTO publication = null;

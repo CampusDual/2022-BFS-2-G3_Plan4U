@@ -43,7 +43,7 @@ export class MyPublicationsComponent implements OnInit {
   }
 
   onEdit(publication: Publication) {
-    this.router.navigate(['/my-publications/edit/' + publication.id]);
+    this.router.navigate(['/publications/editmypublications/' + publication.id]);
   }
 }
   

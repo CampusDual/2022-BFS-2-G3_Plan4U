@@ -13,6 +13,7 @@ const routes: Routes = [
         { path: "", component: PublicationsComponent },
         { path: 'add', component: EditPublicationComponent },
         { path: 'addpublicationuser', component: EditPublicationUserComponent },
+        { path: 'editmypublications/:id', component: EditPublicationUserComponent },
         { path: 'edit/:id', component: EditPublicationComponent },
       ],
     },
