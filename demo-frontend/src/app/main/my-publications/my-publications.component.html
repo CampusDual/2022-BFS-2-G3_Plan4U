@@ -30,8 +30,8 @@
       </mat-form-field>
     </div>
   </div>
-  <div>
-    <div class="card" style="width: 25rem;" *ngFor="let publication of publications | filter : filterPost | filter : filterPost2 | filter: filterUser" (click)="onEdit(publication)">
+  <div class="card" style="width: 25rem;" *ngFor="let publication of publications | filter : filterPost | filter : filterPost2 | filter: filterUser">
+    <div (click)="onEdit(publication)">
       <img   src="../../../assets/images/{{publication.categoryName}}.jpg" class="card-img-top"/>
 
       <div class="card-body">
@@ -50,5 +50,11 @@
         <p class="ocultoOpcional"><b>{{publication.optionalContact}}</b></p>
       </div>
     </div>
+    <button class="deleteButton"
+          mat-raised-button
+          (click)="onDelete(publication)"
+        >
+          <mat-icon class="deleteIcon">delete</mat-icon> {{ "delete" | translate }}
+        </button>
   </div>
 </div>

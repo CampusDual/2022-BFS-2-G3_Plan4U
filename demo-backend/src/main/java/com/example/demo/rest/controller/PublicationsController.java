@@ -191,7 +191,7 @@ public class PublicationsController {
 	}
 
 	@DeleteMapping("/deletePublication")
-	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
+	@PreAuthorize("hasAnyAuthority('PUBLICATIONSUSER')")
 	public ResponseEntity<?> deletePublication(@RequestParam(value = "id")Integer id) {
 		LOGGER.info("deletePublication in progress...");
 		Map<String, Object> response = new HashMap<>();
