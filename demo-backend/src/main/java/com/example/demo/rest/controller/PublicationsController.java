@@ -96,7 +96,7 @@ public class PublicationsController {
 	}
 
 	@PostMapping(path = "/createPublication")
-	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
+	@PreAuthorize("hasAnyAuthority('PUBLICATIONSUSER')")
 	public ResponseEntity<?> createPublication(@Valid @RequestBody PublicationDTO createPublicationRequest, BindingResult result) {
 		LOGGER.info("createPublication in progress...");
 		PublicationDTO publicationNew = null;
@@ -139,7 +139,7 @@ public class PublicationsController {
 	}
 
 	@PostMapping(path = "/editPublication", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
+	@PreAuthorize("hasAnyAuthority('PUBLICATIONSUSER')")
 	public ResponseEntity<?> editPublication(@Valid @RequestBody PublicationDTO editPublicationRequest, BindingResult result) {
 		LOGGER.info("editPublication in progress...");
 		int id = 0;

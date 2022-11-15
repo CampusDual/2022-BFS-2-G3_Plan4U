@@ -85,7 +85,7 @@ export class EditPublicationUserComponent implements OnInit {
 
   redirectList(response: any) {
     if (response.responseCode === 'OK') {
-      this.router.navigate(['/main']);
+      this.router.navigate(['/my-publications']);
     }else{
       console.log(response);
     }
@@ -100,7 +100,7 @@ export class EditPublicationUserComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/main']);
+    this.router.navigate(['/my-publications']);
   }
 
 }
