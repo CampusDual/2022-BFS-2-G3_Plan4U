@@ -40,6 +40,7 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { FilterPipe } from './main-home/filter.pipe';
 import { MainHomeLayoutComponent } from './main-home/main-home-layout.component';
 import { MyPublicationsComponent } from './my-publications/my-publications.component';
+import { GraphicComponent } from './graphic/graphic.component';
 //import { PublicationsComponent } from './publications/publications.component';
 //import { UsersComponent } from './users/users.component';
 // import { EditUserComponent } from './users/edit-user/edit-user.component';
@@ -51,6 +52,7 @@ import { MyPublicationsComponent } from './my-publications/my-publications.compo
     FilterPipe,
     MainHomeLayoutComponent,
     MyPublicationsComponent,
+    GraphicComponent,
     //PublicationsComponent,
     //UsersComponent,
    // EditUserComponent,

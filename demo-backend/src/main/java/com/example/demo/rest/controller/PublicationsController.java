@@ -1,6 +1,7 @@
 package com.example.demo.rest.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
+import com.example.demo.dto.DataChartDTO;
 import com.example.demo.dto.PublicationDTO;
 import com.example.demo.entity.enums.ResponseCodeEnum;
 import com.example.demo.exception.DemoException;
@@ -211,4 +213,16 @@ public class PublicationsController {
 		LOGGER.info("deletePublication is finished...");
 		return new ResponseEntity<Map<String, Object>>(response,status);
 	}
+	
+	@PostMapping(path = "/getDataChart", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
+	public ResponseEntity<?> getDataChart(@RequestBody DataChartDTO dataChartDates) {
+		LOGGER.info("getDataChart in progress...");
+		Map<String, Object> response = new HashMap<>();
+		HttpStatus status = HttpStatus.OK;
+		Object dataChart = publicationService.getDataChart(dataChartDates.getIniDate(), dataChartDates.getEndDate());
+		
+		return new ResponseEntity<Map<String, Object>>(response,status); 
+	}
+	
 }

@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,4 +90,11 @@ public class PublicationServiceImpl extends AbstractDemoService implements IPubl
 		return editPublication.getId();
 	}
 
+	@Override
+	public List<Object> getDataChart(Date initDate, Date endDate) {
+		List<Object> dataChart = publicationRepository.getDataChart(initDate, endDate);
+		return dataChart;
+	}
+
+	
 }

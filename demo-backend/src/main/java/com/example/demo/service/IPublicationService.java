@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
@@ -20,4 +21,9 @@ public interface IPublicationService {
 	
 	Integer editPublication(PublicationDTO editPublicationRequest);
 	
+	List<Object> getDataChart(Date initDate, Date endDate);
+	
 }
+
+
+

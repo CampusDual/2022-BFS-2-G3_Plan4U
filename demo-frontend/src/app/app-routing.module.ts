@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { UsersComponent } from './main/users/users.component';
 import { LandingComponent } from './auth/landing/landing.component';
+import { GraphicComponent } from './main/graphic/graphic.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent,  pathMatch: 'full'},
@@ -12,8 +13,7 @@ const routes: Routes = [
   { path: 'publications', loadChildren: () => import('./main/publications/publications.module').then(x => x.PublicationsModule) },
   { path: 'my-publications', loadChildren: () => import('./main/my-publications/my-publications.module').then(x => x.MyPublicationsModule) },
   { path: 'landing', component: LandingComponent,  pathMatch: 'full'},
-  
-
+  { path: 'graphic', loadChildren: () => import('./main/graphic/graphic.module').then(x => x.GraphicModule) }
 ];
 
 @NgModule({
