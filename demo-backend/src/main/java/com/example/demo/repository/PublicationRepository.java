@@ -16,7 +16,8 @@ public interface PublicationRepository extends JpaRepository<Publication, Intege
 	@Query("SELECT provinceName , categoryName , COUNT(categoryName) AS TotCategories"
 			+ "  FROM Publication"
 			+ "  WHERE eventDate >= :initDate AND eventDate <= :endDate"
-			+ "  GROUP BY provinceName , categoryName")
+			+ "  GROUP BY provinceName , categoryName"
+			+ "  ORDER BY provinceName")
 	public List<Object> getDataChart(@Param("initDate") Date initDate, @Param("endDate") Date endDate);
 	
 }

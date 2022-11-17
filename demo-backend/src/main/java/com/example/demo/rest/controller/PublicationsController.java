@@ -1,5 +1,7 @@
 package com.example.demo.rest.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -12,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -214,15 +217,20 @@ public class PublicationsController {
 		return new ResponseEntity<Map<String, Object>>(response,status);
 	}
 	
-	@PostMapping(path = "/getDataChart", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	
+	@GetMapping(path = "/getDataChart")
 	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
-	public ResponseEntity<?> getDataChart(@RequestBody DataChartDTO dataChartDates) {
+	public Object getDataChart(@RequestParam(value = "iniDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date iniDate,
+										  @RequestParam(value = "endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate) {
+
 		LOGGER.info("getDataChart in progress...");
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.OK;
-		Object dataChart = publicationService.getDataChart(dataChartDates.getIniDate(), dataChartDates.getEndDate());
+		Object dataChart = publicationService.getDataChart(iniDate, endDate);
 		
-		return new ResponseEntity<Map<String, Object>>(response,status); 
+		return dataChart; 
 	}
+
+
 	
 }
