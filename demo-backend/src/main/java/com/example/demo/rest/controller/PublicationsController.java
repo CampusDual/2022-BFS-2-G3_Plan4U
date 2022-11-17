@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
 
 import javax.validation.Valid;
 
@@ -220,17 +221,37 @@ public class PublicationsController {
 	
 	@GetMapping(path = "/getDataChart")
 	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
-	public Object getDataChart(@RequestParam(value = "iniDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date iniDate,
+	public ResponseEntity<?> getDataChart(@RequestParam(value = "iniDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date iniDate,
 										  @RequestParam(value = "endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate) {
 
 		LOGGER.info("getDataChart in progress...");
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.OK;
-		Object dataChart = publicationService.getDataChart(iniDate, endDate);
+		List<Object> dataChart = publicationService.getDataChart(iniDate, endDate);
+		List<Map<String, Object>> listaJson = new ArrayList<>();
 		
-		return dataChart; 
+		List<String> listProvinces = new ArrayList<>();
+		for (Object elemento : dataChart) {
+			Object[] arrayElementos = (Object[]) elemento;
+			if (!listProvinces.contains(arrayElementos[0])) {
+				listProvinces.add((String)arrayElementos[0]);
+				Map<String, Object> valores = new HashMap<>();
+				valores.put("province", arrayElementos[0]);
+				listaJson.add(valores);
+			}
+		}
+		
+				
+		for (Object elemento : dataChart) {
+			Object[] arrayElementos = (Object[]) elemento;
+			for (int i=0; i < listProvinces.size(); i++) {
+				if (listProvinces.get(i).contains((String)arrayElementos[0])){
+					listaJson.get(i).put((String)arrayElementos[1], arrayElementos[2]);
+				}
+			}
+		}
+		response.put("data", listaJson);
+		return new ResponseEntity<Map<String, Object>>(response,status);
 	}
 
-
-	
 }

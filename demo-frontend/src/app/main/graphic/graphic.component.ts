@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
+import { PublicationService } from 'src/app/services/publication.service';
 
 @Component({
   //selector: 'app-graphic',
@@ -10,7 +11,9 @@ import * as am5xy from "@amcharts/amcharts5/xy";
 })
 export class GraphicComponent implements OnInit {
 
-  constructor() { 
+  dataChart: Object[];
+
+  constructor(private publicationService: PublicationService) { 
   }
 
   ngOnInit(): void {
@@ -33,39 +36,7 @@ export class GraphicComponent implements OnInit {
     }));
 
     let data = [{
-      "year": "A Coruña",
-      "deportes": 2.5,
-      "gastronomia": 2.5,
-      "ocio": 2.1,
-      "naturaleza": 1,
-      "viajes": 0.8,
-      "otros": 0.4
-    }, {
-      "year": "Lugo",
-      "europe": 2.6,
-      "namerica": 2.7,
-      "asia": 2.2,
-      "lamerica": 0.5,
-      "meast": 0.4,
-      "africa": 0.3
-    }, {
-      "year": "Ourense",
-      "europe": 2.8,
-      "namerica": 2.9,
-      "asia": 2.4,
-      "lamerica": 0.3,
-      "meast": 0.9,
-      "africa": 0.5
-    }, {
-      "year": "Pontevedra",
-      "europe": 2.8,
-      "namerica": 2.9,
-      "asia": 2.4,
-      "lamerica": 0.3,
-      "meast": 0.9,
-      "africa": 0.5
-    }, {
-      "year": "A Coruña",
+      "province": "A Coruña",
       "deportes": 2.5,
       "gastronomia": 2.5,
       "ocio": 2.1,
@@ -162,6 +133,8 @@ export class GraphicComponent implements OnInit {
 
 
     chart.appear(1000, 100);
+
+    this.dataChart.push = this.publicationService.getDataChart(new Date('2022-11-16'), new Date("2022-12-31"));
 
   }
 
