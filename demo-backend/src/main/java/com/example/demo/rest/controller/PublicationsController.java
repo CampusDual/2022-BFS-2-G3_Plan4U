@@ -222,8 +222,11 @@ public class PublicationsController {
 	
 	@GetMapping(path = "/getDataChart")
 	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
+	
+	// sólo para Postman:  @DateTimeFormat(pattern = "yyyy-MM-dd")
+	
 	public ResponseEntity<?> getDataChart(@RequestParam(value = "iniDate") Date iniDate,
-			  @RequestParam(value = "endDate") Date endDate) {
+			  @RequestParam(value = "endDate")  Date endDate) {
 		LOGGER.info("getDataChart in progress...");
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.OK;

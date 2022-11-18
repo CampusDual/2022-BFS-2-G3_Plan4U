@@ -108,6 +108,7 @@ export class PublicationService {
     return this.http.get<Publication[]>(url, { headers });
   }
 
+  //Map<String, Object>[]
   public getDataChart(iniDate: Date, endDate: Date): Observable<Map<String, Object>[]> {
     const params = new HttpParams().set('iniDate', iniDate.toString()).set('endDate', endDate.toString());
     
