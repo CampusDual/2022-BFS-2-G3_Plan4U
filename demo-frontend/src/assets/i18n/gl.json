@@ -61,7 +61,9 @@
     "publication": "Publicación",
     "publications": "Próximos Plans",
     "listPublications": "Publicaciones",
-    "mypublications": "As Miñas Publicacións"
+    "mypublications": "As Miñas Publicacións",
+    "figures": "Estadísticas",
+    "figuressubtitle" : "Publicacións por provincias e categorías"
   },
   "button": {
     "cancel": "Cancelar",

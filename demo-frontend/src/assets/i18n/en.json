@@ -61,7 +61,9 @@
     "publication": "Publication",
     "publications": "Plans to Come",
     "listPublications": "Publications",
-    "mypublications": "My Publications"
+    "mypublications": "My Publications",
+    "figures": "Figures",
+    "figuressubtitle" : "Publications by provinces and categories"
   },
   "button": {
     "cancel": "Cancel",

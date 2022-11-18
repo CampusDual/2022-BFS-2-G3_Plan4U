@@ -62,7 +62,9 @@
     "publication": "Publicación",
     "publications": "Próximos Planes",
     "listPublications": "Publicaciones",
-    "mypublications": "Mis Publicaciones"
+    "mypublications": "Mis Publicaciones",
+    "figures": "Estadísticas",
+    "figuressubtitle" : "Publicaciones por provincias y categorías"
   },
   "button": {
     "cancel": "Cancelar",
