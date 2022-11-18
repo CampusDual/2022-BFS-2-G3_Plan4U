@@ -40,6 +40,7 @@ import com.example.demo.exception.DemoException;
 import com.example.demo.rest.response.DataSourceRESTResponse;
 import com.example.demo.service.IPublicationService;
 import com.example.demo.utils.Constant;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @CrossOrigin(origins = {"http://localhost:4201"})
 @RestController
@@ -221,9 +222,11 @@ public class PublicationsController {
 	
 	@GetMapping(path = "/getDataChart")
 	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
-	public ResponseEntity<?> getDataChart(@RequestParam(value = "iniDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date iniDate,
+	@JsonFormat(timezone = "Europe/Madrid")
+	public ResponseEntity<?> getDataChart(@RequestParam(value = "iniDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date iniDate,
 										  @RequestParam(value = "endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate) {
-
+// @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+//@DateTimeFormat(pattern = "yyyy-MM-dd"		
 		LOGGER.info("getDataChart in progress...");
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.OK;

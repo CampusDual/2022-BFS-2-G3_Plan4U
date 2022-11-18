@@ -4,6 +4,7 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import { PublicationService } from 'src/app/services/publication.service';
 
+
 @Component({
   //selector: 'app-graphic',
   templateUrl: './graphic.component.html',
@@ -18,6 +19,10 @@ export class GraphicComponent implements OnInit {
 
   ngOnInit(): void {
     let root = am5.Root.new("chartdiv");
+    let data: Object[];
+    let iniDate: Date = new Date('2022-11-16');
+    let endDate: Date = new Date('2022-12-31');
+    
   
     root.setThemes([
       am5themes_Animated.new(root)
@@ -35,42 +40,44 @@ export class GraphicComponent implements OnInit {
       orientation: "horizontal"
     }));
 
-    let data = [{
-      "province": "A Coruña",
-      "deportes": 2.5,
-      "gastronomia": 2.5,
-      "ocio": 2.1,
-      "naturaleza": 1,
-      "viajes": 0.8,
-      "otros": 0.4
-    }, {
-      "year": "Lugo",
-      "europe": 2.6,
-      "namerica": 2.7,
-      "asia": 2.2,
-      "lamerica": 0.5,
-      "meast": 0.4,
-      "africa": 0.3
-    }, {
-      "year": "Ourense",
-      "europe": 2.8,
-      "namerica": 2.9,
-      "asia": 2.4,
-      "lamerica": 0.3,
-      "meast": 0.9,
-      "africa": 0.5
-    }, {
-      "year": "Pontevedra",
-      "europe": 2.8,
-      "namerica": 2.9,
-      "asia": 2.4,
-      "lamerica": 0.3,
-      "meast": 0.9,
-      "africa": 0.5
-    }]
+    this.publicationService.getDataChart(iniDate, endDate).subscribe(response => {data = response});
+
+    // let data = [{
+    //   "province": "A Coruña",
+    //   "deportes": 2.5,
+    //   "gastronomia": 2.5,
+    //   "ocio": 2.1,
+    //   "naturaleza": 1,
+    //   "viajes": 0.8,
+    //   "otros": 0.4
+    // }, {
+    //   "province": "Lugo",
+    //   "deportes": 2.6,
+    //   "gastronomia": 2.7,
+    //   "ocio": 2.2,
+    //   "naturaleza": 0.5,
+    //   "viajes": 0.4,
+    //   "otros": 0.3
+    // }, {
+    //   "province": "Ourense",
+    //   "deportes": 2.8,
+    //   "gastronomia": 2.9,
+    //   "ocio": 2.4,
+    //   "naturaleza": 0.3,
+    //   "viajes": 0.9,
+    //   "otros": 0.5
+    // }, {
+    //   "province": "Pontevedra",
+    //   "deportes": 2.8,
+    //   "gastronomia": 2.9,
+    //   "ocio": 2.4,
+    //   "naturaleza": 0.3,
+    //   "viajes": 0.9,
+    //   "otros": 0.5
+    // }]
 
     let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-      categoryField: "year",
+      categoryField: "province",
       renderer: am5xy.AxisRendererX.new(root, {}),
       tooltip: am5.Tooltip.new(root, {})
     }));
@@ -95,14 +102,14 @@ export class GraphicComponent implements OnInit {
         xAxis: xAxis,
         yAxis: yAxis,
         valueYField: fieldName,
-        categoryXField: "year"
+        categoryXField: "province"
       }));
     
       series.columns.template.setAll({
         tooltipText: "{name}, {categoryX}: {valueY}",
         tooltipY: am5.percent(10)
       });
-      series.data.setAll(data);
+      series.data.setAll(this.data);
     
       // Make stuff animate on load
       // https://www.amcharts.com/docs/v5/concepts/animations/
@@ -134,7 +141,7 @@ export class GraphicComponent implements OnInit {
 
     chart.appear(1000, 100);
 
-    this.dataChart.push = this.publicationService.getDataChart(new Date('2022-11-16'), new Date("2022-12-31"));
+    // this.dataChart.push = this.publicationService.getDataChart(new Date('2022-11-16'), new Date("2022-12-31"));
 
   }
 
