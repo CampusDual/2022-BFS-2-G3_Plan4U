@@ -19,7 +19,7 @@ export class GraphicComponent implements OnInit {
 
   ngOnInit(): void {
     let root = am5.Root.new("chartdiv");
-    let data: Object[];
+    let data: Map<String, Object>[];
     let iniDate: Date = new Date('2022-11-16');
     let endDate: Date = new Date('2022-12-31');
     

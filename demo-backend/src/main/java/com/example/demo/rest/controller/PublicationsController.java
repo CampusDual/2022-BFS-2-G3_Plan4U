@@ -222,11 +222,8 @@ public class PublicationsController {
 	
 	@GetMapping(path = "/getDataChart")
 	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
-	@JsonFormat(timezone = "Europe/Madrid")
-	public ResponseEntity<?> getDataChart(@RequestParam(value = "iniDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date iniDate,
-										  @RequestParam(value = "endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate) {
-// @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-//@DateTimeFormat(pattern = "yyyy-MM-dd"		
+	public ResponseEntity<?> getDataChart(@RequestParam(value = "iniDate") Date iniDate,
+			  @RequestParam(value = "endDate") Date endDate) {
 		LOGGER.info("getDataChart in progress...");
 		Map<String, Object> response = new HashMap<>();
 		HttpStatus status = HttpStatus.OK;
