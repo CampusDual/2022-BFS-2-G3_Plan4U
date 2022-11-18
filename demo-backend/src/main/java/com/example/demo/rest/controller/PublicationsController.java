@@ -224,12 +224,9 @@ public class PublicationsController {
 	@PreAuthorize("hasAnyAuthority('PUBLICATIONS')")
 	
 	// sólo para Postman:  @DateTimeFormat(pattern = "yyyy-MM-dd")
-	
-	public ResponseEntity<?> getDataChart(@RequestParam(value = "iniDate") Date iniDate,
+	public List<Map<String, Object>> getDataChart(@RequestParam(value = "iniDate") Date iniDate,
 			  @RequestParam(value = "endDate")  Date endDate) {
 		LOGGER.info("getDataChart in progress...");
-		Map<String, Object> response = new HashMap<>();
-		HttpStatus status = HttpStatus.OK;
 		List<Object> dataChart = publicationService.getDataChart(iniDate, endDate);
 		List<Map<String, Object>> listaJson = new ArrayList<>();
 		
@@ -243,7 +240,6 @@ public class PublicationsController {
 				listaJson.add(valores);
 			}
 		}
-		
 				
 		for (Object elemento : dataChart) {
 			Object[] arrayElementos = (Object[]) elemento;
@@ -253,8 +249,8 @@ public class PublicationsController {
 				}
 			}
 		}
-		response.put("data", listaJson);
-		return new ResponseEntity<Map<String, Object>>(response,status);
+
+		return listaJson;
 	}
 
 }

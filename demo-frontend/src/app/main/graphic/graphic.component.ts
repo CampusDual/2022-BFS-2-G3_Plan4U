@@ -24,7 +24,7 @@ export class GraphicComponent implements OnInit {
   ngOnInit(): void {
     
     let iniDate: Date = new Date('2022-11-16');
-    let endDate: Date = new Date('2022-12-31');
+    let endDate: Date = new Date('2023-12-31');
     
   
     
@@ -32,48 +32,19 @@ export class GraphicComponent implements OnInit {
     this.publicationService.getDataChart(iniDate, endDate).subscribe((response) => {
  
       this.data = response
-
+      
       this.drawGraphic();
 
     });
 
-    // let data = [{
-    //   "province": "A Coruña",
-    //   "deportes": 2.5,
-    //   "gastronomia": 2.5,
-    //   "ocio": 2.1,
-    //   "naturaleza": 1,
-    //   "viajes": 0.8,
-    //   "otros": 0.4
-    // }, {
-    //   "province": "Lugo",
-    //   "deportes": 2.6,
-    //   "gastronomia": 2.7,
-    //   "ocio": 2.2,
-    //   "naturaleza": 0.5,
-    //   "viajes": 0.4,
-    //   "otros": 0.3
-    // }, {
-    //   "province": "Ourense",
-    //   "deportes": 2.8,
-    //   "gastronomia": 2.9,
-    //   "ocio": 2.4,
-    //   "naturaleza": 0.3,
-    //   "viajes": 0.9,
-    //   "otros": 0.5
-    // }, {
-    //   "province": "Pontevedra",
-    //   "deportes": 2.8,
-    //   "gastronomia": 2.9,
-    //   "ocio": 2.4,
-    //   "naturaleza": 0.3,
-    //   "viajes": 0.9,
-    //   "otros": 0.5
-    // }]
+  }
+
+  formatJson(lista: Map<String, Object>) {
+    
+
+
 
     
-    // this.dataChart.push = this.publicationService.getDataChart(new Date('2022-11-16'), new Date("2022-12-31"));
-
   }
 
 
@@ -128,7 +99,7 @@ export class GraphicComponent implements OnInit {
         tooltipText: "{name}, {categoryX}: {valueY}",
         tooltipY: am5.percent(10)
       });
-      series.data.setAll(data.data);
+      series.data.setAll(data);
     
       // Make stuff animate on load
       // https://www.amcharts.com/docs/v5/concepts/animations/
@@ -151,8 +122,9 @@ export class GraphicComponent implements OnInit {
    
     
     makeSeries("Deportes", "Deportes", this.data);
-    makeSeries("Gastronnomía", "Gastronomia", this.data);
+    makeSeries("Gastronomía", "Gastronomía", this.data);
     makeSeries("Ocio", "Ocio", this.data);
+    makeSeries("Juegos", "Juegos", this.data);
     makeSeries("Naturaleza", "Naturaleza", this.data);
     makeSeries("Viajes", "Viajes", this.data);
     makeSeries("Otros", "Otros", this.data);
@@ -163,3 +135,41 @@ export class GraphicComponent implements OnInit {
   }
 
 }
+
+
+// let data = [{
+    //   "province": "A Coruña",
+    //   "deportes": 2.5,
+    //   "gastronomia": 2.5,
+    //   "ocio": 2.1,
+    //   "naturaleza": 1,
+    //   "viajes": 0.8,
+    //   "otros": 0.4
+    // }, {
+    //   "province": "Lugo",
+    //   "deportes": 2.6,
+    //   "gastronomia": 2.7,
+    //   "ocio": 2.2,
+    //   "naturaleza": 0.5,
+    //   "viajes": 0.4,
+    //   "otros": 0.3
+    // }, {
+    //   "province": "Ourense",
+    //   "deportes": 2.8,
+    //   "gastronomia": 2.9,
+    //   "ocio": 2.4,
+    //   "naturaleza": 0.3,
+    //   "viajes": 0.9,
+    //   "otros": 0.5
+    // }, {
+    //   "province": "Pontevedra",
+    //   "deportes": 2.8,
+    //   "gastronomia": 2.9,
+    //   "ocio": 2.4,
+    //   "naturaleza": 0.3,
+    //   "viajes": 0.9,
+    //   "otros": 0.5
+    // }]
+
+    
+    // this.dataChart.push = this.publicationService.getDataChart(new Date('2022-11-16'), new Date("2022-12-31"));
