@@ -1,8 +1,37 @@
 <div>
-<h1 class="title">{{ "form.figures" | translate }}</h1>
-<h3 class="subtitle">{{ "form.figuressubtitle" | translate }}</h3>
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-<div id="chartdiv"></div>
+  <h1 class="title">{{ "form.figures" | translate }}</h1>
+  <h3 class="subtitle">{{ "form.figuressubtitle" | translate }}</h3>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+  <form [formGroup]="graphicForm" (ngSubmit)="filter()" class="demo-button">
+    <mat-form-field appearance="fill">
+      <mat-label>Ingrese un rango de fechas</mat-label>
+
+      <mat-date-range-input [rangePicker]="picker">
+        <input
+          matStartDate
+          formControlName="iniDate"
+          placeholder="Fecha Inicio"
+        />
+
+        <input matEndDate formControlName="endDate" placeholder="Fecha Fin" />
+      </mat-date-range-input>
+
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+      <mat-date-range-picker #picker></mat-date-range-picker>
+
+
+    </mat-form-field>
+
+    <mat-card-actions class="child">
+      <button class="button" type="submit" mat-raised-button color="accent">
+        Filtrar fechas
+      </button>
+    </mat-card-actions>
+  </form>
+
+  <div id="chartdiv"></div>
 </div>

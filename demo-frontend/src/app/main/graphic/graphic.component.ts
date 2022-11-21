@@ -3,6 +3,7 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import { PublicationService } from 'src/app/services/publication.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -11,12 +12,23 @@ import { PublicationService } from 'src/app/services/publication.service';
   styleUrls: ['./graphic.component.scss']
 })
 export class GraphicComponent implements OnInit {
-  
+
+  graphicForm: FormGroup;
 
   dataChart: Object[];
   data: Map<String, Object>[];
 
-  constructor(private publicationService: PublicationService) {
+  root;
+
+
+  constructor(
+    private publicationService: PublicationService,
+    private fb: FormBuilder
+  ) {
+    this.graphicForm = this.fb.group({
+      iniDate: [''],
+      endDate: ['']
+    })
   }
 
   ngOnInit(): void {
@@ -31,45 +43,54 @@ export class GraphicComponent implements OnInit {
 
   }
 
-  drawGraphic(){
-    let root = am5.Root.new("chartdiv");
-    root.setThemes([
-      am5themes_Animated.new(root)
+
+  drawGraphic() {
+
+
+    if (this.root == null) {
+      this.root = am5.Root.new("chartdiv");
+
+    }
+
+
+    this.root.setThemes([
+      am5themes_Animated.new(this.root)
     ]);
 
-    let chart = root.container.children.push(am5xy.XYChart.new(root, {
+    let chart = this.root.container.children.push(am5xy.XYChart.new(this.root, {
       panX: false,
       panY: false,
       wheelX: "panX",
       wheelY: "zoomX",
-      layout: root.verticalLayout
+      layout: this.root.verticalLayout
     }));
 
-    chart.set("scrollbarX", am5.Scrollbar.new(root, {
+
+    chart.set("scrollbarX", am5.Scrollbar.new(this.root, {
       orientation: "horizontal"
     }));
 
-    let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+    let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(this.root, {
       categoryField: "province",
-      renderer: am5xy.AxisRendererX.new(root, {}),
-      tooltip: am5.Tooltip.new(root, {})
+      renderer: am5xy.AxisRendererX.new(this.root, {}),
+      tooltip: am5.Tooltip.new(this.root, {})
     }));
 
     xAxis.data.setAll(this.data);
 
-    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(this.root, {
       min: 0,
-      renderer: am5xy.AxisRendererY.new(root, {})
+      renderer: am5xy.AxisRendererY.new(this.root, {})
     }));
 
-    let legend = chart.children.push(am5.Legend.new(root, {
+    let legend = chart.children.push(am5.Legend.new(this.root, {
       centerX: am5.p50,
       x: am5.p50
     }));
 
 
     function makeSeries(name, fieldName, data) {
-      let series = chart.series.push(am5xy.ColumnSeries.new(root, {
+      let series = chart.series.push(am5xy.ColumnSeries.new(this.root, {
         name: name,
         stacked: true,
         xAxis: xAxis,
@@ -89,10 +110,10 @@ export class GraphicComponent implements OnInit {
       series.appear();
 
       series.bullets.push(function () {
-        return am5.Bullet.new(root, {
-          sprite: am5.Label.new(root, {
+        return am5.Bullet.new(this.root, {
+          sprite: am5.Label.new(this.root, {
             text: "{valueY}",
-            fill: root.interfaceColors.get("alternativeText"),
+            fill: this.root.interfaceColors.get("alternativeText"),
             centerY: am5.p50,
             centerX: am5.p50,
             populateText: true
@@ -112,6 +133,15 @@ export class GraphicComponent implements OnInit {
     makeSeries("Otros", "Otros", this.data);
 
     chart.appear(1000, 100);
+
+  }
+
+  filter() {
+
+    this.publicationService.getDataChart(this.graphicForm.value.iniDate, this.graphicForm.value.endDate).subscribe((response) => {
+      this.data = response
+      // this.drawGraphic();
+    });
 
   }
 
