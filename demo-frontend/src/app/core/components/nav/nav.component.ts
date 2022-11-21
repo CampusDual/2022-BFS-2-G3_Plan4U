@@ -48,6 +48,14 @@ export class NavComponent implements OnInit, OnDestroy {
       title: 'form.mypublications',
       allowedRoles: ['USERS']
     },
+
+    {
+      icon: 'assessment',
+      route: 'graphic',
+      title: 'form.figures',
+      allowedRoles: ['PUBLICATIONS']
+    }
+
   ];
 
   protected subscription: Subscription;

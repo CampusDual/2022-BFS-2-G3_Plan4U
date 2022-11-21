@@ -11,15 +11,16 @@ import { PublicationService } from 'src/app/services/publication.service';
   styleUrls: ['./graphic.component.scss']
 })
 export class GraphicComponent implements OnInit {
+  
 
   dataChart: Object[];
   data: Map<String, Object>[];
 
-  constructor(private publicationService: PublicationService) { 
+  constructor(private publicationService: PublicationService) {
   }
 
   ngOnInit(): void {
-    
+
     let iniDate: Date = new Date('2022-11-16');
     let endDate: Date = new Date('2023-12-31');
 
@@ -53,9 +54,9 @@ export class GraphicComponent implements OnInit {
       renderer: am5xy.AxisRendererX.new(root, {}),
       tooltip: am5.Tooltip.new(root, {})
     }));
-    
+
     xAxis.data.setAll(this.data);
-    
+
     let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       min: 0,
       renderer: am5xy.AxisRendererY.new(root, {})
@@ -76,17 +77,17 @@ export class GraphicComponent implements OnInit {
         valueYField: fieldName,
         categoryXField: "province"
       }));
-    
+
       series.columns.template.setAll({
         tooltipText: "{name}, {categoryX}: {valueY}",
         tooltipY: am5.percent(10)
       });
       series.data.setAll(data);
-    
+
       // Make stuff animate on load
       // https://www.amcharts.com/docs/v5/concepts/animations/
       series.appear();
-    
+
       series.bullets.push(function () {
         return am5.Bullet.new(root, {
           sprite: am5.Label.new(root, {
@@ -98,10 +99,10 @@ export class GraphicComponent implements OnInit {
           })
         });
       });
-    
+
       legend.data.push(series);
     }
-    
+
     makeSeries("Deportes", "Deportes", this.data);
     makeSeries("Gastronomía", "Gastronomía", this.data);
     makeSeries("Ocio", "Ocio", this.data);
