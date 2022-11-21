@@ -5,6 +5,7 @@ import * as am5xy from "@amcharts/amcharts5/xy";
 import { PublicationService } from 'src/app/services/publication.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ThisReceiver } from '@angular/compiler';
+import * as am5plugins_exporting from "@amcharts/amcharts5/plugins/exporting";
 
 
 @Component({
@@ -17,6 +18,10 @@ export class GraphicComponent implements OnInit {
   graphicForm: FormGroup;
   dataChart: Object[];
   data: Map<String, Object>[];
+  root: any
+  chart: any
+  iniDate: Date = new Date();
+  endDate: Date = new Date('2023-12-31');
 
 
   constructor(
@@ -31,37 +36,36 @@ export class GraphicComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let iniDate: Date = new Date('2022-11-16');
-    let endDate: Date = new Date('2023-12-31');
-
-    this.publicationService.getDataChart(iniDate, endDate).subscribe((response) => {
+    this.root = am5.Root.new("chartdiv");
+    this.publicationService.getDataChart(this.iniDate, this.endDate).subscribe((response) => {
       this.data = response
-      this.drawGraphic();
+      this.drawGraphic(this.root);
+      
     });
 
   }
 
-  drawGraphic() {
-
-    let root = am5.Root.new("chartdiv");
+  drawGraphic(root) {
     root.setThemes([
       am5themes_Animated.new(root)
     ]);
 
-    let chart = root.container.children.push(am5xy.XYChart.new(root, {
+    this.chart = this.root.container.children.push(am5xy.XYChart.new(root, {
       panX: false,
       panY: false,
       wheelX: "panX",
       wheelY: "zoomX",
       layout: root.verticalLayout
     }));
+    let exporting = am5plugins_exporting.Exporting.new(root, {
+      menu: am5plugins_exporting.ExportingMenu.new(root, {})
+    });
 
-
-    chart.set("scrollbarX", am5.Scrollbar.new(root, {
+    this.chart.set("scrollbarX", am5.Scrollbar.new(root, {
       orientation: "horizontal"
     }));
 
-    let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+    let xAxis = this.chart.xAxes.push(am5xy.CategoryAxis.new(root, {
       categoryField: "province",
       renderer: am5xy.AxisRendererX.new(root, {}),
       tooltip: am5.Tooltip.new(root, {})
@@ -69,18 +73,18 @@ export class GraphicComponent implements OnInit {
 
     xAxis.data.setAll(this.data);
 
-    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    let yAxis = this.chart.yAxes.push(am5xy.ValueAxis.new(root, {
       min: 0,
       renderer: am5xy.AxisRendererY.new(root, {})
     }));
 
-    let legend = chart.children.push(am5.Legend.new(root, {
+    let legend = this.chart.children.push(am5.Legend.new(root, {
       centerX: am5.p50,
       x: am5.p50
     }));
 
 
-    function makeSeries(name, fieldName, data) {
+    function makeSeries(name, fieldName, data, root , chart, color) {
       let series = chart.series.push(am5xy.ColumnSeries.new(root, {
         name: name,
         stacked: true,
@@ -90,14 +94,13 @@ export class GraphicComponent implements OnInit {
         categoryXField: "province"
       }));
 
+      series.set("fill" , am5.color(color))
+      series.set("stroke" , am5.color(color))
       series.columns.template.setAll({
         tooltipText: "{name}, {categoryX}: {valueY}",
         tooltipY: am5.percent(10)
       });
       series.data.setAll(data);
-
-      // Make stuff animate on load
-      // https://www.amcharts.com/docs/v5/concepts/animations/
       series.appear();
 
       series.bullets.push(function () {
@@ -114,25 +117,23 @@ export class GraphicComponent implements OnInit {
 
       legend.data.push(series);
     }
+    makeSeries("Deportes", "Deportes", this.data, this.root, this.chart, 0x264653);
+    makeSeries("Gastronomía", "Gastronomía", this.data, this.root, this.chart, 0x2a9d8f);
+    makeSeries("Ocio", "Ocio", this.data, this.root, this.chart, 0xe9c46a);
+    makeSeries("Juegos", "Juegos", this.data, this.root, this.chart, 0xf4a261);
+    makeSeries("Naturaleza", "Naturaleza", this.data, this.root, this.chart, 0xe76f51);
+    makeSeries("Viajes", "Viajes", this.data, this.root, this.chart, 0x457b9d);
+    makeSeries("Otros", "Otros", this.data, this.root, this.chart , 0xbc6c25);
 
-    makeSeries("Deportes", "Deportes", this.data);
-    makeSeries("Gastronomía", "Gastronomía", this.data);
-    makeSeries("Ocio", "Ocio", this.data);
-    makeSeries("Juegos", "Juegos", this.data);
-    makeSeries("Naturaleza", "Naturaleza", this.data);
-    makeSeries("Viajes", "Viajes", this.data);
-    makeSeries("Otros", "Otros", this.data);
-
-    chart.appear(1000, 100);
+    this.chart.appear(1000, 100);
 
   }
 
   filter() {
     this.publicationService.getDataChart(this.graphicForm.value.iniDate, this.graphicForm.value.endDate).subscribe((response) => {
     this.data = response
-    this.drawGraphic();
-    });
-
+    this.chart.dispose()
+    this.drawGraphic(this.root)
+    })
   }
-
 }

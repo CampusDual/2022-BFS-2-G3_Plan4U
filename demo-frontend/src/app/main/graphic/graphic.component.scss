@@ -4,9 +4,8 @@ body {
 
 #chartdiv {
   width: 95%;
-  height: 40em;
+  height: 38em;
   position: relative;
-  margin-top: 2em;
   margin-left: 2em;
 }
 
@@ -25,3 +24,15 @@ body {
   font-size: 1.5rem;
   color: #3a3530;
 }
+
+.demo-button{
+  position: relative;
+  display: flex;
+  margin-left: 47px;
+}
+
+.child{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
