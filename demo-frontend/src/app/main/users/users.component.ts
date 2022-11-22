@@ -18,7 +18,6 @@ export class UsersComponent implements OnInit {
 
   userName: string;
 
-  //dataSource: ContactDataSource;
   displayedColumns = [
     'select',
     'name',
@@ -28,7 +27,6 @@ export class UsersComponent implements OnInit {
     'email',
     'login',
     'password',
-
   ];
   fields = ['name', 'surname', 'nif', 'phone', 'email', 'login', 'password'];
 
@@ -52,10 +50,8 @@ export class UsersComponent implements OnInit {
     this.userName = authService.getUserName();
   }
 
-
   ngOnInit(): void {
   }
-
 
   onAdd() {
     this.router.navigate(['/users/add']);
@@ -64,8 +60,4 @@ export class UsersComponent implements OnInit {
   onEdit() {
     this.router.navigate(['/users/edit/' + this.authService.getUserName]);
   }
-
-
 }
-
-

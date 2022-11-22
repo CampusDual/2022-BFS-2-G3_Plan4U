@@ -12,13 +12,11 @@ import { Observable } from 'rxjs';
 import { tap, finalize } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
-import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-transforms';
-
 
 @Injectable()
 export class InterceptService implements HttpInterceptor {
 
-  constructor(private snackBar: MatSnackBarComponent, private translate: TranslateService, /*private busyService: BusyService,*/
+  constructor(private snackBar: MatSnackBarComponent, private translate: TranslateService,
               private router: Router) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -86,7 +84,5 @@ export class InterceptService implements HttpInterceptor {
       }), finalize(() => {
       })
     );
-
   }
-
 }

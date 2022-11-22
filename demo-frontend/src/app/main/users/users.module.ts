@@ -42,4 +42,3 @@ import { UserLayoutComponent } from './user-layout.component';
     ]
 })
 export class UsersModule { }
-

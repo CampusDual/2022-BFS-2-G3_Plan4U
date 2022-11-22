@@ -10,7 +10,6 @@ import { LoggerService } from 'src/app/services/logger.service';
 import { PublicationService } from 'src/app/services/publication.service';
 
 @Component({
-  // selector: 'app-edit-my-publications',
   templateUrl: './edit-my-publications.component.html',
   styleUrls: ['./edit-my-publications.component.scss']
 })

@@ -10,8 +10,6 @@ const routes: Routes = [
     component: MyPublicationsComponent,
     children: [
       { path: "", component: MyPublicationsComponent },
-      // { path: 'add', component: EditPublicationComponent },
-      // { path: 'addpublicationuser', component: EditPublicationUserComponent },
       { path: 'editmypublications/:id', component: EditPublicationUserComponent },
       { path: 'edit/:id', component: EditMyPublicationsComponent },
     ],

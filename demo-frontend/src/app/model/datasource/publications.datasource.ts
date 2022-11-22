@@ -5,7 +5,6 @@ import { PublicationService } from 'src/app/services/publication.service';
 import { Publication } from '../publication';
 import { AnyPageFilter } from '../rest/filter';
 
-
 export class PublicationsDatasource extends DataSource<Publication> {
     publicationsSubject = new BehaviorSubject<Publication[]>([]);
     loadingSubject = new BehaviorSubject<boolean>(false);
@@ -37,6 +36,4 @@ export class PublicationsDatasource extends DataSource<Publication> {
       this.publicationsSubject.complete();
       this.loadingSubject.complete();
     }
-
-
 }

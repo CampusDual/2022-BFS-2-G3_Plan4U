@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { User } from 'src/app/model/user';
 import { LoggerService } from 'src/app/services/logger.service';
 import { UserService } from 'src/app/services/user.service';
@@ -29,8 +29,6 @@ export class EditUserComponent implements OnInit {
     private authService: AuthService
   ) {
     this.user = new User();
-
-
   }
 
   ngOnInit() {
@@ -51,8 +49,6 @@ export class EditUserComponent implements OnInit {
     }
   }
 
-
-
   onFormChanges() {
     this.userForm.valueChanges.subscribe((val) => {});
   }
@@ -67,12 +63,10 @@ export class EditUserComponent implements OnInit {
       email: [this.user.email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: [this.user.password, [Validators.required, Validators.minLength(6),Validators.maxLength(20)]],
       'confirmPassword':['', Validators.required ],
-      // nif: [this.user.nif, Validators.required],
     },
     {
       validators: checkMatch
     });
-
   }
 
   notMatchPassword() {
@@ -81,7 +75,6 @@ export class EditUserComponent implements OnInit {
     }else{
       this.userForm.get('confirmPassword').setErrors(null)
     }
-
   }
 
   save() {
@@ -96,7 +89,6 @@ export class EditUserComponent implements OnInit {
       });
     }
   }
-
 
   redirectList(response: any) {
     if (response.responseCode === 'OK') {
@@ -117,5 +109,4 @@ export class EditUserComponent implements OnInit {
   cancel() {
     this.router.navigate(['/login']);
   }
-
 }

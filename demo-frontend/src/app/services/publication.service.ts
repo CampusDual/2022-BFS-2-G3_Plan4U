@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { API_CONFIG } from '../shared/api.config';
 import { environment } from 'src/environments/environment';
 import { AnyPageFilter } from '../model/rest/filter';
@@ -22,7 +22,6 @@ export class PublicationService {
     const url = API_CONFIG.getPublications;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.post<DataSourceRESTResponse<Publication[]>>(url, pageFilter, { headers });
@@ -76,12 +75,10 @@ export class PublicationService {
     return this.http.delete<any>(url, { params, headers });
   }
 
-
   public getCategories(): Observable<Category[]> {
     const url = API_CONFIG.getCategories;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.get<Category[]>(url, { headers });
@@ -91,34 +88,28 @@ export class PublicationService {
     const url = API_CONFIG.getProvinces;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.get<Province[]>(url, { headers });
   }
 
-
   public getPublicationsUsers(): Observable<Publication[]> {
     const url = API_CONFIG.getPublications;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.get<Publication[]>(url, { headers });
   }
 
-  //Map<String, Object>[]
   public getDataChart(iniDate: Date, endDate: Date): Observable<Map<String, Object>[]> {
     const params = new HttpParams().set('iniDate', iniDate.toString()).set('endDate', endDate.toString());
 
     const url = API_CONFIG.getDataChart;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.get<Map<String, Object>[]>(url, { params,  headers });
   }
-
 }

@@ -28,11 +28,9 @@ export class CustomMatPaginatorIntl extends MatPaginatorIntl {
 
   injectTranslateService(translate: TranslateService) {
     this.translate = translate;
-
     this.translate.onLangChange.subscribe(() => {
       this.translateLabels();
     });
-
     this.translateLabels();
   }
 
@@ -44,5 +42,4 @@ export class CustomMatPaginatorIntl extends MatPaginatorIntl {
     this.lastPageLabel = this.translate.instant('paginator.last_page');
     this.changes.next();
   }
-
 }

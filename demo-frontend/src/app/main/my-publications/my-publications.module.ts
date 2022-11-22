@@ -16,14 +16,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
-import { EditPublicationUserComponent } from '../publications/edit-publication-user/edit-publication-user.component';
-import { EditPublicationComponent } from '../publications/edit-publication/edit-publication.component';
-import { PublicationsLayoutComponent } from '../publications/publications-layout.component';
-import { PublicationsRoutingModule } from '../publications/publications-routing.module';
-import { PublicationsComponent } from '../publications/publications.component';
 import { MyPublicationsRoutingModule } from './my-publications-routing.module';
 import { EditMyPublicationsComponent } from './edit-my-publications/edit-my-publications.component';
-
 
 
 @NgModule({
@@ -48,12 +42,6 @@ import { EditMyPublicationsComponent } from './edit-my-publications/edit-my-publ
     MatMomentDateModule
     ],
   declarations: [
-    // PublicationsComponent,
-    // PublicationsComponent,
-    // PublicationsLayoutComponent,
-    // EditPublicationComponent,
-    // EditPublicationUserComponent
-  
     EditMyPublicationsComponent
   ]
 })

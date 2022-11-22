@@ -1,12 +1,8 @@
-// https://material.angular.io/guide/theming-your-components
-
 .mat-sidenav-container {
   height: -webkit-fill-available;
 }
 
-// https://github.com/angular/material2/blob/master/src/lib/core/style/_variables.scss
-
-$sidenav-width: 320px; // 240px;
+$sidenav-width: 320px;
 
 .mat-sidenav {
   width: $sidenav-width;

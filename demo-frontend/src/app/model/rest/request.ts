@@ -107,4 +107,3 @@ export class EditPublicationRequest extends CreatePublicationRequest {
     this.id = publication.id;
   }
 }
-

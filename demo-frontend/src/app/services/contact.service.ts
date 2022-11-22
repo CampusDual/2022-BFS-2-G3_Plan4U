@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { API_CONFIG } from '../shared/api.config';
 import { environment } from 'src/environments/environment';
 import { AnyPageFilter } from '../model/rest/filter';
@@ -20,7 +20,6 @@ export class ContactService {
     const url = API_CONFIG.getContacts;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.post<DataSourceRESTResponse<Contact[]>>(url, pageFilter, { headers });

@@ -17,5 +17,4 @@ export class MatSnackBarComponent {
       panelClass: [className],
     });
 }
-
 }

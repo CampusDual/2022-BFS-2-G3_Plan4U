@@ -28,14 +28,8 @@ export class NavComponent implements OnInit, OnDestroy {
       icon: 'home',
       route: 'main',
       title: 'menu.home',
-      allowedRoles: ['CONTACTS']
+      allowedRoles: ['USERS']
     },
-    /*{
-      icon: 'people',
-      route: 'contacts',
-      title: 'menu.contacts',
-      allowedRoles: ['CONTACTS']
-    },*/
     {
       icon: 'description',
       route: 'publications',

@@ -4,8 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { Idle } from '@ng-idle/core';
-import { Keepalive } from '@ng-idle/keepalive';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, Observer } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -50,16 +48,13 @@ export class MyPublicationsComponent implements OnInit {
     private dialog: MatDialog,
     private translate: TranslateService
     ) {
-
   }
-  
   
   ngOnInit () {
     this.publicationService.getPublicationsUsers().subscribe(response => {this.publications = response});
     this.publicationService.getCategories().subscribe(response => {this.categories = response});
     this.publicationService.getProvinces().subscribe(response => {this.provinces = response});
     this.filterUser = this.authService.getUserName();
-
   }
   
   onAdd() {

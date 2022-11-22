@@ -63,7 +63,13 @@
     "listPublications": "Publicaciones",
     "mypublications": "As Miñas Publicacións",
     "figures": "Estadísticas",
-    "figuressubtitle" : "Publicacións por provincias e categorías"
+    "figuressubtitle" : "Publicacións por provincias e categorías",
+    "graphic":{
+      "range" : "Rango de datas",
+      "iniDate": "Data de inicio",
+      "endDate": "Data final",
+      "btnFilter": "Filtrar"
+    }
   },
   "button": {
     "cancel": "Cancelar",

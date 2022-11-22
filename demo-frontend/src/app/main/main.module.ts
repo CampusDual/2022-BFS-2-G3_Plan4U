@@ -41,9 +41,6 @@ import { FilterPipe } from './main-home/filter.pipe';
 import { MainHomeLayoutComponent } from './main-home/main-home-layout.component';
 import { MyPublicationsComponent } from './my-publications/my-publications.component';
 import { GraphicComponent } from './graphic/graphic.component';
-//import { PublicationsComponent } from './publications/publications.component';
-//import { UsersComponent } from './users/users.component';
-// import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -53,9 +50,6 @@ import { GraphicComponent } from './graphic/graphic.component';
     MainHomeLayoutComponent,
     MyPublicationsComponent,
     GraphicComponent,
-    //PublicationsComponent,
-    //UsersComponent,
-   // EditUserComponent,
   ],
   imports: [
     TranslateModule,

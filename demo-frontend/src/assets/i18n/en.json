@@ -63,7 +63,13 @@
     "listPublications": "Publications",
     "mypublications": "My Publications",
     "figures": "Figures",
-    "figuressubtitle" : "Publications by provinces and categories"
+    "figuressubtitle" : "Publications by provinces and categories",
+    "graphic":{
+      "range" : "Input date range",
+      "iniDate": "Start date",
+      "endDate": "End date",
+      "btnFilter": "Filter"
+    }
   },
   "button": {
     "cancel": "Cancel",

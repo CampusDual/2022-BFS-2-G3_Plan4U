@@ -54,9 +54,7 @@
       padding: 5% 25% 5% 25%;
       background-color: #ffffff00;
 
-
       mat-card-header {
-        // align-self: flex-start;
         margin-bottom: 0px;
         box-sizing: content-box;
         width: 100%;
@@ -73,7 +71,6 @@
           margin-right: 130px;
           font-size: 30px;
         }
-
       }
 
       mat-card-content {
@@ -87,23 +84,9 @@
           margin-top: 20px;
           display: inline-flex;
           justify-content: space-evenly;
-
-
         }
 
-        // .columnaslognif {
-
-        //   width: 200%;
-        //   height: 100%;
-        //   position: relative;
-        //   right: 319px;
-        //   margin-top: 20px;
-        //   display: inline-flex;
-        //   justify-content: space-evenly;
-
-        // }
         .columnaslognif {
-
           width: 200%;
           height: 100%;
           position: relative;
@@ -111,16 +94,11 @@
           margin-top: 20px;
           display: inline-flex;
           justify-content: space-evenly;
-
         }
 
         .nif {
           visibility: hidden;
-
         }
-
-
-
       }
 
       mat-card-actions {
@@ -145,32 +123,7 @@
       .p4u-raised-button {
         background-color: #66cccc;
         color: #000000;
-
       }
-
-
     }
-
-
   }
-
-  // .logo-container {
-  //   border-radius: 50%;
-  //   width: 150px;
-  //   height: 150px;
-  //   position: relative;
-  //   background-color: #FFFFFF;
-  //   top: -105px;
-  //   left: 50%;
-  //   -webkit-transform: translate(-50%, 0%);
-
-  //   img {
-  //     max-height: 125px;
-  //     max-width: 125px;
-  //     margin-left: 12px;
-  //     margin-top: 46px;
-  //   }
-  // }
-
 }
-

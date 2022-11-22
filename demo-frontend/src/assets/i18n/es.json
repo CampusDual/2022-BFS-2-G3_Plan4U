@@ -55,7 +55,6 @@
       "optionalContact": "Contacto opcional"
     }
   },
-
   "form": {
     "contact": "Contacto",
     "user":"Datos de usuario",
@@ -64,7 +63,13 @@
     "listPublications": "Publicaciones",
     "mypublications": "Mis Publicaciones",
     "figures": "Estadísticas",
-    "figuressubtitle" : "Publicaciones por provincias y categorías"
+    "figuressubtitle" : "Publicaciones por provincias y categorías",
+    "graphic":{
+      "range" : "Rango de fechas",
+      "iniDate": "Fecha de inicio",
+      "endDate": "Fecha final",
+      "btnFilter": "Filtrar"
+    }
   },
   "button": {
     "cancel": "Cancelar",
@@ -143,5 +148,4 @@
   "provincerequired": "La provincia es un campo obligatorio",
   "daterequired": "La fecha del plan es obligatoria",
   "contactrequired": "La forma de contacto es obligatoria"
-
 }

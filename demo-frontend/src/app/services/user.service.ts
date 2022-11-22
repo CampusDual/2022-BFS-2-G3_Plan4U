@@ -30,7 +30,6 @@ export class UserService {
     const body: CreateUserRequest = new CreateUserRequest(user);
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-     // Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.post<User>(url, body, { headers }).pipe(
       catchError(e =>{
@@ -57,7 +56,6 @@ export class UserService {
     const url = API_CONFIG.getUsers;
     const headers = new HttpHeaders({
       'Content-type': 'application/json; charset=utf-8',
-      // Authorization: 'Basic ' + btoa(`${environment.clientName}:${environment.clientSecret}`),
       Authorization: 'Basic ' + Buffer.from(`${environment.clientName}:${environment.clientSecret}`, 'utf8').toString('base64'),
     });
     return this.http.get<User[]>(url, { headers });

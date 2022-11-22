@@ -15,7 +15,6 @@
                 fxLayout.lt-md="column"
                 fxLayoutGap="20px"
                 fxLayoutGap.lt-md="0px"
-                
               >
                 <mat-form-field  class="filas" >
                   <input style="width: 614px;"
@@ -31,9 +30,7 @@
                   <mat-error>{{ "titlerequired" | translate }}</mat-error>
                 </mat-form-field>
               </div>
-             
             </div>
-  
             <div class="columnas">
               <div
               class="input-row"
@@ -46,7 +43,6 @@
                 <mat-form-field appearance="fill" class="eventDate">
                   <input matInput [matDatepicker]="eventDate" formControlName="eventDate" required>
                   <mat-label>{{'table.publications.eventDate' | translate}}</mat-label>
-                  <!-- <mat-hint>DD/MM/YYYY</mat-hint> -->
                   <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
                   <mat-datepicker #eventDate></mat-datepicker>
                   <mat-error>{{ "daterequired" | translate }}</mat-error>
@@ -84,9 +80,7 @@
               </mat-form-field>
               </div>
             </div>
-  
             <div class="columnaContenido">
-              
               <mat-form-field fxFlex class="input-content">
                 <textarea
                   matInput
@@ -96,16 +90,13 @@
                   name="publication-content"
                   required
                   rows="10"
-                  maxlength="500"
-                  
+                  maxlength="500" 
                 ></textarea>
                 <mat-error>
                   {{ "contentrequired" | translate }}
                 </mat-error>
               </mat-form-field>
-              
             </div>
-  
             <div class="columnas">
               <div
               class="input-row"
@@ -146,9 +137,7 @@
               </mat-form-field>
               </div>
             </div>
-  
           </mat-card-content>
-  
           <mat-card-actions>
             <div
             fclass="input-row"
@@ -179,7 +168,6 @@
             </button>
           </div>
           </mat-card-actions>
-  
         </mat-card>
       </div>
     </div>

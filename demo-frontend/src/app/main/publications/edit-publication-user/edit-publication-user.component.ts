@@ -10,7 +10,6 @@ import { PublicationService } from 'src/app/services/publication.service';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
-  //selector: 'app-edit-publication-user',
   templateUrl: './edit-publication-user.component.html',
   styleUrls: ['./edit-publication-user.component.scss']
 })
@@ -102,5 +101,4 @@ export class EditPublicationUserComponent implements OnInit {
   cancel() {
     this.router.navigate(['/my-publications']);
   }
-
 }

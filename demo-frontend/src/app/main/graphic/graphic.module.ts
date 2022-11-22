@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { GraphicRoutingModule } from './graphic-routing.module';
 
 
-
 @NgModule({
   declarations: [],
   imports: [

@@ -1,8 +1,5 @@
 <div class="p4u_scroll">
-
       <h1 class="title">{{ "form.listPublications" | translate }}</h1>
-
-
     <div
       fxLayout="row"
       fxLayoutAlign="space-between"
@@ -11,9 +8,6 @@
       fxLayoutGap="20px"
       fxLayoutGap.lt-sm="10px"
     >
-
-
-
       <div fxFlex fxLayout.lt-sm="row" class="k-flex-wrap">
         <button mat-raised-button (click)="onAdd()">
           <mat-icon>add</mat-icon> {{ "new" | translate }}
@@ -41,7 +35,6 @@
         </mat-form-field>
       </div>
     </div>
-
     <div class="mat-elevation-z8 table-responsive">
       <table
         mat-table
@@ -71,7 +64,6 @@
             </mat-checkbox>
           </td>
         </ng-container>
-
         <ng-container matColumnDef="title">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.title" | translate }}
@@ -80,7 +72,6 @@
             {{ row.title }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="content">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.content" | translate }}
@@ -89,7 +80,6 @@
             {{ row.content }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="createDate">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.createDate" | translate }}
@@ -98,7 +88,6 @@
             {{ row.createDate | date:"dd/MM/yyyy" }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="userLogin">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.userLogin" | translate }}
@@ -107,7 +96,6 @@
             {{ row.userLogin }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="categoryName">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.categoryName" | translate }}
@@ -116,7 +104,6 @@
             {{ row.categoryName }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="provinceName">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.provinceName" | translate }}
@@ -125,7 +112,6 @@
             {{ row.provinceName  }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="eventDate">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.eventDate" | translate }}
@@ -134,7 +120,6 @@
             {{ row.eventDate | date:"dd/MM/yyyy" }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="contact">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.contact" | translate }}
@@ -143,7 +128,6 @@
             {{ row.contact }}
           </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="optionalContact">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "table.publications.optionalContact" | translate }}
@@ -152,10 +136,6 @@
             {{ row.optionalContact }}
           </mat-cell>
         </ng-container>
-
-
-
-
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row
           *matRowDef="let row; columns: displayedColumns"
@@ -169,14 +149,12 @@
         >
         </mat-row>
       </table>
-
       <mat-card
         *ngIf="dataSource.loading$ | async"
         style="display: flex; justify-content: center; align-items: center"
       >
         <mat-spinner></mat-spinner>
       </mat-card>
-
       <mat-paginator
         [length]="dataSource.totalElements"
         [pageSize]="10"

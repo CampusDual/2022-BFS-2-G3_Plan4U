@@ -4,12 +4,10 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import { PublicationService } from 'src/app/services/publication.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ThisReceiver } from '@angular/compiler';
 import * as am5plugins_exporting from "@amcharts/amcharts5/plugins/exporting";
 
 
 @Component({
-  //selector: 'app-graphic',
   templateUrl: './graphic.component.html',
   styleUrls: ['./graphic.component.scss']
 })
@@ -35,7 +33,6 @@ export class GraphicComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.root = am5.Root.new("chartdiv");
     this.publicationService.getDataChart(this.iniDate, this.endDate).subscribe((response) => {
       this.data = response

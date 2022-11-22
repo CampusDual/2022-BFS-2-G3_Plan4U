@@ -99,7 +99,6 @@ export class AuthService {
   }
 
   redirectMain(){
-    // console.log(this.getRoles());
     if(this.getRoles().includes('PUBLICATIONS')){
       this.redirectUrl='/graphic';
     }

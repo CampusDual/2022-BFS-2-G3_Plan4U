@@ -21,7 +21,6 @@ import { PublicationService } from 'src/app/services/publication.service';
 
 
 @Component({
-  //selector: 'app-publications',
   templateUrl: './publications.component.html',
   styleUrls: ['./publications.component.scss']
 })
@@ -39,7 +38,6 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
     'optionalContact'
   ];
   fields = ['title', 'createDate', 'userLogin', 'categoryName', 'provinceName', 'eventDate', 'contact', 'optionalContact'];
-
   selection = new SelectionModel<Publication>(true, []);
   error = false;
 
@@ -57,9 +55,7 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
     private dialog: MatDialog
   ) {}
 
-
   ngAfterViewInit(): void {
-    // server-side search
     fromEvent(this.input.nativeElement, 'keyup')
       .pipe(
         debounceTime(150),
@@ -181,5 +177,4 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
     this.highlightedRow = row;
     this.router.navigate(['/publications/edit/' + row.id]);
   }
-
 }

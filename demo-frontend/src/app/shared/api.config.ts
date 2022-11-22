@@ -7,16 +7,6 @@ export const API_CONFIG = {
   getAllProfiles: environment.adminBaseUrl + '/getAllProfiles',
   getAllSections: environment.adminBaseUrl + '/getAllSections',
 
-
-
-  // Contacts API
-  getContacts: environment.contactsBaseUrl + '/getContacts',
-  getContact: environment.contactsBaseUrl + '/getContact',
-  createContact: environment.contactsBaseUrl + '/createContact',
-  editContact: environment.contactsBaseUrl + '/editContact',
-  deleteContact: environment.contactsBaseUrl + '/deleteContact',
-
-
   // Users API
   getUsers: environment.usersBaseUrl + '/getUsers',
   getUser: environment.usersBaseUrl + '/getUser',
@@ -33,7 +23,4 @@ export const API_CONFIG = {
   getDataChart: environment.publicationsBaseUrl + '/getDataChart',
   getCategories: "http://localhost:9999/categories/getCategories",
   getProvinces: "http://localhost:9999/provinces/getProvinces",
-
-
-
 };

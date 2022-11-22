@@ -7,7 +7,6 @@ export const environment = {
   apiBaseUrl: 'http://localhost:9999' ,
   authBaseUrl: 'http://localhost:9999',
   adminBaseUrl: 'http://localhost:9999',
-  contactsBaseUrl: 'http://localhost:9999/contacts',
   publicationsBaseUrl: 'http://localhost:9999/publications',
   usersBaseUrl: 'http://localhost:9999/users',
   loginBaseUrl: 'http://localhost:9999/login',
