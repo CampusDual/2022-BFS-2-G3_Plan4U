@@ -15,7 +15,6 @@ public class UserDTO {
 	@NotEmpty(message = Constant.SURNAME_REQUIRED)
 	private String surname;
 	
-	// @NotEmpty(message = Constant.NIF_REQUIRED)
 	private String nif;
 	
 	@NotNull(message = Constant.PHONE_REQUIRED)

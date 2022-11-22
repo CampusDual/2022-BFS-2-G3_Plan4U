@@ -10,13 +10,12 @@ public class ProvinceDTO {
 
 	private Integer id;
 	
-	@NotEmpty(message = Constant.NAME_REQUIRED) // **********CREAR Y CAMBIAR EN CONSTANT CODE_REQUIRED*************************
+	@NotEmpty(message = Constant.NAME_REQUIRED)
 	private String provinceCode;
 	
 	@NotEmpty(message = Constant.NAME_REQUIRED)
 	private String provinceName;
 
-	
 	public Integer getId() {
 		return id;
 	}
@@ -41,5 +40,4 @@ public class ProvinceDTO {
 		this.provinceName = provinceName;
 	}
 	
-
 }

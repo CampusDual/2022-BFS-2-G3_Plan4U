@@ -6,13 +6,10 @@ import org.mapstruct.factory.Mappers;
 import com.example.demo.dto.ProvinceDTO;
 import com.example.demo.entity.Province;
 
-
 @Mapper
 public interface ProvinceMapper {
-
-    ProvinceMapper INSTANCE = Mappers.getMapper( ProvinceMapper.class );
-    ProvinceDTO provinceToProvinceDto(Province province);
-    List<ProvinceDTO> provinceToProvinceDtoList(List<Province> provinces);
-    Province provinceDTOtoProvince(ProvinceDTO provincedto);
-
+	ProvinceMapper INSTANCE = Mappers.getMapper( ProvinceMapper.class );
+	ProvinceDTO provinceToProvinceDto(Province province);
+	List<ProvinceDTO> provinceToProvinceDtoList(List<Province> provinces);
+	Province provinceDTOtoProvince(ProvinceDTO provincedto);
 }

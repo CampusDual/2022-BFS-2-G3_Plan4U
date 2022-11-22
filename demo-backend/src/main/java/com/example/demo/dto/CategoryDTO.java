@@ -5,7 +5,6 @@ public class CategoryDTO {
 	private String category;
 	private String photo;
 	
-	
 	public Integer getId() {
 		return id;
 	}
@@ -24,6 +23,5 @@ public class CategoryDTO {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	
 	
 }

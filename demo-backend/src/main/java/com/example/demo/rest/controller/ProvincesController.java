@@ -3,9 +3,6 @@ package com.example.demo.rest.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-
-
 import org.springframework.web.bind.annotation.CrossOrigin;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.example.demo.dto.ProvinceDTO;
 import com.example.demo.entity.enums.ResponseCodeEnum;
@@ -33,8 +26,6 @@ import com.example.demo.exception.DemoException;
 import com.example.demo.rest.response.DataSourceRESTResponse;
 import com.example.demo.service.IProvinceService;
 import com.example.demo.utils.Constant;
-
-
 
 @CrossOrigin(origins = {"http://localhost:4201"})
 @RestController
@@ -56,7 +47,7 @@ public class ProvincesController {
 		try {
 			province = provinceService.getProvince(id);
 			if(province == null) {
-				response.put(Constant.MESSAGE, Constant.PUBLICATION_NOT_EXISTS); // ***PROVINCE_NOT_EXISTS crearlo***
+				response.put(Constant.MESSAGE, Constant.PUBLICATION_NOT_EXISTS);
 				response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.KO.getValue());
 				re = new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}else {

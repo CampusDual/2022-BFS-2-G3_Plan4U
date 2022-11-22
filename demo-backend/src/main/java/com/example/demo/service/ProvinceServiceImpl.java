@@ -1,13 +1,11 @@
 package com.example.demo.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.borjaglez.springify.repository.specification.SpecificationBuilder;
 import com.example.demo.dto.ProvinceDTO;
@@ -56,6 +54,5 @@ public class ProvinceServiceImpl extends AbstractDemoService implements IProvinc
 		List<Province> provincedto = provinceRepository.findAll(Sort.by(Sort.Direction.ASC,"provinceName"));
 		return ProvinceMapper.INSTANCE.provinceToProvinceDtoList(provincedto);
 	}
-
 	
 }

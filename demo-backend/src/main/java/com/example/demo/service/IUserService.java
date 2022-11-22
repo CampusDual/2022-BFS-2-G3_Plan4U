@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 
 import java.util.List;
-
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.example.demo.dto.UserCompletDTO;
 import com.example.demo.dto.UserDTO;

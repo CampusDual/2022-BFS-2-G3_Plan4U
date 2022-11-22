@@ -7,9 +7,7 @@ import com.example.demo.dto.ProvinceDTO;
 import com.example.demo.rest.response.DataSourceRESTResponse;
 
 public interface IProvinceService {
-
 	ProvinceDTO getProvince(Integer id);
 	DataSourceRESTResponse<List<ProvinceDTO>> getProvinces(AnyPageFilter pageFilter);
 	List<ProvinceDTO> findAll();
-	
 }

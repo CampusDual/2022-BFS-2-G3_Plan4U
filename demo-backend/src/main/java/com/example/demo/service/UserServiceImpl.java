@@ -7,16 +7,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
 import com.borjaglez.springify.repository.specification.SpecificationBuilder;
-import com.example.demo.dto.PublicationDTO;
 import com.example.demo.dto.UserCompletDTO;
 import com.example.demo.dto.UserDTO;
-import com.example.demo.dto.mapper.PublicationMapper;
 import com.example.demo.dto.mapper.UserCompletMapper;
 import com.example.demo.dto.mapper.UserMapper;
-import com.example.demo.entity.Publication;
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.rest.response.DataSourceRESTResponse;
@@ -39,7 +35,6 @@ public class UserServiceImpl extends AbstractDemoService implements IUserService
 		user.setPassword(new CipherUtils().decrypt(user.getLogin(), user.getPassword()));
 		return UserMapper.INSTANCE.userToUserDto(user);
 	}
-
 
 	@Override
 	@Transactional

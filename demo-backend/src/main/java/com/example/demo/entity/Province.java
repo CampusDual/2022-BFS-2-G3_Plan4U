@@ -63,7 +63,6 @@ public class Province implements Serializable {
 		this.provinceName = provinceName;
 	}
 	
-	
 	private static final long serialVersionUID = -6214401508230100066L;
 
 }

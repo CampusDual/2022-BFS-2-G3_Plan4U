@@ -7,10 +7,7 @@ import com.example.demo.dto.CategoryDTO;
 import com.example.demo.rest.response.DataSourceRESTResponse;
 
 public interface ICategoryService {
-	
 	CategoryDTO getCategory(Integer id);
-
 	DataSourceRESTResponse<List<CategoryDTO>> getCategories(AnyPageFilter pageFilter);
-	
 	List<CategoryDTO> findAll();
 }

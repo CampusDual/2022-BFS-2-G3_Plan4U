@@ -1,7 +1,7 @@
 package com.example.demo.utils;
 
 public class Constant {
-	//Contact error
+	
 	public static final String NAME_REQUIRED ="NAME_REQUIRED";
 	public static final String ID_REQUIRED ="ID_REQUIRED";
 	public static final String SURNAME1_REQUIRED ="SURNAME1_REQUIRED";
@@ -34,8 +34,6 @@ public class Constant {
 	public static final String PUBLICATION_CONSTRAINT_VIOLATION ="PUBLICATION_CONSTRAINT_VIOLATION";
 	public static final String PUBLICATION_DATABASE_ERROR ="PUBLICATION_DATABASE_ERROR";
 	public static final String CONTACT_REQUIRED ="CONTACT_REQUIRED";
-	
-	
 	
 	//Publication message
 	public static final String PUBLICATION_CREATE_SUCCESS ="PUBLICATION_CREATE_SUCCESS";
@@ -78,7 +76,6 @@ public class Constant {
 	public static final String ERROR = "errors";
 	public static final String PHONE_ERROR ="contacts_phone_key";
 
-	
 	//nuestros errores
 	public static final String EMAIL_ERROR = "EMAIL_ERROR";
 	public static final String EMAIL_ALREADY_EXIST = "EMAIL_ALREADY_EXISTS";

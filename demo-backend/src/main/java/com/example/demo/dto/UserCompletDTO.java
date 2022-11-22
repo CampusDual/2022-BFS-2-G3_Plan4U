@@ -3,9 +3,6 @@ package com.example.demo.dto;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -23,7 +20,6 @@ public class UserCompletDTO {
 	@NotEmpty(message = Constant.SURNAME_REQUIRED)
 	private String surname;
 	
-	// @NotEmpty(message = Constant.NIF_REQUIRED)
 	private String nif;
 	
 	@NotNull(message = Constant.PHONE_REQUIRED)

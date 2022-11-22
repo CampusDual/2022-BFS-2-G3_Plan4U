@@ -1,21 +1,15 @@
 package com.example.demo.rest.controller;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiFunction;
-
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -31,16 +25,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
-import com.example.demo.dto.DataChartDTO;
 import com.example.demo.dto.PublicationDTO;
 import com.example.demo.entity.enums.ResponseCodeEnum;
 import com.example.demo.exception.DemoException;
 import com.example.demo.rest.response.DataSourceRESTResponse;
 import com.example.demo.service.IPublicationService;
 import com.example.demo.utils.Constant;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @CrossOrigin(origins = {"http://localhost:4201"})
 @RestController
@@ -172,7 +163,6 @@ public class PublicationsController {
 					response.put(Constant.RESPONSE_CODE, ResponseCodeEnum.KO.getValue());
 					response.put(Constant.ERROR, e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 				}
-				
 			}else {
 				List<String> errors = new ArrayList<>();
 				for(FieldError error : result.getFieldErrors()) {
@@ -188,13 +178,10 @@ public class PublicationsController {
 			message = Constant.ID_NOT_EXISTS;
 			status = HttpStatus.BAD_REQUEST;
 		}
-			
-
 		
 		response.put(Constant.MESSAGE, message);
 		LOGGER.info("editPublication is finished...");
 		return new ResponseEntity<Map<String, Object>>(response, status);
-	
 	}
 
 	@DeleteMapping("/deletePublication")

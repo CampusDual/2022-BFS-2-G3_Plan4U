@@ -23,22 +23,16 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "publications")
 public class Publication implements Serializable{
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
 
 	@Column(nullable=false)
 	private String title;
 	
-	
 	@Column(nullable=false)
 	private String content;
 	
-
-//	@Column(nullable=false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 	@PrePersist
@@ -46,7 +40,6 @@ public class Publication implements Serializable{
 		createDate = new Date();
 	}
 
-	
 	@Column(nullable=false, name = "user_login")
 	private String userLogin;
 	
@@ -88,13 +81,13 @@ public class Publication implements Serializable{
 		this.id = id;
 	}
 
-	public Publication(String title, String content, String userLogin) {	// potencialmente inútil; si no añadir provincia y categoría
+	public Publication(String title, String content, String userLogin) {
 		this.title = title;
 		this.content = content;
 		this.userLogin = userLogin;
 	}
 	
-	public Publication(Integer id, String title, String content, String userLogin) {	// potencialmente inútil; si no añadir provincia y categoría
+	public Publication(Integer id, String title, String content, String userLogin) {
 		this(title, content, userLogin);
 		this.id = id;
 	}
@@ -155,7 +148,6 @@ public class Publication implements Serializable{
 	public void setProvinceName(String provinceName) {
 		this.provinceName = provinceName;
 	}
-
 	
 	public Date getEventDate() {
 		return eventDate;
@@ -181,7 +173,6 @@ public class Publication implements Serializable{
 	public void setOptionalContact(String optionalContact) {
 		this.optionalContact = optionalContact;
 	}
-
 
 	private static final long serialVersionUID = 1L;
 }

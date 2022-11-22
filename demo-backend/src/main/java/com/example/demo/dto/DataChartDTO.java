@@ -27,6 +27,5 @@ public class DataChartDTO {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-	
-	
+		
 }

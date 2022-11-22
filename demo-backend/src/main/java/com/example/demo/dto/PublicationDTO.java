@@ -2,7 +2,6 @@ package com.example.demo.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
@@ -28,14 +27,11 @@ public class PublicationDTO {
 	@NotNull(message = Constant.USERID_REQUIRED)
 	private String userLogin;
 
-	//@NotEmpty(message = Constant.CONTENT_REQUIRED)
 	private String categoryName;
 	
-	//@NotEmpty(message = Constant.CONTENT_REQUIRED)
 	private String provinceName;
 	
 	
-//	@Temporal(TemporalType.TIMESTAMP)
 	@JsonFormat(timezone = "Europe/Madrid")
 	private Date eventDate;
 	

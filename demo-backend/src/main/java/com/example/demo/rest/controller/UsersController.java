@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +23,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.borjaglez.springify.repository.filter.impl.AnyPageFilter;
-import com.example.demo.dto.ContactDTO;
-import com.example.demo.dto.PublicationDTO;
 import com.example.demo.dto.UserCompletDTO;
 import com.example.demo.dto.UserDTO;
-import com.example.demo.entity.User;
 import com.example.demo.entity.enums.ResponseCodeEnum;
 import com.example.demo.exception.DemoException;
 import com.example.demo.rest.response.DataSourceRESTResponse;
@@ -106,7 +100,6 @@ public class UsersController {
 		
 	
 	@PostMapping(path = "/createUser")
-	//@PreAuthorize("hasAnyAuthority('USERS')")
 	public ResponseEntity<?> createUser(@Valid @RequestBody UserCompletDTO createUserRequest, BindingResult result) {
 		LOGGER.info("createUser in progress...");
 		UserDTO userNew = null;
@@ -147,8 +140,6 @@ public class UsersController {
 		
 		return new ResponseEntity<>(response, status);
 	}
-	
-	//EditUser
 	
 	@PostMapping(path = "/editUser", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@PreAuthorize("hasAnyAuthority('USERS')")
@@ -193,11 +184,9 @@ public class UsersController {
 			status = HttpStatus.BAD_REQUEST;
 		}
 			
-
 		
 		response.put(Constant.MESSAGE, message);
 		LOGGER.info("editUser is finished...");
 		return new ResponseEntity<Map<String, Object>>(response, status);
-	
 	}
 }
